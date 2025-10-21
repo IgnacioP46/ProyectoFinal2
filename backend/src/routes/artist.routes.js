@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Artist = require("../models/Artist");
+const Artist = require("../models/Artist.models");
 router.get("/", async (req,res)=>{
   const { q } = req.query; const filter = q ? { $text: { $search:q } } : {};
   const items = await Artist.find(filter).limit(200);

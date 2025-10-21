@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { Vinyl } from '../models/Vinyl.js' // 👈 extensión .js
+import { Vinyl } from '../models/Vinyl.models.js' // 👈 extensión .js
 
 const router = Router()
 
