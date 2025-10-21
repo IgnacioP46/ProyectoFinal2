@@ -1,0 +1,1 @@
+const artist = require("../models/Artist.models");

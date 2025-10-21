@@ -1,0 +1,402 @@
+[
+  {
+    "artist_code": "ART001",
+    "name": "Carolina Durante"
+  },
+  {
+    "artist_code": "ART002",
+    "name": "Biznaga"
+  },
+  {
+    "artist_code": "ART003",
+    "name": "VVV"
+  },
+  {
+    "artist_code": "ART004",
+    "name": "Chill Mafia Records"
+  },
+  {
+    "artist_code": "ART005",
+    "name": "Estopa"
+  },
+  {
+    "artist_code": "ART006",
+    "name": "Camellos"
+  },
+  {
+    "artist_code": "ART007",
+    "name": "Ben Yart"
+  },
+  {
+    "artist_code": "ART008",
+    "name": "Shego"
+  },
+  {
+    "artist_code": "ART009",
+    "name": "La Élite"
+  },
+  {
+    "artist_code": "ART010",
+    "name": "Alcalá Norte"
+  },
+  {
+    "artist_code": "ART011",
+    "name": "Dua Lipa"
+  },
+  {
+    "artist_code": "ART012",
+    "name": "Los Planetas"
+  },
+  {
+    "artist_code": "ART013",
+    "name": "Ultralágrima"
+  },
+  {
+    "artist_code": "ART014",
+    "name": "Los Rodríguez"
+  },
+  {
+    "artist_code": "ART015",
+    "name": "María Escarmiento"
+  },
+  {
+    "artist_code": "ART016",
+    "name": "C. Tangana"
+  },
+  {
+    "artist_code": "ART017",
+    "name": "Oasis"
+  },
+  {
+    "artist_code": "ART018",
+    "name": "Arctic Monkeys"
+  },
+  {
+    "artist_code": "ART019",
+    "name": "Bon Iver"
+  },
+  {
+    "artist_code": "ART020",
+    "name": "Joe Crepúsculo"
+  },
+  {
+    "artist_code": "ART021",
+    "name": "Natos y Waor"
+  },
+  {
+    "artist_code": "ART022",
+    "name": "Bad Bunny"
+  },
+  {
+    "artist_code": "ART023",
+    "name": "Bad Gyal"
+  },
+  {
+    "artist_code": "ART024",
+    "name": "Bizarrap"
+  },
+  {
+    "artist_code": "ART025",
+    "name": "Margarita Quebrada"
+  },
+  {
+    "artist_code": "ART026",
+    "name": "Extremoduro"
+  },
+  {
+    "artist_code": "ART027",
+    "name": "Rigoberta Bandini"
+  },
+  {
+    "artist_code": "ART028",
+    "name": "Los Punsetes"
+  },
+  {
+    "artist_code": "ART029",
+    "name": "Casatriste"
+  },
+  {
+    "artist_code": "ART030",
+    "name": "Miley Cyrus"
+  },
+  {
+    "artist_code": "ART031",
+    "name": "Rage Against the Machine"
+  },
+  {
+    "artist_code": "ART032",
+    "name": "Yung Beef"
+  },
+  {
+    "artist_code": "ART033",
+    "name": "Cupido"
+  },
+  {
+    "artist_code": "ART034",
+    "name": "Xenia"
+  },
+  {
+    "artist_code": "ART035",
+    "name": "Luna Ki"
+  },
+  {
+    "artist_code": "ART036",
+    "name": "Perra Inmunda"
+  },
+  {
+    "artist_code": "ART037",
+    "name": "The Stone Roses"
+  },
+  {
+    "artist_code": "ART038",
+    "name": "Arde Bogotá"
+  },
+  {
+    "artist_code": "ART039",
+    "name": "Cecilio G."
+  },
+  {
+    "artist_code": "ART040",
+    "name": "FrioLento"
+  },
+  {
+    "artist_code": "ART041",
+    "name": "La Plazuela"
+  },
+  {
+    "artist_code": "ART042",
+    "name": "The Strokes"
+  },
+  {
+    "artist_code": "ART043",
+    "name": "Califato ¾"
+  },
+  {
+    "artist_code": "ART044",
+    "name": "Hinds"
+  },
+  {
+    "artist_code": "ART045",
+    "name": "ROSALÍA"
+  },
+  {
+    "artist_code": "ART046",
+    "name": "AC/DC"
+  },
+  {
+    "artist_code": "ART047",
+    "name": "Metallica"
+  },
+  {
+    "artist_code": "ART048",
+    "name": "Novedades Carminha"
+  },
+  {
+    "artist_code": "ART049",
+    "name": "Reincidentes"
+  },
+  {
+    "artist_code": "ART050",
+    "name": "Junio"
+  },
+  {
+    "artist_code": "ART051",
+    "name": "Duki"
+  },
+  {
+    "artist_code": "ART052",
+    "name": "Elvis Presley"
+  },
+  {
+    "artist_code": "ART053",
+    "name": "Lil Peep"
+  },
+  {
+    "artist_code": "ART054",
+    "name": "Lola Índigo"
+  },
+  {
+    "artist_code": "ART055",
+    "name": "Bob Marley y The Wailers"
+  },
+  {
+    "artist_code": "ART056",
+    "name": "Rodrigo Cuevas"
+  },
+  {
+    "artist_code": "ART057",
+    "name": "El Jardinero"
+  },
+  {
+    "artist_code": "ART058",
+    "name": "Amaia"
+  },
+  {
+    "artist_code": "ART059",
+    "name": "El Coleta"
+  },
+  {
+    "artist_code": "ART060",
+    "name": "Ladilla Rusa"
+  },
+  {
+    "artist_code": "ART061",
+    "name": "Joachim Witt"
+  },
+  {
+    "artist_code": "ART062",
+    "name": "LA TXAMA"
+  },
+  {
+    "artist_code": "ART063",
+    "name": "Nirvana"
+  },
+  {
+    "artist_code": "ART064",
+    "name": "Eminem"
+  },
+  {
+    "artist_code": "ART065",
+    "name": "Gordo"
+  },
+  {
+    "artist_code": "ART066",
+    "name": "Creed"
+  },
+  {
+    "artist_code": "ART067",
+    "name": "Post Malone"
+  },
+  {
+    "artist_code": "ART068",
+    "name": "Soto Asa"
+  },
+  {
+    "artist_code": "ART069",
+    "name": "Marilyn Manson"
+  },
+  {
+    "artist_code": "ART070",
+    "name": "Cala Vento"
+  },
+  {
+    "artist_code": "ART071",
+    "name": "Monteperdido"
+  },
+  {
+    "artist_code": "ART072",
+    "name": "Porretas"
+  },
+  {
+    "artist_code": "ART073",
+    "name": "VAN17INO6"
+  },
+  {
+    "artist_code": "ART074",
+    "name": "Gabry Ponte"
+  },
+  {
+    "artist_code": "ART075",
+    "name": "Mujeres"
+  },
+  {
+    "artist_code": "ART076",
+    "name": "Kings of Leon"
+  },
+  {
+    "artist_code": "ART077",
+    "name": "Zahara"
+  },
+  {
+    "artist_code": "ART078",
+    "name": "Vetusta Morla"
+  },
+  {
+    "artist_code": "ART079",
+    "name": "Calle 13"
+  },
+  {
+    "artist_code": "ART080",
+    "name": "Cascada"
+  },
+  {
+    "artist_code": "ART081",
+    "name": "El Columpio Asesino"
+  },
+  {
+    "artist_code": "ART082",
+    "name": "Pet Shop Boys"
+  },
+  {
+    "artist_code": "ART083",
+    "name": "Barry B"
+  },
+  {
+    "artist_code": "ART084",
+    "name": "La Plata"
+  },
+  {
+    "artist_code": "ART085",
+    "name": "Manel"
+  },
+  {
+    "artist_code": "ART086",
+    "name": "Sen Senra"
+  },
+  {
+    "artist_code": "ART087",
+    "name": "Fito y Fitipaldis"
+  },
+  {
+    "artist_code": "ART088",
+    "name": "The Prodigy"
+  },
+  {
+    "artist_code": "ART089",
+    "name": "La Casa Azul"
+  },
+  {
+    "artist_code": "ART090",
+    "name": "Daft Punk"
+  },
+  {
+    "artist_code": "ART091",
+    "name": "Rihanna"
+  },
+  {
+    "artist_code": "ART092",
+    "name": "El Gavira"
+  },
+  {
+    "artist_code": "ART093",
+    "name": "Kanye West"
+  },
+  {
+    "artist_code": "ART094",
+    "name": "Los Ganglios"
+  },
+  {
+    "artist_code": "ART095",
+    "name": "El Chico del Té"
+  },
+  {
+    "artist_code": "ART096",
+    "name": "Ed Sheeran"
+  },
+  {
+    "artist_code": "ART097",
+    "name": "Ilegales"
+  },
+  {
+    "artist_code": "ART098",
+    "name": "Blur"
+  },
+  {
+    "artist_code": "ART099",
+    "name": "Dub Fx"
+  },
+  {
+    "artist_code": "ART100",
+    "name": "The Killers"
+  }
+]
