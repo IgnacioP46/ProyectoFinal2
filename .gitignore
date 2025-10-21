@@ -1,0 +1,21 @@
+# Raíz
+.env
+.env.*
+*.log
+dist/
+build/
+coverage/
+.DS_Store
+
+# Ignorar node_modules en cualquier subcarpeta
+**/node_modules/
+
+# Frontend
+frontend/.env
+frontend/dist/
+frontend/.vite/
+frontend/.eslintcache
+
+# Backend
+backend/.env
+backend/.cache/
