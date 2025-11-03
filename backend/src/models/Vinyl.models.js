@@ -2,24 +2,19 @@ import mongoose from "mongoose";
 
 const VinylSchema = new mongoose.Schema(
   {
-    sku: { type: String, unique: true, index: true, required: true },
-    artist_code: { type: String, index: true, required: true },
-    artist: { type: mongoose.Schema.Types.ObjectId, ref: "Artist" },
-    artist_name: String,
-    title: { type: String, required: true },
-    year: Number,
-    price: Number,
-    stock: Number,
-    weight_g: Number,
-    condition: String,
-    color_variant: String,
-    speed_rpm: Number,
-    cover_image: String,
-    status: String,
+    title: { type: String, required: true, trim: true },
+    artist_name: { type: String, required: true, trim: true },
+    price: { type: Number, default: 0 },
+    cover_image: { type: String, default: "" },
+    genre: { type: String, default: "" },
+    year: { type: Number },
+    label: { type: String },
   },
-  { timestamps: true,
-  versionKey: false
- }
+  { timestamps: true }
 );
 
-export const Vinyl = mongoose.model("Vinyl", VinylSchema);
+// Si da conflicto por duplicados, comenta temporalmente el índice
+VinylSchema.index({ artist_name: 1, title: 1 }, { unique: true });
+
+const Vinyl = mongoose.model("Vinyl", VinylSchema);
+export default Vinyl;

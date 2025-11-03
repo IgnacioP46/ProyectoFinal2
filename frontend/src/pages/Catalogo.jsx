@@ -10,7 +10,7 @@ export default function Catalogo() {
     let cancel = false
     ;(async () => {
       try {
-        const { data } = await http.get('/api/vinyls')
+        const { data } = await http.get("/vinyls")
         if (!cancel) setVinyls(data)
       } catch (e) {
         if (!cancel) setError("No se pudo cargar el catálogo.")

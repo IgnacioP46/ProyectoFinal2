@@ -1,201 +1,201 @@
-sku,artist_code,artist_name,title,year,price_eur,stock,weight_g,condition,color_variant,speed_rpm,cover_image,status
-ART001-1,ART001,Carolina Durante,Carolina Durante,2019,24.99,20,180,New,Black,33,,
-ART001-2,ART001,Carolina Durante,Cuatro Chavales,2022,24.99,20,180,New,Black,33,,
-ART002-1,ART002,Biznaga,Gran Pantalla,2020,24.99,20,180,New,Black,33,,
-ART002-2,ART002,Biznaga,Bremen No Existe,2022,24.99,20,180,New,Black,33,,
-ART003-1,ART003,VVV,Escama,2020,24.99,20,180,New,Black,33,,PENDIENTE
-ART003-2,ART003,VVV,Turboviolencia,2021,24.99,20,180,New,Black,33,,PENDIENTE
-ART004-1,ART004,Chill Mafia Records,Ezorregatik X berpizkundea,2021,24.99,20,180,New,Black,33,,PENDIENTE
-ART004-2,ART004,Chill Mafia Records,Agur Eta Ohore X Alla Va La Despedida,2024,24.99,20,180,New,Black,33,,PENDIENTE
-ART005-1,ART005,Estopa,Estopa,1999,24.99,20,180,New,Black,33,,
-ART005-2,ART005,Estopa,Destrangis,2001,24.99,20,180,New,Black,33,,
-ART006-1,ART006,Camellos,Embajadores,2017,24.99,20,180,New,Black,33,,PENDIENTE
-ART006-2,ART006,Camellos,Calle para siempre,2019,24.99,20,180,New,Black,33,,PENDIENTE
-ART007-1,ART007,Ben Yart,Ceros,2023,24.99,20,180,New,Black,33,,PENDIENTE
-ART007-2,ART007,Ben Yart,Mañaneo,2021,24.99,20,180,New,Black,33,,PENDIENTE
-ART008-1,ART008,Shego,Suerte chica,2023,24.99,20,180,New,Black,33,,PENDIENTE
-ART008-2,ART008,Shego,No lo volvere a hacer,2025,24.99,20,180,New,Black,33,,PENDIENTE
-ART009-1,ART009,La Élite,Sorry Not Sorry,2019,24.99,20,180,New,Black,33,,PENDIENTE
-ART009-2,ART009,La Élite,Escaleras Al Cielo,2024,24.99,20,180,New,Black,33,,PENDIENTE
-ART010-1,ART010,Alcalá Norte,Alcalá Norte,2024,24.99,20,180,New,Black,33,,PENDIENTE
-ART010-2,ART010,Alcalá Norte,Maquetas tempranas,2021,24.99,20,180,New,Black,33,,PENDIENTE
-ART011-1,ART011,Dua Lipa,Future Nostalgia,2020,24.99,20,180,New,Black,33,,
-ART011-2,ART011,Dua Lipa,Dua Lipa,2017,24.99,20,180,New,Black,33,,
-ART012-1,ART012,Los Planetas,Una semana en el motor de un autobús,1998,24.99,20,180,New,Black,33,,
-ART012-2,ART012,Los Planetas,Super 8,1994,24.99,20,180,New,Black,33,,
-ART013-1,ART013,Ultralágrima,Ultralágrima,2024,24.99,20,180,New,Black,33,,PENDIENTE
-ART013-2,ART013,Ultralágrima,El paseo,2025,24.99,20,180,New,Black,33,,PENDIENTE
-ART014-1,ART014,Los Rodríguez,Sin documentos,1993,24.99,20,180,New,Black,33,,
-ART014-2,ART014,Los Rodríguez,Buena Suerte,1991,24.99,20,180,New,Black,33,,
-ART015-1,ART015,María Escarmiento,Sintiendolo Mucho,2021,24.99,20,180,New,Black,33,,PENDIENTE
-ART015-2,ART015,María Escarmiento,Cosas de Brujas,2023,24.99,20,180,New,Black,33,,PENDIENTE
-ART016-1,ART016,C. Tangana,El Madrileño,2021,24.99,20,180,New,Black,33,,
-ART016-2,ART016,C. Tangana,Ídolo,2017,24.99,20,180,New,Black,33,,
-ART017-1,ART017,Oasis,Definitely Maybe,1994,24.99,20,180,New,Black,33,,
-ART017-2,ART017,Oasis,(What's the Story) Morning Glory?,1995,24.99,20,180,New,Black,33,,
-ART018-1,ART018,Arctic Monkeys,"Whatever People Say I Am, That's What I'm Not",2006,24.99,20,180,New,Black,33,,
-ART018-2,ART018,Arctic Monkeys,AM,2013,24.99,20,180,New,Black,33,,
-ART019-1,ART019,Bon Iver,Bon Iver,2011,24.99,20,180,New,Black,33,,PENDIENTE
-ART019-2,ART019,Bon Iver,For Emma Forever Ago,2008,24.99,20,180,New,Black,33,,PENDIENTE
-ART020-1,ART020,Joe Crepúsculo,Supercrepus,2008,24.99,20,180,New,Black,33,,
-ART020-2,ART020,Joe Crepúsculo,Baile de Magos,2013,24.99,20,180,New,Black,33,,
-ART021-1,ART021,Natos y Waor,Martes 13,2015,24.99,20,180,New,Black,33,,PENDIENTE
-ART021-2,ART021,Natos y Waor,Cicatrices,2018,24.99,20,180,New,Black,33,,PENDIENTE
-ART022-1,ART022,Bad Bunny,YHLQMDLG,2020,24.99,20,180,New,Black,33,,
-ART022-2,ART022,Bad Bunny,Un Verano Sin Ti,2022,24.99,20,180,New,Black,33,,
-ART023-1,ART023,Bad Gyal,Slow Wine,2016,24.99,20,180,New,Black,33,,PENDIENTE
-ART023-2,ART023,Bad Gyal,Warm Up,2018,24.99,20,180,New,Black,33,,PENDIENTE
-ART024-1,ART024,Bizarrap,Bizarrap 1,2020,24.99,20,180,New,Black,33,,PENDIENTE
-ART024-2,ART024,Bizarrap,Bizarrap 2,2025,24.99,20,180,New,Black,33,,PENDIENTE
-ART025-1,ART025,Margarita Quebrada,Margarita Quebrada,2020,24.99,20,180,New,Black,33,,PENDIENTE
-ART025-2,ART025,Margarita Quebrada,Gas lagrima,2022,24.99,20,180,New,Black,33,,PENDIENTE
-ART026-1,ART026,Extremoduro,Agila,1996,24.99,20,180,New,Black,33,,
-ART026-2,ART026,Extremoduro,Deltoya,1992,24.99,20,180,New,Black,33,,
-ART027-1,ART027,Rigoberta Bandini,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART027-2,ART027,Rigoberta Bandini,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART028-1,ART028,Los Punsetes,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART028-2,ART028,Los Punsetes,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART029-1,ART029,Casatriste,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART029-2,ART029,Casatriste,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART030-1,ART030,Miley Cyrus,Bangerz,2013,24.99,20,180,New,Black,33,,
-ART030-2,ART030,Miley Cyrus,Endless Summer Vacation,2023,24.99,20,180,New,Black,33,,
-ART031-1,ART031,Rage Against the Machine,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART031-2,ART031,Rage Against the Machine,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART032-1,ART032,Yung Beef,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART032-2,ART032,Yung Beef,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART033-1,ART033,Cupido,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART033-2,ART033,Cupido,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART034-1,ART034,Xenia,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART034-2,ART034,Xenia,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART035-1,ART035,Luna Ki,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART035-2,ART035,Luna Ki,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART036-1,ART036,Perra Inmunda,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART036-2,ART036,Perra Inmunda,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART037-1,ART037,The Stone Roses,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART037-2,ART037,The Stone Roses,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART038-1,ART038,Arde Bogotá,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART038-2,ART038,Arde Bogotá,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART039-1,ART039,Cecilio G.,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART039-2,ART039,Cecilio G.,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART040-1,ART040,FrioLento,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART040-2,ART040,FrioLento,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART041-1,ART041,La Plazuela,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART041-2,ART041,La Plazuela,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART042-1,ART042,The Strokes,Is This It,2001,24.99,20,180,New,Black,33,,
-ART042-2,ART042,The Strokes,Room on Fire,2003,24.99,20,180,New,Black,33,,
-ART043-1,ART043,Califato ¾,Puerta de la Cânne,2019,24.99,20,180,New,Black,33,,
-ART043-2,ART043,Califato ¾,La Contraçeña,2021,24.99,20,180,New,Black,33,,
-ART044-1,ART044,Hinds,Leave Me Alone,2016,24.99,20,180,New,Black,33,,
-ART044-2,ART044,Hinds,I Don't Run,2018,24.99,20,180,New,Black,33,,
-ART045-1,ART045,ROSALÍA,El Mal Querer,2018,24.99,20,180,New,Black,33,,
-ART045-2,ART045,ROSALÍA,Motomami,2022,24.99,20,180,New,Black,33,,
-ART046-1,ART046,AC/DC,Back in Black,1980,24.99,20,180,New,Black,33,,
-ART046-2,ART046,AC/DC,Highway to Hell,1979,24.99,20,180,New,Black,33,,
-ART047-1,ART047,Metallica,Metallica (The Black Album),1991,24.99,20,180,New,Black,33,,
-ART047-2,ART047,Metallica,Master of Puppets,1986,24.99,20,180,New,Black,33,,
-ART048-1,ART048,Novedades Carminha,Ultraligero,2019,24.99,20,180,New,Black,33,,
-ART048-2,ART048,Novedades Carminha,Juventud Infinita,2014,24.99,20,180,New,Black,33,,
-ART049-1,ART049,Reincidentes,Reincidentes,1992,24.99,20,180,New,Black,33,,
-ART049-2,ART049,Reincidentes,Algazara,1995,24.99,20,180,New,Black,33,,
-ART050-1,ART050,Junio,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART050-2,ART050,Junio,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART051-1,ART051,Duki,Desde el Fin del Mundo,2021,24.99,20,180,New,Black,33,,
-ART051-2,ART051,Duki,Antes de Ameri,2023,24.99,20,180,New,Black,33,,
-ART052-1,ART052,Elvis Presley,Elvis Presley,1956,24.99,20,180,New,Black,33,,
-ART052-2,ART052,Elvis Presley,Elvis,1956,24.99,20,180,New,Black,33,,
-ART053-1,ART053,Lil Peep,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART053-2,ART053,Lil Peep,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART054-1,ART054,Lola Índigo,Akelarre,2019,24.99,20,180,New,Black,33,,
-ART054-2,ART054,Lola Índigo,El Dragón,2023,24.99,20,180,New,Black,33,,
-ART055-1,ART055,Bob Marley y The Wailers,Exodus,1977,24.99,20,180,New,Black,33,,
-ART055-2,ART055,Bob Marley y The Wailers,Catch a Fire,1973,24.99,20,180,New,Black,33,,
-ART056-1,ART056,Rodrigo Cuevas,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART056-2,ART056,Rodrigo Cuevas,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART057-1,ART057,El Jardinero,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART057-2,ART057,El Jardinero,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART058-1,ART058,Amaia,Pero No Pasa Nada,2019,24.99,20,180,New,Black,33,,
-ART058-2,ART058,Amaia,Cuando No Sé Quién Soy,2022,24.99,20,180,New,Black,33,,
-ART059-1,ART059,El Coleta,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART059-2,ART059,El Coleta,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART060-1,ART060,Ladilla Rusa,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART060-2,ART060,Ladilla Rusa,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART061-1,ART061,Joachim Witt,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART061-2,ART061,Joachim Witt,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART062-1,ART062,LA TXAMA,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART062-2,ART062,LA TXAMA,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART063-1,ART063,Nirvana,Nevermind,1991,24.99,20,180,New,Black,33,,
-ART063-2,ART063,Nirvana,In Utero,1993,24.99,20,180,New,Black,33,,
-ART064-1,ART064,Eminem,The Marshall Mathers LP,2000,24.99,20,180,New,Black,33,,
-ART064-2,ART064,Eminem,The Eminem Show,2002,24.99,20,180,New,Black,33,,
-ART065-1,ART065,Gordo,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART065-2,ART065,Gordo,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART066-1,ART066,Creed,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART066-2,ART066,Creed,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART067-1,ART067,Post Malone,Beerbongs & Bentleys,2018,24.99,20,180,New,Black,33,,
-ART067-2,ART067,Post Malone,Hollywood's Bleeding,2019,24.99,20,180,New,Black,33,,
-ART068-1,ART068,Soto Asa,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART068-2,ART068,Soto Asa,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART069-1,ART069,Marilyn Manson,Antichrist Superstar,1996,24.99,20,180,New,Black,33,,
-ART069-2,ART069,Marilyn Manson,Mechanical Animals,1998,24.99,20,180,New,Black,33,,
-ART070-1,ART070,Cala Vento,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART070-2,ART070,Cala Vento,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART071-1,ART071,Monteperdido,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART071-2,ART071,Monteperdido,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART072-1,ART072,Porretas,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART072-2,ART072,Porretas,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART073-1,ART073,VAN17INO6,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART073-2,ART073,VAN17INO6,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART074-1,ART074,Gabry Ponte,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART074-2,ART074,Gabry Ponte,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART075-1,ART075,Mujeres,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART075-2,ART075,Mujeres,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART076-1,ART076,Kings of Leon,Only by the Night,2008,24.99,20,180,New,Black,33,,
-ART076-2,ART076,Kings of Leon,Aha Shake Heartbreak,2004,24.99,20,180,New,Black,33,,
-ART077-1,ART077,Zahara,Año X,2024,24.99,20,180,New,Black,33,,
-ART077-2,ART077,Zahara,Santa,2015,24.99,20,180,New,Black,33,,
-ART078-1,ART078,Vetusta Morla,Un día en el mundo,2008,24.99,20,180,New,Black,33,,
-ART078-2,ART078,Vetusta Morla,"Mismo sitio, distinto lugar",2017,24.99,20,180,New,Black,33,,
-ART079-1,ART079,Calle 13,Residente o Visitante,2007,24.99,20,180,New,Black,33,,
-ART079-2,ART079,Calle 13,Entren los que quieran,2010,24.99,20,180,New,Black,33,,
-ART080-1,ART080,Cascada,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART080-2,ART080,Cascada,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART081-1,ART081,El Columpio Asesino,Diamantes,2011,24.99,20,180,New,Black,33,,
-ART081-2,ART081,El Columpio Asesino,Ataque Celeste,2021,24.99,20,180,New,Black,33,,
-ART082-1,ART082,Pet Shop Boys,Actually,1987,24.99,20,180,New,Black,33,,
-ART082-2,ART082,Pet Shop Boys,Behaviour,1990,24.99,20,180,New,Black,33,,
-ART083-1,ART083,Barry B,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART083-2,ART083,Barry B,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART084-1,ART084,La Plata,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART084-2,ART084,La Plata,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART085-1,ART085,Manel,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART085-2,ART085,Manel,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART086-1,ART086,Sen Senra,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART086-2,ART086,Sen Senra,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART087-1,ART087,Fito y Fitipaldis,A puerta cerrada,1998,24.99,20,180,New,Black,33,,
-ART087-2,ART087,Fito y Fitipaldis,"Lo más lejos, a tu lado",2003,24.99,20,180,New,Black,33,,
-ART088-1,ART088,The Prodigy,Music for the Jilted Generation,1994,24.99,20,180,New,Black,33,,
-ART088-2,ART088,The Prodigy,The Fat of the Land,1997,24.99,20,180,New,Black,33,,
-ART089-1,ART089,La Casa Azul,La revolución sexual,2007,24.99,20,180,New,Black,33,,
-ART089-2,ART089,La Casa Azul,La Polinesia meridional,2011,24.99,20,180,New,Black,33,,
-ART090-1,ART090,Daft Punk,Discovery,2001,24.99,20,180,New,Black,33,,
-ART090-2,ART090,Daft Punk,Random Access Memories,2013,24.99,20,180,New,Black,33,,
-ART091-1,ART091,Rihanna,Good Girl Gone Bad,2007,24.99,20,180,New,Black,33,,
-ART091-2,ART091,Rihanna,Anti,2016,24.99,20,180,New,Black,33,,
-ART092-1,ART092,El Gavira,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART092-2,ART092,El Gavira,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART093-1,ART093,Kanye West,My Beautiful Dark Twisted Fantasy,2010,24.99,20,180,New,Black,33,,
-ART093-2,ART093,Kanye West,The College Dropout,2004,24.99,20,180,New,Black,33,,
-ART094-1,ART094,Los Ganglios,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART094-2,ART094,Los Ganglios,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART095-1,ART095,El Chico del Té,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART095-2,ART095,El Chico del Té,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART096-1,ART096,Ed Sheeran,x (Multiply),2014,24.99,20,180,New,Black,33,,
-ART096-2,ART096,Ed Sheeran,÷ (Divide),2017,24.99,20,180,New,Black,33,,
-ART097-1,ART097,Ilegales,Ilegales,1983,24.99,20,180,New,Black,33,,
-ART097-2,ART097,Ilegales,"A la luz o a la sombra, todo está permitido",1990,24.99,20,180,New,Black,33,,
-ART098-1,ART098,Blur,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART098-2,ART098,Blur,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART099-1,ART099,Dub Fx,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE
-ART099-2,ART099,Dub Fx,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE
-ART100-1,ART100,The Killers,Hot Fuss,2004,24.99,20,180,New,Black,33,,
-ART100-2,ART100,The Killers,Sam's Town,2006,24.99,20,180,New,Black,33,,
+sku,artist_code,artist_name,title,year,price_eur,stock,weight_g,condition,color_variant,speed_rpm,cover_image,status,genre
+ART001-1,ART001,Carolina Durante,Carolina Durante,2019.0,24.99,20,180,New,Black,33,https://universalmusiconline.es/cdn/shop/products/carolinadurantelp-0602577565137.jpg?v=1637657754,,Indie rock / punk pop
+ART001-2,ART001,Carolina Durante,Cuatro Chavales,2022.0,24.99,20,180,New,Black,33,https://discosaltafidelidad.es/wp-content/uploads/2022/01/carolina-durante-cuatro-chavales.jpg,,Indie rock / punk pop
+ART002-1,ART002,Biznaga,Gran Pantalla,2020.0,24.99,20,180,New,Black,33,https://www.discogs.com/release/14893271-Biznaga-Gran-Pantalla,,Punk rock / post‑punk
+ART002-2,ART002,Biznaga,Bremen No Existe,2022.0,24.99,20,180,New,Black,33,https://www.discogs.com/es/release/23152187-Biznaga-Bremen-No-Existe,,Punk rock / post‑punk
+ART003-1,ART003,VVV,Escama,2020.0,24.99,20,180,New,Black,33,https://whereisvvv.bandcamp.com/album/escama,PENDIENTE,Synth‑pop / darkwave
+ART003-2,ART003,VVV,Turboviolencia,2021.0,24.99,20,180,New,Black,33,https://www.discogs.com/es/release/20911168-VVVTrippinyou-Turboviolencia,PENDIENTE,Synth‑pop / darkwave
+ART004-1,ART004,Chill Mafia Records,Ezorregatik X berpizkundea,2021.0,24.99,20,180,New,Black,33,https://chillmafia.bandcamp.com/album/ezorregatik-x-berpizkundea,PENDIENTE,Rap / trap
+ART004-2,ART004,Chill Mafia Records,Agur Eta Ohore X Alla Va La Despedida,2024.0,24.99,20,180,New,Black,33,https://open.spotify.com/intl-es/album/0x8XlLXgCYnJiQpmBgSO3q,PENDIENTE,Rap / trap
+ART005-1,ART005,Estopa,Estopa,1999.0,24.99,20,180,New,Black,33,https://www.discogs.com/es/release/13029838-Estopa-Estopa,,Rumba rock / pop rock
+ART005-2,ART005,Estopa,Destrangis,2001.0,24.99,20,180,New,Black,33,https://www.discogs.com/es/release/1470734-Estopa-Destrangis,,Rumba rock / pop rock
+ART006-1,ART006,Camellos,Embajadores,2017.0,24.99,20,180,New,Black,33,https://limbostarr.bandcamp.com/album/embajadores,PENDIENTE,Post‑punk / garage rock
+ART006-2,ART006,Camellos,Calle para siempre,2019.0,24.99,20,180,New,Black,33,https://limbostarr.bandcamp.com/album/calle-para-siempre,PENDIENTE,Post‑punk / garage rock
+ART007-1,ART007,Ben Yart,Ceros,2023.0,24.99,20,180,New,Black,33,https://music.apple.com/es/album/ceros/1689768817,PENDIENTE,Rap alternativo / trap
+ART007-2,ART007,Ben Yart,Mañaneo,2021.0,24.99,20,180,New,Black,33,https://music.apple.com/es/album/ma%C3%B1aneo-single/1569897903,PENDIENTE,Rap alternativo / trap
+ART008-1,ART008,Shego,Suerte chica,2023.0,24.99,20,180,New,Black,33,https://www.discogs.com/es/release/26374649-Shego-Suerte-Chica,PENDIENTE,Punk rock / indie rock
+ART008-2,ART008,Shego,No lo volvere a hacer,2025.0,24.99,20,180,New,Black,33,https://www.discogs.com/es/release/33064359-shego-No-Lo-Volver%C3%A9-A-Hacer,PENDIENTE,Punk rock / indie rock
+ART009-1,ART009,La Élite,Sorry Not Sorry,2019.0,24.99,20,180,New,Black,33,https://open.spotify.com/album/6nvAfHejb706KQMLECVwLD,PENDIENTE,Synth‑punk / electro‑punk
+ART009-2,ART009,La Élite,Escaleras Al Cielo,2024.0,24.99,20,180,New,Black,33,https://laelite.bandcamp.com/album/escaleras-al-cielo,PENDIENTE,Synth‑punk / electro‑punk
+ART010-1,ART010,Alcalá Norte,Alcalá Norte,2024.0,24.99,20,180,New,Black,33,https://www.discogs.com/es/release/31202707-Alcal%C3%A1-Norte-Alcal%C3%A1-Norte,PENDIENTE,Post‑punk / indie rock
+ART010-2,ART010,Alcalá Norte,Maquetas tempranas,2021.0,24.99,20,180,New,Black,33,https://open.spotify.com/album/6ClP0ezbx34YtWOQRHRptb,PENDIENTE,Post‑punk / indie rock
+ART011-1,ART011,Dua Lipa,Future Nostalgia,2020.0,24.99,20,180,New,Black,33,,,
+ART011-2,ART011,Dua Lipa,Dua Lipa,2017.0,24.99,20,180,New,Black,33,,,
+ART012-1,ART012,Los Planetas,Una semana en el motor de un autobús,1998.0,24.99,20,180,New,Black,33,,,
+ART012-2,ART012,Los Planetas,Super 8,1994.0,24.99,20,180,New,Black,33,,,
+ART013-1,ART013,Ultralágrima,Ultralágrima,2024.0,24.99,20,180,New,Black,33,,PENDIENTE,
+ART013-2,ART013,Ultralágrima,El paseo,2025.0,24.99,20,180,New,Black,33,,PENDIENTE,
+ART014-1,ART014,Los Rodríguez,Sin documentos,1993.0,24.99,20,180,New,Black,33,,,
+ART014-2,ART014,Los Rodríguez,Buena Suerte,1991.0,24.99,20,180,New,Black,33,,,
+ART015-1,ART015,María Escarmiento,Sintiendolo Mucho,2021.0,24.99,20,180,New,Black,33,,PENDIENTE,
+ART015-2,ART015,María Escarmiento,Cosas de Brujas,2023.0,24.99,20,180,New,Black,33,,PENDIENTE,
+ART016-1,ART016,C. Tangana,El Madrileño,2021.0,24.99,20,180,New,Black,33,,,
+ART016-2,ART016,C. Tangana,Ídolo,2017.0,24.99,20,180,New,Black,33,,,
+ART017-1,ART017,Oasis,Definitely Maybe,1994.0,24.99,20,180,New,Black,33,,,
+ART017-2,ART017,Oasis,(What's the Story) Morning Glory?,1995.0,24.99,20,180,New,Black,33,,,
+ART018-1,ART018,Arctic Monkeys,"Whatever People Say I Am, That's What I'm Not",2006.0,24.99,20,180,New,Black,33,,,
+ART018-2,ART018,Arctic Monkeys,AM,2013.0,24.99,20,180,New,Black,33,,,
+ART019-1,ART019,Bon Iver,Bon Iver,2011.0,24.99,20,180,New,Black,33,,PENDIENTE,
+ART019-2,ART019,Bon Iver,For Emma Forever Ago,2008.0,24.99,20,180,New,Black,33,,PENDIENTE,
+ART020-1,ART020,Joe Crepúsculo,Supercrepus,2008.0,24.99,20,180,New,Black,33,,,
+ART020-2,ART020,Joe Crepúsculo,Baile de Magos,2013.0,24.99,20,180,New,Black,33,,,
+ART021-1,ART021,Natos y Waor,Martes 13,2015.0,24.99,20,180,New,Black,33,,PENDIENTE,
+ART021-2,ART021,Natos y Waor,Cicatrices,2018.0,24.99,20,180,New,Black,33,,PENDIENTE,
+ART022-1,ART022,Bad Bunny,YHLQMDLG,2020.0,24.99,20,180,New,Black,33,,,
+ART022-2,ART022,Bad Bunny,Un Verano Sin Ti,2022.0,24.99,20,180,New,Black,33,,,
+ART023-1,ART023,Bad Gyal,Slow Wine,2016.0,24.99,20,180,New,Black,33,,PENDIENTE,
+ART023-2,ART023,Bad Gyal,Warm Up,2018.0,24.99,20,180,New,Black,33,,PENDIENTE,
+ART024-1,ART024,Bizarrap,Bizarrap 1,2020.0,24.99,20,180,New,Black,33,,PENDIENTE,
+ART024-2,ART024,Bizarrap,Bizarrap 2,2025.0,24.99,20,180,New,Black,33,,PENDIENTE,
+ART025-1,ART025,Margarita Quebrada,Margarita Quebrada,2020.0,24.99,20,180,New,Black,33,,PENDIENTE,
+ART025-2,ART025,Margarita Quebrada,Gas lagrima,2022.0,24.99,20,180,New,Black,33,,PENDIENTE,
+ART026-1,ART026,Extremoduro,Agila,1996.0,24.99,20,180,New,Black,33,,,
+ART026-2,ART026,Extremoduro,Deltoya,1992.0,24.99,20,180,New,Black,33,,,
+ART027-1,ART027,Rigoberta Bandini,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART027-2,ART027,Rigoberta Bandini,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART028-1,ART028,Los Punsetes,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART028-2,ART028,Los Punsetes,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART029-1,ART029,Casatriste,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART029-2,ART029,Casatriste,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART030-1,ART030,Miley Cyrus,Bangerz,2013.0,24.99,20,180,New,Black,33,,,
+ART030-2,ART030,Miley Cyrus,Endless Summer Vacation,2023.0,24.99,20,180,New,Black,33,,,
+ART031-1,ART031,Rage Against the Machine,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART031-2,ART031,Rage Against the Machine,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART032-1,ART032,Yung Beef,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART032-2,ART032,Yung Beef,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART033-1,ART033,Cupido,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART033-2,ART033,Cupido,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART034-1,ART034,Xenia,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART034-2,ART034,Xenia,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART035-1,ART035,Luna Ki,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART035-2,ART035,Luna Ki,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART036-1,ART036,Perra Inmunda,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART036-2,ART036,Perra Inmunda,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART037-1,ART037,The Stone Roses,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART037-2,ART037,The Stone Roses,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART038-1,ART038,Arde Bogotá,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART038-2,ART038,Arde Bogotá,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART039-1,ART039,Cecilio G.,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART039-2,ART039,Cecilio G.,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART040-1,ART040,FrioLento,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART040-2,ART040,FrioLento,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART041-1,ART041,La Plazuela,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART041-2,ART041,La Plazuela,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART042-1,ART042,The Strokes,Is This It,2001.0,24.99,20,180,New,Black,33,,,
+ART042-2,ART042,The Strokes,Room on Fire,2003.0,24.99,20,180,New,Black,33,,,
+ART043-1,ART043,Califato ¾,Puerta de la Cânne,2019.0,24.99,20,180,New,Black,33,,,
+ART043-2,ART043,Califato ¾,La Contraçeña,2021.0,24.99,20,180,New,Black,33,,,
+ART044-1,ART044,Hinds,Leave Me Alone,2016.0,24.99,20,180,New,Black,33,,,
+ART044-2,ART044,Hinds,I Don't Run,2018.0,24.99,20,180,New,Black,33,,,
+ART045-1,ART045,ROSALÍA,El Mal Querer,2018.0,24.99,20,180,New,Black,33,,,
+ART045-2,ART045,ROSALÍA,Motomami,2022.0,24.99,20,180,New,Black,33,,,
+ART046-1,ART046,AC/DC,Back in Black,1980.0,24.99,20,180,New,Black,33,,,
+ART046-2,ART046,AC/DC,Highway to Hell,1979.0,24.99,20,180,New,Black,33,,,
+ART047-1,ART047,Metallica,Metallica (The Black Album),1991.0,24.99,20,180,New,Black,33,,,
+ART047-2,ART047,Metallica,Master of Puppets,1986.0,24.99,20,180,New,Black,33,,,
+ART048-1,ART048,Novedades Carminha,Ultraligero,2019.0,24.99,20,180,New,Black,33,,,
+ART048-2,ART048,Novedades Carminha,Juventud Infinita,2014.0,24.99,20,180,New,Black,33,,,
+ART049-1,ART049,Reincidentes,Reincidentes,1992.0,24.99,20,180,New,Black,33,,,
+ART049-2,ART049,Reincidentes,Algazara,1995.0,24.99,20,180,New,Black,33,,,
+ART050-1,ART050,Junio,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART050-2,ART050,Junio,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART051-1,ART051,Duki,Desde el Fin del Mundo,2021.0,24.99,20,180,New,Black,33,,,
+ART051-2,ART051,Duki,Antes de Ameri,2023.0,24.99,20,180,New,Black,33,,,
+ART052-1,ART052,Elvis Presley,Elvis Presley,1956.0,24.99,20,180,New,Black,33,,,
+ART052-2,ART052,Elvis Presley,Elvis,1956.0,24.99,20,180,New,Black,33,,,
+ART053-1,ART053,Lil Peep,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART053-2,ART053,Lil Peep,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART054-1,ART054,Lola Índigo,Akelarre,2019.0,24.99,20,180,New,Black,33,,,
+ART054-2,ART054,Lola Índigo,El Dragón,2023.0,24.99,20,180,New,Black,33,,,
+ART055-1,ART055,Bob Marley y The Wailers,Exodus,1977.0,24.99,20,180,New,Black,33,,,
+ART055-2,ART055,Bob Marley y The Wailers,Catch a Fire,1973.0,24.99,20,180,New,Black,33,,,
+ART056-1,ART056,Rodrigo Cuevas,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART056-2,ART056,Rodrigo Cuevas,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART057-1,ART057,El Jardinero,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART057-2,ART057,El Jardinero,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART058-1,ART058,Amaia,Pero No Pasa Nada,2019.0,24.99,20,180,New,Black,33,,,
+ART058-2,ART058,Amaia,Cuando No Sé Quién Soy,2022.0,24.99,20,180,New,Black,33,,,
+ART059-1,ART059,El Coleta,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART059-2,ART059,El Coleta,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART060-1,ART060,Ladilla Rusa,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART060-2,ART060,Ladilla Rusa,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART061-1,ART061,Joachim Witt,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART061-2,ART061,Joachim Witt,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART062-1,ART062,LA TXAMA,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART062-2,ART062,LA TXAMA,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART063-1,ART063,Nirvana,Nevermind,1991.0,24.99,20,180,New,Black,33,,,
+ART063-2,ART063,Nirvana,In Utero,1993.0,24.99,20,180,New,Black,33,,,
+ART064-1,ART064,Eminem,The Marshall Mathers LP,2000.0,24.99,20,180,New,Black,33,,,
+ART064-2,ART064,Eminem,The Eminem Show,2002.0,24.99,20,180,New,Black,33,,,
+ART065-1,ART065,Gordo,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART065-2,ART065,Gordo,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART066-1,ART066,Creed,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART066-2,ART066,Creed,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART067-1,ART067,Post Malone,Beerbongs & Bentleys,2018.0,24.99,20,180,New,Black,33,,,
+ART067-2,ART067,Post Malone,Hollywood's Bleeding,2019.0,24.99,20,180,New,Black,33,,,
+ART068-1,ART068,Soto Asa,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART068-2,ART068,Soto Asa,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART069-1,ART069,Marilyn Manson,Antichrist Superstar,1996.0,24.99,20,180,New,Black,33,,,
+ART069-2,ART069,Marilyn Manson,Mechanical Animals,1998.0,24.99,20,180,New,Black,33,,,
+ART070-1,ART070,Cala Vento,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART070-2,ART070,Cala Vento,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART071-1,ART071,Monteperdido,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART071-2,ART071,Monteperdido,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART072-1,ART072,Porretas,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART072-2,ART072,Porretas,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART073-1,ART073,VAN17INO6,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART073-2,ART073,VAN17INO6,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART074-1,ART074,Gabry Ponte,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART074-2,ART074,Gabry Ponte,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART075-1,ART075,Mujeres,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART075-2,ART075,Mujeres,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART076-1,ART076,Kings of Leon,Only by the Night,2008.0,24.99,20,180,New,Black,33,,,
+ART076-2,ART076,Kings of Leon,Aha Shake Heartbreak,2004.0,24.99,20,180,New,Black,33,,,
+ART077-1,ART077,Zahara,Año X,2024.0,24.99,20,180,New,Black,33,,,
+ART077-2,ART077,Zahara,Santa,2015.0,24.99,20,180,New,Black,33,,,
+ART078-1,ART078,Vetusta Morla,Un día en el mundo,2008.0,24.99,20,180,New,Black,33,,,
+ART078-2,ART078,Vetusta Morla,"Mismo sitio, distinto lugar",2017.0,24.99,20,180,New,Black,33,,,
+ART079-1,ART079,Calle 13,Residente o Visitante,2007.0,24.99,20,180,New,Black,33,,,
+ART079-2,ART079,Calle 13,Entren los que quieran,2010.0,24.99,20,180,New,Black,33,,,
+ART080-1,ART080,Cascada,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART080-2,ART080,Cascada,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART081-1,ART081,El Columpio Asesino,Diamantes,2011.0,24.99,20,180,New,Black,33,,,
+ART081-2,ART081,El Columpio Asesino,Ataque Celeste,2021.0,24.99,20,180,New,Black,33,,,
+ART082-1,ART082,Pet Shop Boys,Actually,1987.0,24.99,20,180,New,Black,33,,,
+ART082-2,ART082,Pet Shop Boys,Behaviour,1990.0,24.99,20,180,New,Black,33,,,
+ART083-1,ART083,Barry B,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART083-2,ART083,Barry B,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART084-1,ART084,La Plata,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART084-2,ART084,La Plata,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART085-1,ART085,Manel,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART085-2,ART085,Manel,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART086-1,ART086,Sen Senra,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART086-2,ART086,Sen Senra,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART087-1,ART087,Fito y Fitipaldis,A puerta cerrada,1998.0,24.99,20,180,New,Black,33,,,
+ART087-2,ART087,Fito y Fitipaldis,"Lo más lejos, a tu lado",2003.0,24.99,20,180,New,Black,33,,,
+ART088-1,ART088,The Prodigy,Music for the Jilted Generation,1994.0,24.99,20,180,New,Black,33,,,
+ART088-2,ART088,The Prodigy,The Fat of the Land,1997.0,24.99,20,180,New,Black,33,,,
+ART089-1,ART089,La Casa Azul,La revolución sexual,2007.0,24.99,20,180,New,Black,33,,,
+ART089-2,ART089,La Casa Azul,La Polinesia meridional,2011.0,24.99,20,180,New,Black,33,,,
+ART090-1,ART090,Daft Punk,Discovery,2001.0,24.99,20,180,New,Black,33,,,
+ART090-2,ART090,Daft Punk,Random Access Memories,2013.0,24.99,20,180,New,Black,33,,,
+ART091-1,ART091,Rihanna,Good Girl Gone Bad,2007.0,24.99,20,180,New,Black,33,,,
+ART091-2,ART091,Rihanna,Anti,2016.0,24.99,20,180,New,Black,33,,,
+ART092-1,ART092,El Gavira,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART092-2,ART092,El Gavira,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART093-1,ART093,Kanye West,My Beautiful Dark Twisted Fantasy,2010.0,24.99,20,180,New,Black,33,,,
+ART093-2,ART093,Kanye West,The College Dropout,2004.0,24.99,20,180,New,Black,33,,,
+ART094-1,ART094,Los Ganglios,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART094-2,ART094,Los Ganglios,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART095-1,ART095,El Chico del Té,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART095-2,ART095,El Chico del Té,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART096-1,ART096,Ed Sheeran,x (Multiply),2014.0,24.99,20,180,New,Black,33,,,
+ART096-2,ART096,Ed Sheeran,÷ (Divide),2017.0,24.99,20,180,New,Black,33,,,
+ART097-1,ART097,Ilegales,Ilegales,1983.0,24.99,20,180,New,Black,33,,,
+ART097-2,ART097,Ilegales,"A la luz o a la sombra, todo está permitido",1990.0,24.99,20,180,New,Black,33,,,
+ART098-1,ART098,Blur,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART098-2,ART098,Blur,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART099-1,ART099,Dub Fx,PENDIENTE álbum 1,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART099-2,ART099,Dub Fx,PENDIENTE álbum 2,,24.99,20,180,New,Black,33,,PENDIENTE,
+ART100-1,ART100,The Killers,Hot Fuss,2004.0,24.99,20,180,New,Black,33,,,
+ART100-2,ART100,The Killers,Sam's Town,2006.0,24.99,20,180,New,Black,33,,,

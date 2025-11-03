@@ -1,14 +1,13 @@
-import express from 'express'
-import cors from 'cors'
-import vinylRouter from './routes/vinyl.js' // 👈 extensión .js
+import express from "express";
+import cors from "cors";
+import vinylRouter from "./routes/vinyl.routes.js";
+import coverRouter from "./routes/cover.routes.js"; // default import
 
-const app = express()
-app.use(cors())
-app.use(express.json())
+const app = express();
+app.use(cors());
+app.use(express.json());
 
-app.get('/api/health', (_req, res) => res.json({ ok: true }))
+app.use("/api/vinyls", vinylRouter);
+app.use("/api/cover", coverRouter);
 
-// Si tu archivo es 'vinyl.js' monta la ruta así:
-app.use('/api/vinyls', vinylRouter)
-
-export default app
+export default app;

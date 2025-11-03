@@ -1,14 +1,17 @@
-const vinyl = require("../models/Vinyl.models");
 
-const getVinyls = async (req, res) => {
-    try {
-        const vinyls = await vinylService.getAllVinyls();
-        res.json(vinyls);
-    } catch (error) {
-        res.status(500).json({ error: "Internal Server Error" });
-    }
-}
+import Vinyl from "../models/Vinyl.models.js";
 
+export const getAllVinyls = async (req, res) => {
+  try {
+    const vinyls = await Vinyl.find({})
+      .select("title artist_name price cover_image genre")
+      .lean();
+    res.json(vinyls);
+  } catch (err) {
+    console.error("getAllVinyls error:", err);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+};
 const getVinylById = async (req, res) => {
     const { id } = req.params;
     try {
@@ -53,8 +56,10 @@ const deleteVinyl = async (req, res) => {
     }
 }
 
-module.exports = {
-    getVinyls,
+
+
+export default {
+    getAllVinyls,
     getVinylById,
     createVinyl,
     updateVinyl,
