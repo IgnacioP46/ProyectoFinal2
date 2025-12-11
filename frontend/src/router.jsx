@@ -1,25 +1,27 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "./pages/Home";
-import Catalog from "./pages/Catalogo";
-import Product from "./pages/Product";
-import Cart from "./pages/Cart";
-import Checkout from "./pages/Checkout";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
 import App from "./App";
+import Home from "./pages/Home";
+import Cart from "./pages/Cart";
+import Login from "./pages/Login"; // Asegúrate de importar Login
+import Register from "./pages/Register"; // Asegúrate de importar Register
+import Checkout from "./pages/Checkout"; // Tu nuevo componente
+import Profile from "./pages/Profile";
+import AdminDashboard from "./pages/AdminDashboard";
 
-export default createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <App />, // App es el contenedor principal
     children: [
-      { index: true, element: <Home/> },
-      { path: "catalog", element: <Catalog/> },
-      { path: "product/:id", element: <Product/> },
-      { path: "cart", element: <Cart/> },
-      { path: "checkout", element: <Checkout/> },
-      { path: "login", element: <Login/> },
-      { path: "register", element: <Register/> },
-    ]
-  }
+      { index: true, element: <Home /> },
+      { path: "cart", element: <Cart /> },
+      { path: "login", element: <Login /> },
+      { path: "register", element: <Register /> },
+      { path: "checkout", element: <Checkout /> }, // Aquí está tu checkout
+      { path: "profile", element: <Profile /> },
+      { path: "admin", element: <AdminDashboard /> },
+    ],
+  },
 ]);
+
+export default router;

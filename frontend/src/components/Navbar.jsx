@@ -1,60 +1,36 @@
-import { Link } from "react-router-dom"
-import { useClock } from "../hooks/useClock"
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+import { CartContext } from "../context/CartContext";
+import { ShoppingCart, User, LogOut } from "lucide-react"; // Iconos bonitos
 
 export default function Navbar() {
-  const { dateStr, timeStr } = useClock("Europe/Madrid")
+  const { user, logout } = useContext(AuthContext);
+  const { cart } = useContext(CartContext);
 
   return (
-    <nav style={styles.navbar}>
-      {/* Logo */}
-      <div style={styles.logo}>
-        <h1 style={{ margin: 0 }}>Discos Rizos</h1>
-      </div>
+    <nav className="navbar">
+      <Link to="/" className="logo">🎵 Murmullo Records</Link>
 
-      {/* Links */}
-      <ul style={styles.links}>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/catalogo">Catálogo</Link></li>
-        <li><Link to="/product">Product</Link></li>
-        <li><Link to="/checkout">Checkout</Link></li>
-      </ul>
+      <div className="nav-links">
+        {user?.role === 'admin' && (
+          <Link to="/admin" className="admin-link">Panel Admin</Link>
+        )}
 
-      {/* Hora y fecha */}
-      <div style={styles.clock}>
-        <span>{timeStr}</span>
-        <span>{dateStr}</span>
+        <Link to="/cart" className="cart-icon">
+          <ShoppingCart />
+          {cart.length > 0 && <span className="badge">{cart.length}</span>}
+        </Link>
+
+        {user ? (
+          <div className="user-menu">
+            <Link to="/profile" className="profile-link"><User /> {user.name}</Link>
+            <button onClick={logout} className="logout-btn"><LogOut /></button>
+          </div>
+        ) : (
+          <Link to="/login" className="btn-login">Entrar</Link>
+        )}
       </div>
     </nav>
-  )
-}
-
-const styles = {
-  navbar: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "0.75rem 1.5rem",
-    backgroundColor: "#222",
-    color: "#fff",
-    position: "sticky",
-    top: 0,
-    zIndex: 1000,
-  },
-  logo: {
-    fontSize: "1.25rem",
-    fontWeight: "bold",
-  },
-  links: {
-    listStyle: "none",
-    display: "flex",
-    gap: "1rem",
-    margin: 0,
-    padding: 0,
-  },
-  clock: {
-    display: "flex",
-    flexDirection: "column",
-    textAlign: "right",
-    fontSize: "0.9rem",
-  },
+  );
 }

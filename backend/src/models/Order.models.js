@@ -1,8 +1,26 @@
-const { Schema, model, Types } = require("mongoose");
-const orderSchema = new Schema({
-  user:{type:Types.ObjectId,ref:"User",required:true},
-  items:[{ vinyl:{type:Types.ObjectId,ref:"Vinyl",required:true}, qty:{type:Number,min:1,required:true}, priceAtPurchase:{type:Number,required:true} }],
-  status:{type:String,enum:["created","paid","shipped","cancelled"],default:"created"},
-  total:{type:Number,required:true}
-},{timestamps:true});
-module.exports = model("Order", orderSchema);
+import mongoose from "mongoose";
+
+const orderSchema = new mongoose.Schema({
+  user: { type: mongoose.Schema.Types.ObjectId, ref: "User" }, // Null si es invitado
+  guest_info: { // Datos si no está registrado
+    name: String,
+    email: String,
+    address: {
+      street: String,
+      city: String,
+      zip: String,
+      floor: String
+    }
+  },
+  items: [{
+    vinyl_id: { type: mongoose.Schema.Types.ObjectId, ref: "Vinyl" },
+    title: String,
+    price: Number,
+    quantity: Number
+  }],
+  total: Number,
+  status: { type: String, default: "paid" }, // paid, shipped, delivered
+  date: { type: Date, default: Date.now }
+});
+
+export const Order = mongoose.model("Order", orderSchema);

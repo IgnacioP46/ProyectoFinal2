@@ -1,20 +1,24 @@
 import mongoose from "mongoose";
 
-const VinylSchema = new mongoose.Schema(
-  {
-    title: { type: String, required: true, trim: true },
-    artist_name: { type: String, required: true, trim: true },
-    price: { type: Number, default: 0 },
-    cover_image: { type: String, default: "" },
-    genre: { type: String, default: "" },
-    year: { type: Number },
-    label: { type: String },
-  },
-  { timestamps: true }
-);
+const vinylSchema = new mongoose.Schema({
+  sku: { type: String, unique: true, required: true }, // Clave fundamental para el seed
+  artist_code: String,
+  artist_name: { type: String, required: true, text: true },
+  title: { type: String, required: true, text: true },
+  year: String,
+  price_eur: { type: Number, required: true }, // Antes tenías 'price', ahora coincide con el CSV
+  stock: { type: Number, default: 0 },
+  weight_g: Number,
+  condition: String,
+  color_variant: String,
+  speed_rpm: String,
+  cover_image: String,
+  status: String,
+  genre: String,
+  active: { type: Boolean, default: true }
+}, { timestamps: true });
 
-// Si da conflicto por duplicados, comenta temporalmente el índice
-VinylSchema.index({ artist_name: 1, title: 1 }, { unique: true });
+// Índice para el buscador (busca por título y artista)
+vinylSchema.index({ title: 'text', artist_name: 'text' });
 
-const Vinyl = mongoose.model("Vinyl", VinylSchema);
-export default Vinyl;
+export const Vinyl = mongoose.model("Vinyl", vinylSchema);

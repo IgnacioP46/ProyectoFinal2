@@ -1,101 +1,150 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-:root{
-  --color-1:#0e1a2b; --color-2:#e63946; --color-3:#f1faee;
-  --sp-s:8px; --sp-m:16px; --sp-l:24px; --radius:12px;
-}
-*{box-sizing:border-box} body{margin:0;background:var(--color-1);color:var(--color-3);font-family:system-ui}
-.navbar{position:sticky;top:0;display:flex;gap:16px;align-items:center;justify-content:space-between;padding:12px 16px;background:#13233b}
-.navlinks a{margin-left:12px}
-.btn{padding:.6rem 1rem;border-radius:var(--radius);background:var(--color-2);border:none;color:#fff;cursor:pointer}
-
-
-.carousel-btn{
-  position:absolute; top:40%; transform:translateY(-50%);
-  border:none; background:rgba(0,0,0,.4); color:#fff;
-  width:36px; height:48px; border-radius:8px; cursor:pointer;
-  z-index:1;
-}
-.carousel-btn.left{ left:4px }
-.carousel-btn.right{ right:4px }
-.carousel-btn:hover{ background:rgba(0,0,0,.6) }
-
-
-
-.navbar{
-  position:sticky; top:0; z-index:10;
-  display:flex; align-items:center; justify-content:space-between;
-  gap:16px; padding:12px 16px; background:#13233b;
-}
-.nav-left, .nav-right{ display:flex; align-items:center; gap:12px }
-.brand{ font-weight:700 }
-a{ color:inherit; text-decoration:none }
-a:hover{ text-decoration:underline }
-
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  --bg: #121212;
+  --card-bg: #1e1e1e;
+  --primary: #bb86fc;
+  --text: #ffffff;
 }
 
 body {
   margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.navbar {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #000;
+  align-items: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 15px;
 }
 
-button {
+.badge {
+  background: red;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+  vertical-align: top;
+}
+
+.input-dark {
+  width: 100%;
+  padding: 10px;
+  background-color: #2a2a2a;
+  border: 1px solid #444;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  color: white;
+  outline: none;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.input-dark:focus {
+  border-color: #bb86fc;
+}
+
+/* Contenedor Horizontal para Vinilos */
+.vinyl-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 2rem;
+  padding: 2rem;
+  scroll-snap-type: x mandatory;
+}
+
+.vinyl-card {
+  flex: 0 0 250px;
+  /* Ancho fijo */
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  scroll-snap-align: center;
+  transition: transform 0.3s;
+}
+
+.vinyl-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Efecto Disco Giratorio */
+.img-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.vinyl-disc {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s ease-in-out;
+}
+
+/* Al pasar el ratón por la tarjeta, el disco gira */
+.vinyl-card:hover .vinyl-disc {
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+}
+
+/* Carrito */
+.cart-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.empty-cart {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.sad-cart-img {
+  width: 150px;
+  opacity: 0.5;
+}
+
+.buy-btn {
+  width: 100%;
+  background: var(--primary);
+  color: black;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Formularios */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  background: #2a2a2a;
+  color: white;
+}
+
+.address-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 5px;
 }

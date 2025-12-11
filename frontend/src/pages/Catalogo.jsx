@@ -1,3 +1,4 @@
+// frontend/src/pages/Catalogo.jsx
 import { useEffect, useState } from "react"
 import { http } from "../api/http"
 
@@ -8,16 +9,16 @@ export default function Catalogo() {
 
   useEffect(() => {
     let cancel = false
-    ;(async () => {
-      try {
-        const { data } = await http.get("/vinyls")
-        if (!cancel) setVinyls(data)
-      } catch (e) {
-        if (!cancel) setError("No se pudo cargar el catálogo.")
-      } finally {
-        if (!cancel) setLoading(false)
-      }
-    })()
+      ; (async () => {
+        try {
+          const { data } = await http.get("/vinyls")
+          if (!cancel) setVinyls(data)
+        } catch (e) {
+          if (!cancel) setError("No se pudo cargar el catálogo.")
+        } finally {
+          if (!cancel) setLoading(false)
+        }
+      })()
     return () => { cancel = true }
   }, [])
 

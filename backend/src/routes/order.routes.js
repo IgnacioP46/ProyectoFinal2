@@ -1,25 +1,40 @@
-const router = require("express").Router();
-const Order = require("../models/Order.models");
-const Vinyl = require("../models/Vinyl.models");
-const auth = require("../middleware/auth");
+import { Router } from "express";
+import { Order } from "../models/Order.models.js";
+import { User } from "../models/User.models.js";
 
-router.post("/", auth(), async (req,res)=>{
-  const { items } = req.body; // [{vinylId, qty}]
-  const lines = [];
-  for (const it of items){
-    const v = await Vinyl.findById(it.vinylId);
-    if (!v || v.stock < it.qty) return res.status(400).json({error:"Stock not available"});
-    lines.push({ vinyl:v._id, qty:it.qty, priceAtPurchase:v.priceEur });
+const router = Router();
+
+// CREAR UN PEDIDO (Checkout)
+router.post("/", async (req, res) => {
+  try {
+    const { user_id, guest_info, items, total } = req.body;
+
+    const newOrder = await Order.create({
+      user: user_id || null, // Si viene user_id, lo guardamos
+      guest_info: user_id ? null : guest_info, // Si es user, no guardamos guest_info (ya está en su perfil)
+      items,
+      total
+    });
+
+    // Si es usuario registrado, añadimos el pedido a su historial
+    if (user_id) {
+      await User.findByIdAndUpdate(user_id, { $push: { orders: newOrder._id } });
+    }
+
+    res.status(201).json(newOrder);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
-  const total = lines.reduce((s,l)=> s + l.qty*l.priceAtPurchase, 0);
-  const order = await Order.create({ user:req.user.id, items:lines, total });
-  await Promise.all(lines.map(l=> Vinyl.findByIdAndUpdate(l.vinyl, { $inc: { stock: -l.qty } })));
-  res.json(order);
 });
 
-router.get("/my", auth(), async (req,res)=>{
-  const orders = await Order.find({ user:req.user.id }).populate("items.vinyl");
-  res.json(orders);
+// OBTENER PEDIDOS DE UN USUARIO (Para el Perfil)
+router.get("/user/:userId", async (req, res) => {
+  try {
+    const orders = await Order.find({ user: req.params.userId }).sort({ date: -1 });
+    res.json(orders);
+  } catch (error) {
+    res.status(500).json({ error: "Error obteniendo pedidos" });
+  }
 });
 
-module.exports = router;
+export default router;

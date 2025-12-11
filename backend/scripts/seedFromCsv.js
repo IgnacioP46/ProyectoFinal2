@@ -4,12 +4,16 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { parse } from "csv-parse";
 import mongoose from "mongoose";
-import { Artist } from "../src/models/Artist.js";
-import { Vinyl } from "../src/models/Vinyl.js";
+
+// --- CAMBIO AQUÍ: Añadido .models ---
+import { Artist } from "../src/models/Artist.models.js";
+import { Vinyl } from "../src/models/Vinyl.models.js";
+// ------------------------------------
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// ... (El resto del código sigue igual) ...
 const { MONGODB_URI } = process.env;
 if (!MONGODB_URI) {
   console.error("❌ Falta MONGODB_URI en backend/.env");
@@ -19,7 +23,7 @@ if (!MONGODB_URI) {
 const dataDir = path.join(__dirname, "..", "data");
 const ARTISTS_CSV = path.join(dataDir, "artists.csv");
 const VINYLS_CSV = path.join(dataDir, "vinyls.csv");
-const SNAP_DIR   = path.join(dataDir, "_snapshots");
+const SNAP_DIR = path.join(dataDir, "_snapshots");
 
 function readCSV(filePath) {
   return new Promise((resolve, reject) => {
@@ -32,56 +36,32 @@ function readCSV(filePath) {
   });
 }
 
-function ensureDir(p) {
-  if (!fs.existsSync(p)) fs.mkdirSync(p, { recursive: true });
+function ensureDir(dirPath) {
+  if (!fs.existsSync(dirPath)) {
+    fs.mkdirSync(dirPath, { recursive: true });
+  }
 }
 
-function toNumber(v) {
-  if (v === undefined || v === null || v === "") return undefined;
-  const n = Number(v);
-  return Number.isNaN(n) ? undefined : n;
-}
+async function seedVinyls(vinylRows) {
+  if (!vinylRows.length) return;
+  console.log(`💾 Procesando ${vinylRows.length} vinilos...`);
 
-async function seedArtists(rows) {
-  console.log(`➡️  Sembrando artistas (${rows.length})…`);
-  const ops = rows.map((a) => ({
-    updateOne: {
-      filter: { artist_code: a.artist_code },
-      update: { $set: { artist_code: a.artist_code, name: a.name } },
-      upsert: true,
-    },
-  }));
-  const res = await Artist.bulkWrite(ops, { ordered: false });
-  console.log("✅ Artistas:", {
-    upserted: res.upsertedCount || 0,
-    matched: res.matchedCount || 0,
-    modified: res.modifiedCount || 0,
-  });
-}
-
-async function seedVinyls(rows) {
-  console.log(`➡️  Sembrando vinilos (${rows.length})…`);
-
-  // Cache de artistas
-  const artists = await Artist.find({}, { _id: 1, artist_code: 1 }).lean();
-  const byCode = new Map(artists.map((a) => [a.artist_code, a._id]));
-
-  const ops = rows.map((v) => {
+  const ops = vinylRows.map((v) => {
     const doc = {
       sku: v.sku,
       artist_code: v.artist_code,
-      artist: byCode.get(v.artist_code) || null,
-      artist_name: v.artist_name ?? undefined,
+      artist_name: v.artist_name,
       title: v.title,
-      year: toNumber(v.year),
-      price: toNumber(v.price_eur),
-      stock: toNumber(v.stock),
-      weight_g: toNumber(v.weight_g),
-      condition: v.condition || undefined,
-      color_variant: v.color_variant || undefined,
-      speed_rpm: toNumber(v.speed_rpm),
-      cover_image: v.cover_image || undefined,
+      year: v.year || undefined,
+      price_eur: parseFloat(v.price_eur) || 0,
+      stock: parseInt(v.stock, 10) || 0,
+      weight_g: parseInt(v.weight_g, 10) || 180,
+      condition: v.condition || "New",
+      color_variant: v.color_variant || "Black",
+      speed_rpm: v.speed_rpm || "33",
+      cover_image: v.cover_image || "",
       status: v.status || undefined,
+      genre: v.genre || undefined
     };
     return {
       updateOne: {
@@ -100,42 +80,53 @@ async function seedVinyls(rows) {
   });
 }
 
+async function seedArtists(artistRows) {
+  if (!artistRows.length) return;
+  console.log(`🎤 Procesando ${artistRows.length} artistas...`);
+
+  const ops = artistRows.map((a) => ({
+    updateOne: {
+      filter: { artist_code: a.artist_code },
+      update: { $set: { name: a.name } },
+      upsert: true,
+    },
+  }));
+
+  const res = await Artist.bulkWrite(ops, { ordered: false });
+  console.log("✅ Artistas:", {
+    upserted: res.upsertedCount || 0,
+    matched: res.matchedCount || 0,
+    modified: res.modifiedCount || 0,
+  });
+}
+
 async function main() {
   try {
     console.log("🔌 Conectando a MongoDB…");
-    await mongoose.connect(MONGODB_URI, { serverSelectionTimeoutMS: 10000 });
+    await mongoose.connect(MONGODB_URI); // Eliminado timeout opcional para simplificar
     console.log("✅ Conectado");
 
-    // 1) Leer CSV
     const [artistRows, vinylRows] = await Promise.all([
       readCSV(ARTISTS_CSV),
       readCSV(VINYLS_CSV),
     ]);
 
-    // 2) Escribir snapshots JSON (requisito: usar fs para leer/escribir)
-    ensureDir(SNAP_DIR);
-    fs.writeFileSync(
-      path.join(SNAP_DIR, "artists_snapshot.json"),
-      JSON.stringify(artistRows, null, 2),
-      "utf-8"
-    );
-    fs.writeFileSync(
-      path.join(SNAP_DIR, "vinyls_snapshot.json"),
-      JSON.stringify(vinylRows, null, 2),
-      "utf-8"
-    );
+    // Snapshot opcional (puedes quitarlo si da problemas de permisos)
+    try {
+      ensureDir(SNAP_DIR);
+      fs.writeFileSync(path.join(SNAP_DIR, "artists_snapshot.json"), JSON.stringify(artistRows, null, 2));
+      fs.writeFileSync(path.join(SNAP_DIR, "vinyls_snapshot.json"), JSON.stringify(vinylRows, null, 2));
+    } catch (e) { console.log("⚠️ No se pudieron guardar snapshots (no crítico)"); }
 
-    // 3) Sembrar (idempotente)
     await seedArtists(artistRows);
     await seedVinyls(vinylRows);
 
-    console.log("🎉 Seed desde CSV completado.");
-  } catch (err) {
-    console.error("❌ Error en seed:", err?.message || err);
+    console.log("🏁 Carga completada.");
+  } catch (e) {
+    console.error("❌ Error:", e);
     process.exitCode = 1;
   } finally {
     await mongoose.disconnect();
-    console.log("🔌 Desconectado");
   }
 }
 

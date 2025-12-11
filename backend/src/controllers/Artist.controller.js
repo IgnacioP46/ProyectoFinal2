@@ -1,1 +1,1 @@
-const artist = require("../models/Artist.models");
+import { Artist } from "../models/Artist.models.js";

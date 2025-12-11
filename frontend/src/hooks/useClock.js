@@ -1,4 +1,3 @@
-// frontend/src/hooks/useClock.js
 import { useEffect, useState } from 'react'
 
 export function useClock(tz = 'Europe/Madrid') {

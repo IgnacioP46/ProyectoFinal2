@@ -4,307 +4,327 @@
     "artist_code": "ART001",
     "artist_name": "Carolina Durante",
     "title": "Carolina Durante",
-    "year": "2019",
+    "year": "2019.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
     "condition": "New",
     "color_variant": "Black",
     "speed_rpm": "33",
-    "cover_image": "",
-    "status": ""
+    "cover_image": "https://universalmusiconline.es/cdn/shop/products/carolinadurantelp-0602577565137.jpg?v=1637657754",
+    "status": "",
+    "genre": "Indie rock / punk pop"
   },
   {
     "sku": "ART001-2",
     "artist_code": "ART001",
     "artist_name": "Carolina Durante",
     "title": "Cuatro Chavales",
-    "year": "2022",
+    "year": "2022.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
     "condition": "New",
     "color_variant": "Black",
     "speed_rpm": "33",
-    "cover_image": "",
-    "status": ""
+    "cover_image": "https://discosaltafidelidad.es/wp-content/uploads/2022/01/carolina-durante-cuatro-chavales.jpg",
+    "status": "",
+    "genre": "Indie rock / punk pop"
   },
   {
     "sku": "ART002-1",
     "artist_code": "ART002",
     "artist_name": "Biznaga",
     "title": "Gran Pantalla",
-    "year": "2020",
+    "year": "2020.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
     "condition": "New",
     "color_variant": "Black",
     "speed_rpm": "33",
-    "cover_image": "",
-    "status": ""
+    "cover_image": "https://www.discogs.com/release/14893271-Biznaga-Gran-Pantalla",
+    "status": "",
+    "genre": "Punk rock / post‑punk"
   },
   {
     "sku": "ART002-2",
     "artist_code": "ART002",
     "artist_name": "Biznaga",
     "title": "Bremen No Existe",
-    "year": "2022",
+    "year": "2022.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
     "condition": "New",
     "color_variant": "Black",
     "speed_rpm": "33",
-    "cover_image": "",
-    "status": ""
+    "cover_image": "https://www.discogs.com/es/release/23152187-Biznaga-Bremen-No-Existe",
+    "status": "",
+    "genre": "Punk rock / post‑punk"
   },
   {
     "sku": "ART003-1",
     "artist_code": "ART003",
     "artist_name": "VVV",
-    "title": "PENDIENTE álbum 1",
-    "year": "",
+    "title": "Escama",
+    "year": "2020.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
     "condition": "New",
     "color_variant": "Black",
     "speed_rpm": "33",
-    "cover_image": "",
-    "status": "PENDIENTE"
+    "cover_image": "https://whereisvvv.bandcamp.com/album/escama",
+    "status": "PENDIENTE",
+    "genre": "Synth‑pop / darkwave"
   },
   {
     "sku": "ART003-2",
     "artist_code": "ART003",
     "artist_name": "VVV",
-    "title": "PENDIENTE álbum 2",
-    "year": "",
+    "title": "Turboviolencia",
+    "year": "2021.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
     "condition": "New",
     "color_variant": "Black",
     "speed_rpm": "33",
-    "cover_image": "",
-    "status": "PENDIENTE"
+    "cover_image": "https://www.discogs.com/es/release/20911168-VVVTrippinyou-Turboviolencia",
+    "status": "PENDIENTE",
+    "genre": "Synth‑pop / darkwave"
   },
   {
     "sku": "ART004-1",
     "artist_code": "ART004",
     "artist_name": "Chill Mafia Records",
-    "title": "PENDIENTE álbum 1",
-    "year": "",
+    "title": "Ezorregatik X berpizkundea",
+    "year": "2021.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
     "condition": "New",
     "color_variant": "Black",
     "speed_rpm": "33",
-    "cover_image": "",
-    "status": "PENDIENTE"
+    "cover_image": "https://chillmafia.bandcamp.com/album/ezorregatik-x-berpizkundea",
+    "status": "PENDIENTE",
+    "genre": "Rap / trap"
   },
   {
     "sku": "ART004-2",
     "artist_code": "ART004",
     "artist_name": "Chill Mafia Records",
-    "title": "PENDIENTE álbum 2",
-    "year": "",
+    "title": "Agur Eta Ohore X Alla Va La Despedida",
+    "year": "2024.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
     "condition": "New",
     "color_variant": "Black",
     "speed_rpm": "33",
-    "cover_image": "",
-    "status": "PENDIENTE"
+    "cover_image": "https://open.spotify.com/intl-es/album/0x8XlLXgCYnJiQpmBgSO3q",
+    "status": "PENDIENTE",
+    "genre": "Rap / trap"
   },
   {
     "sku": "ART005-1",
     "artist_code": "ART005",
     "artist_name": "Estopa",
     "title": "Estopa",
-    "year": "1999",
+    "year": "1999.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
     "condition": "New",
     "color_variant": "Black",
     "speed_rpm": "33",
-    "cover_image": "",
-    "status": ""
+    "cover_image": "https://www.discogs.com/es/release/13029838-Estopa-Estopa",
+    "status": "",
+    "genre": "Rumba rock / pop rock"
   },
   {
     "sku": "ART005-2",
     "artist_code": "ART005",
     "artist_name": "Estopa",
     "title": "Destrangis",
-    "year": "2001",
+    "year": "2001.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
     "condition": "New",
     "color_variant": "Black",
     "speed_rpm": "33",
-    "cover_image": "",
-    "status": ""
+    "cover_image": "https://www.discogs.com/es/release/1470734-Estopa-Destrangis",
+    "status": "",
+    "genre": "Rumba rock / pop rock"
   },
   {
     "sku": "ART006-1",
     "artist_code": "ART006",
     "artist_name": "Camellos",
-    "title": "PENDIENTE álbum 1",
-    "year": "",
+    "title": "Embajadores",
+    "year": "2017.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
     "condition": "New",
     "color_variant": "Black",
     "speed_rpm": "33",
-    "cover_image": "",
-    "status": "PENDIENTE"
+    "cover_image": "https://limbostarr.bandcamp.com/album/embajadores",
+    "status": "PENDIENTE",
+    "genre": "Post‑punk / garage rock"
   },
   {
     "sku": "ART006-2",
     "artist_code": "ART006",
     "artist_name": "Camellos",
-    "title": "PENDIENTE álbum 2",
-    "year": "",
+    "title": "Calle para siempre",
+    "year": "2019.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
     "condition": "New",
     "color_variant": "Black",
     "speed_rpm": "33",
-    "cover_image": "",
-    "status": "PENDIENTE"
+    "cover_image": "https://limbostarr.bandcamp.com/album/calle-para-siempre",
+    "status": "PENDIENTE",
+    "genre": "Post‑punk / garage rock"
   },
   {
     "sku": "ART007-1",
     "artist_code": "ART007",
     "artist_name": "Ben Yart",
-    "title": "PENDIENTE álbum 1",
-    "year": "",
+    "title": "Ceros",
+    "year": "2023.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
     "condition": "New",
     "color_variant": "Black",
     "speed_rpm": "33",
-    "cover_image": "",
-    "status": "PENDIENTE"
+    "cover_image": "https://music.apple.com/es/album/ceros/1689768817",
+    "status": "PENDIENTE",
+    "genre": "Rap alternativo / trap"
   },
   {
     "sku": "ART007-2",
     "artist_code": "ART007",
     "artist_name": "Ben Yart",
-    "title": "PENDIENTE álbum 2",
-    "year": "",
+    "title": "Mañaneo",
+    "year": "2021.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
     "condition": "New",
     "color_variant": "Black",
     "speed_rpm": "33",
-    "cover_image": "",
-    "status": "PENDIENTE"
+    "cover_image": "https://music.apple.com/es/album/ma%C3%B1aneo-single/1569897903",
+    "status": "PENDIENTE",
+    "genre": "Rap alternativo / trap"
   },
   {
     "sku": "ART008-1",
     "artist_code": "ART008",
     "artist_name": "Shego",
-    "title": "PENDIENTE álbum 1",
-    "year": "",
+    "title": "Suerte chica",
+    "year": "2023.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
     "condition": "New",
     "color_variant": "Black",
     "speed_rpm": "33",
-    "cover_image": "",
-    "status": "PENDIENTE"
+    "cover_image": "https://www.discogs.com/es/release/26374649-Shego-Suerte-Chica",
+    "status": "PENDIENTE",
+    "genre": "Punk rock / indie rock"
   },
   {
     "sku": "ART008-2",
     "artist_code": "ART008",
     "artist_name": "Shego",
-    "title": "PENDIENTE álbum 2",
-    "year": "",
+    "title": "No lo volvere a hacer",
+    "year": "2025.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
     "condition": "New",
     "color_variant": "Black",
     "speed_rpm": "33",
-    "cover_image": "",
-    "status": "PENDIENTE"
+    "cover_image": "https://www.discogs.com/es/release/33064359-shego-No-Lo-Volver%C3%A9-A-Hacer",
+    "status": "PENDIENTE",
+    "genre": "Punk rock / indie rock"
   },
   {
     "sku": "ART009-1",
     "artist_code": "ART009",
     "artist_name": "La Élite",
-    "title": "PENDIENTE álbum 1",
-    "year": "",
+    "title": "Sorry Not Sorry",
+    "year": "2019.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
     "condition": "New",
     "color_variant": "Black",
     "speed_rpm": "33",
-    "cover_image": "",
-    "status": "PENDIENTE"
+    "cover_image": "https://open.spotify.com/album/6nvAfHejb706KQMLECVwLD",
+    "status": "PENDIENTE",
+    "genre": "Synth‑punk / electro‑punk"
   },
   {
     "sku": "ART009-2",
     "artist_code": "ART009",
     "artist_name": "La Élite",
-    "title": "PENDIENTE álbum 2",
-    "year": "",
+    "title": "Escaleras Al Cielo",
+    "year": "2024.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
     "condition": "New",
     "color_variant": "Black",
     "speed_rpm": "33",
-    "cover_image": "",
-    "status": "PENDIENTE"
+    "cover_image": "https://laelite.bandcamp.com/album/escaleras-al-cielo",
+    "status": "PENDIENTE",
+    "genre": "Synth‑punk / electro‑punk"
   },
   {
     "sku": "ART010-1",
     "artist_code": "ART010",
     "artist_name": "Alcalá Norte",
-    "title": "PENDIENTE álbum 1",
-    "year": "",
+    "title": "Alcalá Norte",
+    "year": "2024.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
     "condition": "New",
     "color_variant": "Black",
     "speed_rpm": "33",
-    "cover_image": "",
-    "status": "PENDIENTE"
+    "cover_image": "https://www.discogs.com/es/release/31202707-Alcal%C3%A1-Norte-Alcal%C3%A1-Norte",
+    "status": "PENDIENTE",
+    "genre": "Post‑punk / indie rock"
   },
   {
     "sku": "ART010-2",
     "artist_code": "ART010",
     "artist_name": "Alcalá Norte",
-    "title": "PENDIENTE álbum 2",
-    "year": "",
+    "title": "Maquetas tempranas",
+    "year": "2021.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
     "condition": "New",
     "color_variant": "Black",
     "speed_rpm": "33",
-    "cover_image": "",
-    "status": "PENDIENTE"
+    "cover_image": "https://open.spotify.com/album/6ClP0ezbx34YtWOQRHRptb",
+    "status": "PENDIENTE",
+    "genre": "Post‑punk / indie rock"
   },
   {
     "sku": "ART011-1",
     "artist_code": "ART011",
     "artist_name": "Dua Lipa",
     "title": "Future Nostalgia",
-    "year": "2020",
+    "year": "2020.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -312,14 +332,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART011-2",
     "artist_code": "ART011",
     "artist_name": "Dua Lipa",
     "title": "Dua Lipa",
-    "year": "2017",
+    "year": "2017.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -327,14 +348,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART012-1",
     "artist_code": "ART012",
     "artist_name": "Los Planetas",
     "title": "Una semana en el motor de un autobús",
-    "year": "1998",
+    "year": "1998.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -342,14 +364,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART012-2",
     "artist_code": "ART012",
     "artist_name": "Los Planetas",
     "title": "Super 8",
-    "year": "1994",
+    "year": "1994.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -357,14 +380,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART013-1",
     "artist_code": "ART013",
     "artist_name": "Ultralágrima",
-    "title": "PENDIENTE álbum 1",
-    "year": "",
+    "title": "Ultralágrima",
+    "year": "2024.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -372,14 +396,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART013-2",
     "artist_code": "ART013",
     "artist_name": "Ultralágrima",
-    "title": "PENDIENTE álbum 2",
-    "year": "",
+    "title": "El paseo",
+    "year": "2025.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -387,14 +412,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART014-1",
     "artist_code": "ART014",
     "artist_name": "Los Rodríguez",
     "title": "Sin documentos",
-    "year": "1993",
+    "year": "1993.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -402,14 +428,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART014-2",
     "artist_code": "ART014",
     "artist_name": "Los Rodríguez",
     "title": "Buena Suerte",
-    "year": "1991",
+    "year": "1991.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -417,14 +444,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART015-1",
     "artist_code": "ART015",
     "artist_name": "María Escarmiento",
-    "title": "PENDIENTE álbum 1",
-    "year": "",
+    "title": "Sintiendolo Mucho",
+    "year": "2021.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -432,14 +460,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART015-2",
     "artist_code": "ART015",
     "artist_name": "María Escarmiento",
-    "title": "PENDIENTE álbum 2",
-    "year": "",
+    "title": "Cosas de Brujas",
+    "year": "2023.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -447,14 +476,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART016-1",
     "artist_code": "ART016",
     "artist_name": "C. Tangana",
     "title": "El Madrileño",
-    "year": "2021",
+    "year": "2021.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -462,14 +492,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART016-2",
     "artist_code": "ART016",
     "artist_name": "C. Tangana",
     "title": "Ídolo",
-    "year": "2017",
+    "year": "2017.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -477,14 +508,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART017-1",
     "artist_code": "ART017",
     "artist_name": "Oasis",
     "title": "Definitely Maybe",
-    "year": "1994",
+    "year": "1994.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -492,14 +524,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART017-2",
     "artist_code": "ART017",
     "artist_name": "Oasis",
     "title": "(What's the Story) Morning Glory?",
-    "year": "1995",
+    "year": "1995.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -507,14 +540,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART018-1",
     "artist_code": "ART018",
     "artist_name": "Arctic Monkeys",
     "title": "Whatever People Say I Am, That's What I'm Not",
-    "year": "2006",
+    "year": "2006.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -522,14 +556,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART018-2",
     "artist_code": "ART018",
     "artist_name": "Arctic Monkeys",
     "title": "AM",
-    "year": "2013",
+    "year": "2013.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -537,14 +572,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART019-1",
     "artist_code": "ART019",
     "artist_name": "Bon Iver",
     "title": "Bon Iver",
-    "year": "2011",
+    "year": "2011.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -552,14 +588,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART019-2",
     "artist_code": "ART019",
     "artist_name": "Bon Iver",
     "title": "For Emma Forever Ago",
-    "year": "2008",
+    "year": "2008.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -567,14 +604,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART020-1",
     "artist_code": "ART020",
     "artist_name": "Joe Crepúsculo",
     "title": "Supercrepus",
-    "year": "2008",
+    "year": "2008.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -582,14 +620,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART020-2",
     "artist_code": "ART020",
     "artist_name": "Joe Crepúsculo",
     "title": "Baile de Magos",
-    "year": "2013",
+    "year": "2013.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -597,14 +636,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART021-1",
     "artist_code": "ART021",
     "artist_name": "Natos y Waor",
-    "title": "PENDIENTE álbum 1",
-    "year": "",
+    "title": "Martes 13",
+    "year": "2015.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -612,14 +652,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART021-2",
     "artist_code": "ART021",
     "artist_name": "Natos y Waor",
-    "title": "PENDIENTE álbum 2",
-    "year": "",
+    "title": "Cicatrices",
+    "year": "2018.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -627,14 +668,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART022-1",
     "artist_code": "ART022",
     "artist_name": "Bad Bunny",
     "title": "YHLQMDLG",
-    "year": "2020",
+    "year": "2020.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -642,14 +684,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART022-2",
     "artist_code": "ART022",
     "artist_name": "Bad Bunny",
     "title": "Un Verano Sin Ti",
-    "year": "2022",
+    "year": "2022.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -657,14 +700,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART023-1",
     "artist_code": "ART023",
     "artist_name": "Bad Gyal",
-    "title": "PENDIENTE álbum 1",
-    "year": "",
+    "title": "Slow Wine",
+    "year": "2016.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -672,14 +716,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART023-2",
     "artist_code": "ART023",
     "artist_name": "Bad Gyal",
-    "title": "PENDIENTE álbum 2",
-    "year": "",
+    "title": "Warm Up",
+    "year": "2018.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -687,14 +732,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART024-1",
     "artist_code": "ART024",
     "artist_name": "Bizarrap",
-    "title": "PENDIENTE álbum 1",
-    "year": "",
+    "title": "Bizarrap 1",
+    "year": "2020.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -702,14 +748,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART024-2",
     "artist_code": "ART024",
     "artist_name": "Bizarrap",
-    "title": "PENDIENTE álbum 2",
-    "year": "",
+    "title": "Bizarrap 2",
+    "year": "2025.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -717,14 +764,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART025-1",
     "artist_code": "ART025",
     "artist_name": "Margarita Quebrada",
-    "title": "PENDIENTE álbum 1",
-    "year": "",
+    "title": "Margarita Quebrada",
+    "year": "2020.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -732,14 +780,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART025-2",
     "artist_code": "ART025",
     "artist_name": "Margarita Quebrada",
-    "title": "PENDIENTE álbum 2",
-    "year": "",
+    "title": "Gas lagrima",
+    "year": "2022.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -747,14 +796,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART026-1",
     "artist_code": "ART026",
     "artist_name": "Extremoduro",
     "title": "Agila",
-    "year": "1996",
+    "year": "1996.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -762,14 +812,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART026-2",
     "artist_code": "ART026",
     "artist_name": "Extremoduro",
     "title": "Deltoya",
-    "year": "1992",
+    "year": "1992.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -777,7 +828,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART027-1",
@@ -792,7 +844,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART027-2",
@@ -807,7 +860,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART028-1",
@@ -822,7 +876,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART028-2",
@@ -837,7 +892,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART029-1",
@@ -852,7 +908,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART029-2",
@@ -867,14 +924,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART030-1",
     "artist_code": "ART030",
     "artist_name": "Miley Cyrus",
     "title": "Bangerz",
-    "year": "2013",
+    "year": "2013.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -882,14 +940,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART030-2",
     "artist_code": "ART030",
     "artist_name": "Miley Cyrus",
     "title": "Endless Summer Vacation",
-    "year": "2023",
+    "year": "2023.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -897,7 +956,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART031-1",
@@ -912,7 +972,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART031-2",
@@ -927,7 +988,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART032-1",
@@ -942,7 +1004,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART032-2",
@@ -957,7 +1020,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART033-1",
@@ -972,7 +1036,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART033-2",
@@ -987,7 +1052,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART034-1",
@@ -1002,7 +1068,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART034-2",
@@ -1017,7 +1084,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART035-1",
@@ -1032,7 +1100,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART035-2",
@@ -1047,7 +1116,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART036-1",
@@ -1062,7 +1132,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART036-2",
@@ -1077,7 +1148,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART037-1",
@@ -1092,7 +1164,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART037-2",
@@ -1107,7 +1180,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART038-1",
@@ -1122,7 +1196,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART038-2",
@@ -1137,7 +1212,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART039-1",
@@ -1152,7 +1228,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART039-2",
@@ -1167,7 +1244,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART040-1",
@@ -1182,7 +1260,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART040-2",
@@ -1197,7 +1276,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART041-1",
@@ -1212,7 +1292,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART041-2",
@@ -1227,14 +1308,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART042-1",
     "artist_code": "ART042",
     "artist_name": "The Strokes",
     "title": "Is This It",
-    "year": "2001",
+    "year": "2001.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1242,14 +1324,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART042-2",
     "artist_code": "ART042",
     "artist_name": "The Strokes",
     "title": "Room on Fire",
-    "year": "2003",
+    "year": "2003.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1257,14 +1340,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART043-1",
     "artist_code": "ART043",
     "artist_name": "Califato ¾",
     "title": "Puerta de la Cânne",
-    "year": "2019",
+    "year": "2019.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1272,14 +1356,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART043-2",
     "artist_code": "ART043",
     "artist_name": "Califato ¾",
     "title": "La Contraçeña",
-    "year": "2021",
+    "year": "2021.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1287,14 +1372,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART044-1",
     "artist_code": "ART044",
     "artist_name": "Hinds",
     "title": "Leave Me Alone",
-    "year": "2016",
+    "year": "2016.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1302,14 +1388,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART044-2",
     "artist_code": "ART044",
     "artist_name": "Hinds",
     "title": "I Don't Run",
-    "year": "2018",
+    "year": "2018.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1317,14 +1404,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART045-1",
     "artist_code": "ART045",
     "artist_name": "ROSALÍA",
     "title": "El Mal Querer",
-    "year": "2018",
+    "year": "2018.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1332,14 +1420,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART045-2",
     "artist_code": "ART045",
     "artist_name": "ROSALÍA",
     "title": "Motomami",
-    "year": "2022",
+    "year": "2022.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1347,14 +1436,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART046-1",
     "artist_code": "ART046",
     "artist_name": "AC/DC",
     "title": "Back in Black",
-    "year": "1980",
+    "year": "1980.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1362,14 +1452,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART046-2",
     "artist_code": "ART046",
     "artist_name": "AC/DC",
     "title": "Highway to Hell",
-    "year": "1979",
+    "year": "1979.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1377,14 +1468,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART047-1",
     "artist_code": "ART047",
     "artist_name": "Metallica",
     "title": "Metallica (The Black Album)",
-    "year": "1991",
+    "year": "1991.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1392,14 +1484,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART047-2",
     "artist_code": "ART047",
     "artist_name": "Metallica",
     "title": "Master of Puppets",
-    "year": "1986",
+    "year": "1986.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1407,14 +1500,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART048-1",
     "artist_code": "ART048",
     "artist_name": "Novedades Carminha",
     "title": "Ultraligero",
-    "year": "2019",
+    "year": "2019.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1422,14 +1516,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART048-2",
     "artist_code": "ART048",
     "artist_name": "Novedades Carminha",
     "title": "Juventud Infinita",
-    "year": "2014",
+    "year": "2014.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1437,14 +1532,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART049-1",
     "artist_code": "ART049",
     "artist_name": "Reincidentes",
     "title": "Reincidentes",
-    "year": "1992",
+    "year": "1992.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1452,14 +1548,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART049-2",
     "artist_code": "ART049",
     "artist_name": "Reincidentes",
     "title": "Algazara",
-    "year": "1995",
+    "year": "1995.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1467,7 +1564,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART050-1",
@@ -1482,7 +1580,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART050-2",
@@ -1497,14 +1596,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART051-1",
     "artist_code": "ART051",
     "artist_name": "Duki",
     "title": "Desde el Fin del Mundo",
-    "year": "2021",
+    "year": "2021.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1512,14 +1612,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART051-2",
     "artist_code": "ART051",
     "artist_name": "Duki",
     "title": "Antes de Ameri",
-    "year": "2023",
+    "year": "2023.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1527,14 +1628,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART052-1",
     "artist_code": "ART052",
     "artist_name": "Elvis Presley",
     "title": "Elvis Presley",
-    "year": "1956",
+    "year": "1956.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1542,14 +1644,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART052-2",
     "artist_code": "ART052",
     "artist_name": "Elvis Presley",
     "title": "Elvis",
-    "year": "1956",
+    "year": "1956.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1557,7 +1660,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART053-1",
@@ -1572,7 +1676,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART053-2",
@@ -1587,14 +1692,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART054-1",
     "artist_code": "ART054",
     "artist_name": "Lola Índigo",
     "title": "Akelarre",
-    "year": "2019",
+    "year": "2019.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1602,14 +1708,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART054-2",
     "artist_code": "ART054",
     "artist_name": "Lola Índigo",
     "title": "El Dragón",
-    "year": "2023",
+    "year": "2023.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1617,14 +1724,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART055-1",
     "artist_code": "ART055",
     "artist_name": "Bob Marley y The Wailers",
     "title": "Exodus",
-    "year": "1977",
+    "year": "1977.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1632,14 +1740,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART055-2",
     "artist_code": "ART055",
     "artist_name": "Bob Marley y The Wailers",
     "title": "Catch a Fire",
-    "year": "1973",
+    "year": "1973.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1647,7 +1756,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART056-1",
@@ -1662,7 +1772,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART056-2",
@@ -1677,7 +1788,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART057-1",
@@ -1692,7 +1804,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART057-2",
@@ -1707,14 +1820,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART058-1",
     "artist_code": "ART058",
     "artist_name": "Amaia",
     "title": "Pero No Pasa Nada",
-    "year": "2019",
+    "year": "2019.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1722,14 +1836,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART058-2",
     "artist_code": "ART058",
     "artist_name": "Amaia",
     "title": "Cuando No Sé Quién Soy",
-    "year": "2022",
+    "year": "2022.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1737,7 +1852,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART059-1",
@@ -1752,7 +1868,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART059-2",
@@ -1767,7 +1884,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART060-1",
@@ -1782,7 +1900,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART060-2",
@@ -1797,7 +1916,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART061-1",
@@ -1812,7 +1932,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART061-2",
@@ -1827,7 +1948,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART062-1",
@@ -1842,7 +1964,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART062-2",
@@ -1857,14 +1980,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART063-1",
     "artist_code": "ART063",
     "artist_name": "Nirvana",
     "title": "Nevermind",
-    "year": "1991",
+    "year": "1991.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1872,14 +1996,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART063-2",
     "artist_code": "ART063",
     "artist_name": "Nirvana",
     "title": "In Utero",
-    "year": "1993",
+    "year": "1993.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1887,14 +2012,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART064-1",
     "artist_code": "ART064",
     "artist_name": "Eminem",
     "title": "The Marshall Mathers LP",
-    "year": "2000",
+    "year": "2000.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1902,14 +2028,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART064-2",
     "artist_code": "ART064",
     "artist_name": "Eminem",
     "title": "The Eminem Show",
-    "year": "2002",
+    "year": "2002.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1917,7 +2044,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART065-1",
@@ -1932,7 +2060,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART065-2",
@@ -1947,7 +2076,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART066-1",
@@ -1962,7 +2092,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART066-2",
@@ -1977,14 +2108,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART067-1",
     "artist_code": "ART067",
     "artist_name": "Post Malone",
     "title": "Beerbongs & Bentleys",
-    "year": "2018",
+    "year": "2018.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -1992,14 +2124,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART067-2",
     "artist_code": "ART067",
     "artist_name": "Post Malone",
     "title": "Hollywood's Bleeding",
-    "year": "2019",
+    "year": "2019.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2007,7 +2140,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART068-1",
@@ -2022,7 +2156,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART068-2",
@@ -2037,14 +2172,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART069-1",
     "artist_code": "ART069",
     "artist_name": "Marilyn Manson",
     "title": "Antichrist Superstar",
-    "year": "1996",
+    "year": "1996.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2052,14 +2188,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART069-2",
     "artist_code": "ART069",
     "artist_name": "Marilyn Manson",
     "title": "Mechanical Animals",
-    "year": "1998",
+    "year": "1998.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2067,7 +2204,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART070-1",
@@ -2082,7 +2220,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART070-2",
@@ -2097,7 +2236,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART071-1",
@@ -2112,7 +2252,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART071-2",
@@ -2127,7 +2268,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART072-1",
@@ -2142,7 +2284,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART072-2",
@@ -2157,7 +2300,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART073-1",
@@ -2172,7 +2316,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART073-2",
@@ -2187,7 +2332,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART074-1",
@@ -2202,7 +2348,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART074-2",
@@ -2217,7 +2364,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART075-1",
@@ -2232,7 +2380,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART075-2",
@@ -2247,14 +2396,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART076-1",
     "artist_code": "ART076",
     "artist_name": "Kings of Leon",
     "title": "Only by the Night",
-    "year": "2008",
+    "year": "2008.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2262,14 +2412,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART076-2",
     "artist_code": "ART076",
     "artist_name": "Kings of Leon",
     "title": "Aha Shake Heartbreak",
-    "year": "2004",
+    "year": "2004.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2277,14 +2428,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART077-1",
     "artist_code": "ART077",
     "artist_name": "Zahara",
     "title": "Año X",
-    "year": "2024",
+    "year": "2024.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2292,14 +2444,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART077-2",
     "artist_code": "ART077",
     "artist_name": "Zahara",
     "title": "Santa",
-    "year": "2015",
+    "year": "2015.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2307,14 +2460,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART078-1",
     "artist_code": "ART078",
     "artist_name": "Vetusta Morla",
     "title": "Un día en el mundo",
-    "year": "2008",
+    "year": "2008.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2322,14 +2476,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART078-2",
     "artist_code": "ART078",
     "artist_name": "Vetusta Morla",
     "title": "Mismo sitio, distinto lugar",
-    "year": "2017",
+    "year": "2017.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2337,14 +2492,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART079-1",
     "artist_code": "ART079",
     "artist_name": "Calle 13",
     "title": "Residente o Visitante",
-    "year": "2007",
+    "year": "2007.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2352,14 +2508,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART079-2",
     "artist_code": "ART079",
     "artist_name": "Calle 13",
     "title": "Entren los que quieran",
-    "year": "2010",
+    "year": "2010.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2367,7 +2524,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART080-1",
@@ -2382,7 +2540,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART080-2",
@@ -2397,14 +2556,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART081-1",
     "artist_code": "ART081",
     "artist_name": "El Columpio Asesino",
     "title": "Diamantes",
-    "year": "2011",
+    "year": "2011.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2412,14 +2572,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART081-2",
     "artist_code": "ART081",
     "artist_name": "El Columpio Asesino",
     "title": "Ataque Celeste",
-    "year": "2021",
+    "year": "2021.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2427,14 +2588,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART082-1",
     "artist_code": "ART082",
     "artist_name": "Pet Shop Boys",
     "title": "Actually",
-    "year": "1987",
+    "year": "1987.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2442,14 +2604,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART082-2",
     "artist_code": "ART082",
     "artist_name": "Pet Shop Boys",
     "title": "Behaviour",
-    "year": "1990",
+    "year": "1990.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2457,7 +2620,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART083-1",
@@ -2472,7 +2636,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART083-2",
@@ -2487,7 +2652,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART084-1",
@@ -2502,7 +2668,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART084-2",
@@ -2517,7 +2684,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART085-1",
@@ -2532,7 +2700,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART085-2",
@@ -2547,7 +2716,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART086-1",
@@ -2562,7 +2732,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART086-2",
@@ -2577,14 +2748,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART087-1",
     "artist_code": "ART087",
     "artist_name": "Fito y Fitipaldis",
     "title": "A puerta cerrada",
-    "year": "1998",
+    "year": "1998.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2592,14 +2764,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART087-2",
     "artist_code": "ART087",
     "artist_name": "Fito y Fitipaldis",
     "title": "Lo más lejos, a tu lado",
-    "year": "2003",
+    "year": "2003.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2607,14 +2780,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART088-1",
     "artist_code": "ART088",
     "artist_name": "The Prodigy",
     "title": "Music for the Jilted Generation",
-    "year": "1994",
+    "year": "1994.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2622,14 +2796,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART088-2",
     "artist_code": "ART088",
     "artist_name": "The Prodigy",
     "title": "The Fat of the Land",
-    "year": "1997",
+    "year": "1997.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2637,14 +2812,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART089-1",
     "artist_code": "ART089",
     "artist_name": "La Casa Azul",
     "title": "La revolución sexual",
-    "year": "2007",
+    "year": "2007.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2652,14 +2828,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART089-2",
     "artist_code": "ART089",
     "artist_name": "La Casa Azul",
     "title": "La Polinesia meridional",
-    "year": "2011",
+    "year": "2011.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2667,14 +2844,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART090-1",
     "artist_code": "ART090",
     "artist_name": "Daft Punk",
     "title": "Discovery",
-    "year": "2001",
+    "year": "2001.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2682,14 +2860,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART090-2",
     "artist_code": "ART090",
     "artist_name": "Daft Punk",
     "title": "Random Access Memories",
-    "year": "2013",
+    "year": "2013.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2697,14 +2876,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART091-1",
     "artist_code": "ART091",
     "artist_name": "Rihanna",
     "title": "Good Girl Gone Bad",
-    "year": "2007",
+    "year": "2007.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2712,14 +2892,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART091-2",
     "artist_code": "ART091",
     "artist_name": "Rihanna",
     "title": "Anti",
-    "year": "2016",
+    "year": "2016.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2727,7 +2908,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART092-1",
@@ -2742,7 +2924,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART092-2",
@@ -2757,14 +2940,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART093-1",
     "artist_code": "ART093",
     "artist_name": "Kanye West",
     "title": "My Beautiful Dark Twisted Fantasy",
-    "year": "2010",
+    "year": "2010.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2772,14 +2956,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART093-2",
     "artist_code": "ART093",
     "artist_name": "Kanye West",
     "title": "The College Dropout",
-    "year": "2004",
+    "year": "2004.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2787,7 +2972,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART094-1",
@@ -2802,7 +2988,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART094-2",
@@ -2817,7 +3004,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART095-1",
@@ -2832,7 +3020,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART095-2",
@@ -2847,14 +3036,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART096-1",
     "artist_code": "ART096",
     "artist_name": "Ed Sheeran",
     "title": "x (Multiply)",
-    "year": "2014",
+    "year": "2014.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2862,14 +3052,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART096-2",
     "artist_code": "ART096",
     "artist_name": "Ed Sheeran",
     "title": "÷ (Divide)",
-    "year": "2017",
+    "year": "2017.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2877,14 +3068,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART097-1",
     "artist_code": "ART097",
     "artist_name": "Ilegales",
     "title": "Ilegales",
-    "year": "1983",
+    "year": "1983.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2892,14 +3084,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART097-2",
     "artist_code": "ART097",
     "artist_name": "Ilegales",
     "title": "A la luz o a la sombra, todo está permitido",
-    "year": "1990",
+    "year": "1990.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2907,7 +3100,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART098-1",
@@ -2922,7 +3116,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART098-2",
@@ -2937,7 +3132,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART099-1",
@@ -2952,7 +3148,8 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART099-2",
@@ -2967,14 +3164,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": "PENDIENTE"
+    "status": "PENDIENTE",
+    "genre": ""
   },
   {
     "sku": "ART100-1",
     "artist_code": "ART100",
     "artist_name": "The Killers",
     "title": "Hot Fuss",
-    "year": "2004",
+    "year": "2004.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2982,14 +3180,15 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   },
   {
     "sku": "ART100-2",
     "artist_code": "ART100",
     "artist_name": "The Killers",
     "title": "Sam's Town",
-    "year": "2006",
+    "year": "2006.0",
     "price_eur": "24.99",
     "stock": "20",
     "weight_g": "180",
@@ -2997,6 +3196,7 @@
     "color_variant": "Black",
     "speed_rpm": "33",
     "cover_image": "",
-    "status": ""
+    "status": "",
+    "genre": ""
   }
 ]
