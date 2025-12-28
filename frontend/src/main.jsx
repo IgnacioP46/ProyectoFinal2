@@ -1,15 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { RouterProvider } from 'react-router-dom';
-import router from './router'; // Tu archivo de rutas
-import { AuthProvider } from './context/AuthContext';
-import './index.css';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
+import App from './App.jsx'
+import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthProvider>
-      {/* Aquí está el Router principal. NO pongas otro BrowserRouter dentro de App */}
-      <RouterProvider router={router} />
-    </AuthProvider>
-  </React.StrictMode>
-);
+    <BrowserRouter>
+      {/* ⚠️ IMPORTANTE: Aquí NO debe haber <Routes> ni <Route> */}
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>,
+)

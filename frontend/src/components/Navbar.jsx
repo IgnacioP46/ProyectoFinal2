@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { CartContext } from "../context/CartContext";
-import { ShoppingCart, User, LogOut } from "lucide-react"; // Iconos bonitos
+import { ShoppingCart, User, LogOut, Disc } from "lucide-react"; // He añadido el icono Disc
 
 export default function Navbar() {
   const { user, logout } = useContext(AuthContext);
@@ -10,9 +10,14 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <Link to="/" className="logo">🎵 Murmullo Records</Link>
+      <Link to="/" className="logo">🎵 Discos Rizados</Link>
 
       <div className="nav-links">
+        {/* 👇 AQUÍ AÑADIMOS EL ENLACE AL CATÁLOGO QUE FALTABA */}
+        <Link to="/catalogo" className="nav-item">
+          Catálogo
+        </Link>
+
         {user?.role === 'admin' && (
           <Link to="/admin" className="admin-link">Panel Admin</Link>
         )}
