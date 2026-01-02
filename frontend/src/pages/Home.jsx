@@ -1,290 +1,340 @@
-import { useEffect, useState, useRef, useContext } from "react";
-import { Link } from "react-router-dom";
-import api from "../api/axios";
-import { CartContext } from "../context/CartContext";
-
+import React, { useEffect, useState, useRef, useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Disc, Music, Star, ChevronLeft, ChevronRight, ShoppingCart } from 'lucide-react';
+import axios from 'axios';
+import { CartContext } from '../context/CartContext';
 
 const styles = {
   container: {
-    maxWidth: "1200px",
-    margin: "0 auto",
-    padding: "40px 20px",
-    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+    fontFamily: "'Segoe UI', sans-serif",
+    color: '#e9edef',
+    backgroundColor: '#0b141a',
+    minHeight: '100vh',
+    paddingBottom: '50px'
   },
-  heroSection: {
-    textAlign: "center",
-    marginBottom: "60px",
-    padding: "60px 20px",
-    backgroundColor: "#f8f9fa",
-    borderRadius: "20px",
-    boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
+  // --- HERO SECTION ---
+  hero: {
+    position: 'relative',
+    height: '70vh', // Un poco más corto para ver el slider antes
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    backgroundImage: 'url("https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=2070&auto=format&fit=crop")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
+  overlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(11, 20, 26, 0.7)',
+  },
+  heroContent: {
+    position: 'relative',
+    zIndex: 1,
+    padding: '20px',
+    maxWidth: '800px',
   },
   title: {
-    fontSize: "3rem",
-    fontWeight: "800",
-    color: "#2d3748",
-    marginBottom: "1rem",
+    fontSize: '4rem',
+    fontWeight: '800',
+    marginBottom: '20px',
+    background: 'linear-gradient(90deg, #fff, #00a884)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
   },
   subtitle: {
-    fontSize: "1.2rem",
-    color: "#718096",
-    marginBottom: "2rem",
-    maxWidth: "600px",
-    marginLeft: "auto",
-    marginRight: "auto",
+    fontSize: '1.5rem',
+    marginBottom: '40px',
+    color: '#d1d7db',
   },
   ctaButton: {
-    display: "inline-block",
-    backgroundColor: "#6b46c1",
-    color: "white",
-    padding: "15px 40px",
-    fontSize: "1.1rem",
-    fontWeight: "bold",
-    borderRadius: "50px",
-    textDecoration: "none",
-    boxShadow: "0 4px 15px rgba(107, 70, 193, 0.4)",
-    transition: "transform 0.2s, box-shadow 0.2s",
-    cursor: "pointer",
+    backgroundColor: '#00a884',
+    color: '#0b141a',
+    padding: '15px 40px',
+    fontSize: '1.2rem',
+    fontWeight: 'bold',
+    borderRadius: '50px',
+    textDecoration: 'none',
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: '10px',
+    transition: 'transform 0.2s',
+    boxShadow: '0 4px 15px rgba(0, 168, 132, 0.4)',
+  },
+  
+  // --- SECCIÓN SLIDER DESTACADOS ---
+  sliderSection: {
+    padding: '60px 5%',
+    maxWidth: '1400px',
+    margin: '0 auto',
   },
   sectionTitle: {
-    fontSize: "2rem",
-    fontWeight: "700",
-    marginBottom: "20px",
-    paddingLeft: "10px",
-    borderLeft: "5px solid #6b46c1",
+    fontSize: '2rem',
+    fontWeight: 'bold',
+    marginBottom: '30px',
+    borderLeft: '5px solid #00a884',
+    paddingLeft: '15px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between'
   },
-  carouselContainer: {
-    position: "relative",
-    display: "flex",
-    alignItems: "center",
+  sliderContainer: {
+    position: 'relative',
+    display: 'flex',
+    alignItems: 'center',
   },
-  carouselTrack: {
-    display: "flex",
-    gap: "25px",
-    overflowX: "auto",
-    scrollBehavior: "smooth",
-    padding: "20px 5px",
-    scrollbarWidth: "none",
-    msOverflowStyle: "none",
+  scrollTrack: {
+    display: 'flex',
+    gap: '20px',
+    overflowX: 'auto',
+    scrollBehavior: 'smooth',
+    padding: '20px 5px',
+    scrollbarWidth: 'none', // Firefox
+    msOverflowStyle: 'none',  // IE
   },
+  scrollButton: {
+    backgroundColor: 'rgba(32, 44, 51, 0.8)',
+    color: '#00a884',
+    border: '1px solid #2a3942',
+    borderRadius: '50%',
+    width: '50px',
+    height: '50px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    cursor: 'pointer',
+    position: 'absolute',
+    zIndex: 10,
+    transition: 'all 0.3s',
+  },
+  // --- TARJETA DE VINILO ---
   card: {
-    minWidth: "240px",
-    maxWidth: "240px",
-    backgroundColor: "white",
-    borderRadius: "15px",
-    overflow: "hidden",
-    boxShadow: "0 5px 15px rgba(0,0,0,0.08)",
-    transition: "transform 0.3s ease",
-    border: "1px solid #edf2f7",
-    flexShrink: 0,
-    display: "flex",
-    flexDirection: "column",
+    minWidth: '250px',
+    maxWidth: '250px',
+    backgroundColor: '#202c33',
+    borderRadius: '15px',
+    overflow: 'hidden',
+    transition: 'transform 0.3s, box-shadow 0.3s',
+    border: '1px solid #2a3942',
+    display: 'flex',
+    flexDirection: 'column',
   },
-  cardImageContainer: {
-    height: "240px",
-    backgroundColor: "#e2e8f0",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    fontSize: "4rem",
-    position: "relative",
+  cardImg: {
+    width: '100%',
+    height: '250px',
+    objectFit: 'cover',
   },
-  cardImage: {
-    width: "100%",
-    height: "100%",
-    objectFit: "cover",
-  },
-  cardContent: {
-    padding: "15px",
+  cardBody: {
+    padding: '15px',
     flexGrow: 1,
-    display: "flex",
-    flexDirection: "column",
+    display: 'flex',
+    flexDirection: 'column',
   },
   cardTitle: {
-    fontSize: "1.1rem",
-    fontWeight: "bold",
-    margin: "0 0 5px 0",
-    whiteSpace: "nowrap",
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-    color: "#2d3748",
-    textDecoration: "none"
+    fontSize: '1.1rem',
+    fontWeight: 'bold',
+    marginBottom: '5px',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    color: '#e9edef',
+    textDecoration: 'none',
   },
   cardArtist: {
-    fontSize: "0.9rem",
-    color: "#718096",
-    margin: "0 0 15px 0",
+    color: '#8696a0',
+    fontSize: '0.9rem',
+    marginBottom: '15px',
   },
-  priceRow: {
-    marginTop: "auto",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center"
+  cardFooter: {
+    marginTop: 'auto',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
-  cardPrice: {
-    fontSize: "1.2rem",
-    fontWeight: "bold",
-    color: "#2d3748",
+  price: {
+    fontSize: '1.2rem',
+    fontWeight: 'bold',
+    color: '#e9edef',
   },
-  // ESTILO NUEVO PARA EL BOTÓN COMPRAR
-  buyButtonSmall: {
-    backgroundColor: "#10B981", // Verde esmeralda
-    color: "white",
-    border: "none",
-    borderRadius: "20px",
-    padding: "5px 15px",
-    fontSize: "0.9rem",
-    fontWeight: "bold",
-    cursor: "pointer",
-    transition: "background 0.2s",
+  addBtn: {
+    backgroundColor: '#00a884',
+    border: 'none',
+    borderRadius: '50%',
+    width: '40px',
+    height: '40px',
+    color: '#0b141a',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    cursor: 'pointer',
+    transition: 'transform 0.2s',
   },
-  navButton: {
-    position: "absolute",
-    top: "50%",
-    transform: "translateY(-50%)",
-    backgroundColor: "white",
-    border: "1px solid #ddd",
-    borderRadius: "50%",
-    width: "50px",
-    height: "50px",
-    fontSize: "1.5rem",
-    cursor: "pointer",
-    zIndex: 10,
-    boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+
+  // --- VENTAJAS ---
+  features: {
+    padding: '40px 20px',
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+    gap: '30px',
+    maxWidth: '1200px',
+    margin: '0 auto',
+    marginTop: '40px',
+    borderTop: '1px solid #2a3942',
+    paddingTop: '60px'
+  },
+  featureCard: {
+    textAlign: 'center',
+    padding: '20px'
   },
 };
-
-const adapt = (v) => ({
-  _id: v._id ?? v.id,
-  title: v.title ?? "Sin título",
-  artist_name: v.artist_name ?? v.artist ?? "Desconocido",
-  cover_image: v.cover_image ?? "",
-  price: typeof v.price === "number" ? v.price : Number(v.price ?? v.price_eur ?? 0) || 0,
-});
 
 export default function Home() {
   const [vinyls, setVinyls] = useState([]);
   const [loading, setLoading] = useState(true);
-  const rowRef = useRef(null);
-
-  // Usamos el contexto para añadir al carrito
+  const scrollRef = useRef(null);
   const { addToCart } = useContext(CartContext);
 
+  // Cargar vinilos al iniciar
   useEffect(() => {
-    (async () => {
+    const fetchFeatured = async () => {
       try {
-        const { data } = await api.get("/vinyls");
-        const list = (Array.isArray(data) ? data : []).map(adapt);
-        setVinyls(list.slice(0, 10));
-      } catch (err) {
-        console.error("Error loading home:", err);
-      } finally {
+        const res = await axios.get('http://localhost:3000/api/vinyls');
+        // Cogemos solo los primeros 10 para "Destacados"
+        setVinyls(res.data.slice(0, 10));
+        setLoading(false);
+      } catch (error) {
+        console.error("Error cargando destacados:", error);
         setLoading(false);
       }
-    })();
+    };
+    fetchFeatured();
   }, []);
 
+  // Función para scroll horizontal
   const scroll = (direction) => {
-    if (rowRef.current) {
-      const scrollAmount = 300;
-      rowRef.current.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
+    const { current } = scrollRef;
+    if (current) {
+      const scrollAmount = 300; // Cuánto se mueve al hacer click
+      current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth',
+      });
     }
-  };
-
-  // Función para manejar la compra directa
-  const handleQuickBuy = (e, vinyl) => {
-    e.preventDefault(); // Evita que el clic nos lleve a la página de detalles
-    addToCart(vinyl);   // Llama a la función global del carrito
-    alert(`¡${vinyl.title} añadido al carrito! 🛒`); // Feedback visual rápido
   };
 
   return (
     <div style={styles.container}>
-
-      {/* SECCIÓN HERO */}
-      <section style={styles.heroSection}>
-        <h1 style={styles.title}>El sonido que buscas.</h1>
-        <p style={styles.subtitle}>
-          Explora nuestra colección exclusiva de vinilos. Desde clásicos del rock hasta las últimas novedades indie.
-        </p>
-        <Link
-          to="/catalogo"
-          style={styles.ctaButton}
-          onMouseOver={(e) => {
-            e.target.style.transform = "translateY(-3px)";
-            e.target.style.boxShadow = "0 6px 20px rgba(107, 70, 193, 0.6)";
-          }}
-          onMouseOut={(e) => {
-            e.target.style.transform = "translateY(0)";
-            e.target.style.boxShadow = "0 4px 15px rgba(107, 70, 193, 0.4)";
-          }}
-        >
-          Ver Catálogo Completo
-        </Link>
+      
+      {/* HERO SECTION */}
+      <section style={styles.hero}>
+        <div style={styles.overlay}></div>
+        <div style={styles.heroContent}>
+          <h1 style={styles.title}>Siente la Música Real</h1>
+          <p style={styles.subtitle}>
+            Descubre los vinilos más exclusivos. Desde clásicos del rock hasta las últimas novedades indie.
+          </p>
+          <Link to="/catalogo" style={styles.ctaButton}>
+            Explorar Catálogo <ArrowRight size={24} />
+          </Link>
+        </div>
       </section>
 
-      {/* SECCIÓN CARRUSEL */}
-      <section>
-        <h2 style={styles.sectionTitle}>Destacados de la semana 🔥</h2>
+      {/* --- SECCIÓN DESTACADOS (SLIDER) --- */}
+      <section style={styles.sliderSection}>
+        <div style={styles.sectionTitle}>
+          <span>🔥 Novedades Destacadas</span>
+          <Link to="/catalogo" style={{fontSize: '1rem', color: '#00a884', textDecoration: 'none'}}>Ver todos</Link>
+        </div>
 
         {loading ? (
-          <p style={{ textAlign: "center", color: "#888" }}>Cargando éxitos...</p>
+            <p style={{textAlign: 'center', color: '#8696a0'}}>Cargando éxitos...</p>
         ) : (
-          <div style={styles.carouselContainer}>
-            <button onClick={() => scroll(-1)} style={{ ...styles.navButton, left: "-20px" }}>❮</button>
+          <div style={styles.sliderContainer}>
+            {/* Botón Izquierda */}
+            <button 
+                onClick={() => scroll('left')} 
+                style={{...styles.scrollButton, left: '-25px'}}
+            >
+                <ChevronLeft size={24} />
+            </button>
 
-            <div ref={rowRef} style={styles.carouselTrack} className="hide-scrollbar">
-              {vinyls.map((v) => (
-                <div key={v._id} style={styles.card}>
-
-                  {/* El enlace envuelve la imagen para ver detalles */}
-                  <Link to={`/vinyls/${v._id}`} style={{ textDecoration: "none", color: "inherit" }}>
-                    <div style={styles.cardImageContainer}>
-                      {v.cover_image ? (
-                        <img src={v.cover_image} alt={v.title} style={styles.cardImage} />
-                      ) : (
-                        <span>💿</span>
-                      )}
-                    </div>
+            {/* Pista de Scroll */}
+            <div ref={scrollRef} style={styles.scrollTrack} className="hide-scrollbar">
+              {vinyls.map((vinyl) => (
+                <div key={vinyl._id} style={styles.card}>
+                  <Link to={`/producto/${vinyl._id}`}>
+                    <img 
+                        src={vinyl.cover_image || vinyl.image || "https://via.placeholder.com/250"} 
+                        alt={vinyl.title} 
+                        style={styles.cardImg} 
+                    />
                   </Link>
-
-                  <div style={styles.cardContent}>
-                    <Link to={`/vinyls/${v._id}`} style={{ textDecoration: "none" }}>
-                      <h3 style={styles.cardTitle} title={v.title}>{v.title}</h3>
+                  <div style={styles.cardBody}>
+                    <Link to={`/producto/${vinyl._id}`} style={styles.cardTitle}>
+                        {vinyl.title}
                     </Link>
-                    <p style={styles.cardArtist}>{v.artist_name}</p>
-
-                    <div style={styles.priceRow}>
-                      <span style={styles.cardPrice}>{v.price}€</span>
-
-                      {/* BOTÓN COMPRAR AHORA */}
-                      <button
-                        onClick={(e) => handleQuickBuy(e, v)}
-                        style={styles.buyButtonSmall}
-                        onMouseOver={(e) => e.target.style.backgroundColor = "#059669"}
-                        onMouseOut={(e) => e.target.style.backgroundColor = "#10B981"}
-                      >
-                        COMPRAR
-                      </button>
+                    <p style={styles.cardArtist}>{vinyl.artist_name || vinyl.artist}</p>
+                    
+                    <div style={styles.cardFooter}>
+                        <span style={styles.price}>{vinyl.price_eur || vinyl.price} €</span>
+                        <button 
+                            style={styles.addBtn}
+                            onClick={() => addToCart(vinyl)}
+                            title="Añadir al carrito"
+                        >
+                            <ShoppingCart size={18} />
+                        </button>
                     </div>
                   </div>
-
                 </div>
               ))}
             </div>
 
-            <button onClick={() => scroll(1)} style={{ ...styles.navButton, right: "-20px" }}>❯</button>
+            {/* Botón Derecha */}
+            <button 
+                onClick={() => scroll('right')} 
+                style={{...styles.scrollButton, right: '-25px'}}
+            >
+                <ChevronRight size={24} />
+            </button>
           </div>
         )}
       </section>
 
+      {/* SECCIÓN DE VENTAJAS (Iconos) */}
+      <section style={styles.features}>
+        <div style={styles.featureCard}>
+          <Disc size={40} color="#00a884" style={{marginBottom: '15px'}} />
+          <h3 style={{fontWeight: 'bold', marginBottom: '10px'}}>Calidad Premium</h3>
+          <p style={{color: '#8696a0'}}>Vinilos revisados uno a uno.</p>
+        </div>
+        <div style={styles.featureCard}>
+          <Star size={40} color="#00a884" style={{marginBottom: '15px'}} />
+          <h3 style={{fontWeight: 'bold', marginBottom: '10px'}}>Ediciones Raras</h3>
+          <p style={{color: '#8696a0'}}>Joyas difíciles de encontrar.</p>
+        </div>
+        <div style={styles.featureCard}>
+          <Music size={40} color="#00a884" style={{marginBottom: '15px'}} />
+          <h3 style={{fontWeight: 'bold', marginBottom: '10px'}}>Pasión Musical</h3>
+          <p style={{color: '#8696a0'}}>De coleccionistas para ti.</p>
+        </div>
+      </section>
+
+      {/* Estilo para ocultar barra de scroll nativa */}
       <style>{`
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
       `}</style>
+
     </div>
   );
 }

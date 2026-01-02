@@ -1,23 +1,70 @@
-import { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import api from "../api/axios";
 import { useNavigate } from "react-router-dom";
+import { Plus, Trash2, Edit, Package } from "lucide-react";
+
+const styles = {
+    container: {
+        minHeight: "100vh",
+        backgroundColor: "#0b141a",
+        color: "#e9edef",
+        padding: "40px",
+        fontFamily: "'Segoe UI', sans-serif",
+    },
+    header: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginBottom: "40px",
+    },
+    title: { fontSize: "2.5rem", fontWeight: "800", color: "#e9edef" },
+    addBtn: {
+        backgroundColor: "#00a884",
+        color: "#fff",
+        border: "none",
+        padding: "12px 24px",
+        borderRadius: "8px",
+        fontWeight: "bold",
+        cursor: "pointer",
+        display: "flex",
+        alignItems: "center",
+        gap: "8px",
+    },
+    tableContainer: {
+        backgroundColor: "#202c33",
+        borderRadius: "15px",
+        overflow: "hidden",
+        border: "1px solid #2a3942",
+        boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
+    },
+    tableHeader: {
+        display: "grid",
+        gridTemplateColumns: "80px 2fr 1.5fr 1fr 1fr 100px",
+        padding: "15px 20px",
+        backgroundColor: "#111b21",
+        color: "#8696a0",
+        fontWeight: "bold",
+        fontSize: "0.9rem",
+    },
+    row: {
+        display: "grid",
+        gridTemplateColumns: "80px 2fr 1.5fr 1fr 1fr 100px",
+        padding: "15px 20px",
+        borderBottom: "1px solid #2a3942",
+        alignItems: "center",
+    },
+    img: { width: "50px", height: "50px", borderRadius: "5px", objectFit: "cover" },
+    actionBtn: { background: "none", border: "none", cursor: "pointer", color: "#ef4444", padding: "5px" }
+};
 
 export default function AdminDashboard() {
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
     const [vinyls, setVinyls] = useState([]);
-    // Estado para el formulario de nuevo vinilo
-    const [form, setForm] = useState({
-        title: "", artist_name: "", price_eur: "", cover_image: "", stock: 10
-    });
 
     useEffect(() => {
-        // Seguridad básica en frontend: si no es admin, fuera.
-        if (!user || user.role !== "admin") {
-            navigate("/");
-            return;
-        }
+        if (!user || user.role !== "admin") { navigate("/"); return; }
         loadVinyls();
     }, [user]);
 
@@ -27,85 +74,43 @@ export default function AdminDashboard() {
     };
 
     const handleDelete = async (id) => {
-        if (confirm("¿Estás seguro de borrar este vinilo para siempre?")) {
-            try {
-                await api.delete(`/vinyls/${id}`);
-                loadVinyls(); // Recargar lista
-            } catch (err) { alert("Error al borrar"); }
+        if (window.confirm("¿Seguro que quieres eliminar este disco?")) {
+            await api.delete(`/vinyls/${id}`);
+            loadVinyls();
         }
     };
 
-    const handleCreate = async (e) => {
-        e.preventDefault();
-        try {
-            await api.post("/vinyls", form);
-            alert("Vinilo añadido correctamente");
-            setForm({ title: "", artist_name: "", price_eur: "", cover_image: "", stock: 10 });
-            loadVinyls();
-        } catch (err) { alert("Error al crear. Revisa los datos."); }
-    };
-
     return (
-        <div className="container mx-auto p-6 text-white">
-            <h1 className="text-3xl font-bold mb-8 text-yellow-500">Panel de Administración</h1>
+        <div style={styles.container}>
+            <div style={styles.header}>
+                <h1 style={styles.title}>Inventario</h1>
+                <button onClick={() => navigate("/admin/new")} style={styles.addBtn}>
+                    <Plus size={20}/> Nuevo Disco
+                </button>
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {/* COLUMNA 1: Formulario de Subida */}
-                <div className="bg-neutral-800 p-6 rounded-lg h-fit">
-                    <h2 className="text-xl font-bold mb-4">Subir Nuevo Vinilo</h2>
-                    <form onSubmit={handleCreate} className="flex flex-col gap-3">
-                        <input
-                            placeholder="Título del álbum"
-                            className="p-2 bg-neutral-700 rounded text-white"
-                            value={form.title} onChange={e => setForm({ ...form, title: e.target.value })} required
-                        />
-                        <input
-                            placeholder="Artista / Banda"
-                            className="p-2 bg-neutral-700 rounded text-white"
-                            value={form.artist_name} onChange={e => setForm({ ...form, artist_name: e.target.value })} required
-                        />
-                        <input
-                            type="number" placeholder="Precio (€)"
-                            className="p-2 bg-neutral-700 rounded text-white"
-                            value={form.price_eur} onChange={e => setForm({ ...form, price_eur: e.target.value })} required
-                        />
-                        <input
-                            placeholder="URL de la Portada"
-                            className="p-2 bg-neutral-700 rounded text-white"
-                            value={form.cover_image} onChange={e => setForm({ ...form, cover_image: e.target.value })}
-                        />
-                        <button type="submit" className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 rounded mt-2">
-                            Añadir al Catálogo
+            <div style={styles.tableContainer}>
+                <div style={styles.tableHeader}>
+                    <span>Imagen</span>
+                    <span>Título</span>
+                    <span>Artista</span>
+                    <span>Precio</span>
+                    <span>Stock</span>
+                    <span>Acciones</span>
+                </div>
+
+                {vinyls.map((v) => (
+                    <div key={v._id} style={styles.row}>
+                        <img src={v.cover_image} alt="" style={styles.img} />
+                        <span style={{fontWeight: "bold"}}>{v.title}</span>
+                        <span style={{color: "#8696a0"}}>{v.artist_name}</span>
+                        <span style={{color: "#00a884", fontWeight: "bold"}}>{v.price_eur} €</span>
+                        <span style={{color: v.stock < 5 ? "#ef4444" : "#e9edef"}}>{v.stock} u.</span>
+                        <button onClick={() => handleDelete(v._id)} style={styles.actionBtn}>
+                            <Trash2 size={20}/>
                         </button>
-                    </form>
-                </div>
-
-                {/* COLUMNA 2 y 3: Lista de Vinilos */}
-                <div className="md:col-span-2 bg-neutral-800 p-6 rounded-lg">
-                    <h2 className="text-xl font-bold mb-4">Inventario Actual ({vinyls.length})</h2>
-                    <div className="overflow-y-auto max-h-[600px] pr-2 space-y-2">
-                        {vinyls.map(v => (
-                            <div key={v._id} className="flex justify-between items-center bg-neutral-900 p-3 rounded border border-neutral-700">
-                                <div className="flex items-center gap-3">
-                                    <img src={v.cover_image || "https://via.placeholder.com/40"} className="w-10 h-10 rounded object-cover" />
-                                    <div>
-                                        <p className="font-bold">{v.title}</p>
-                                        <p className="text-xs text-gray-400">{v.artist_name}</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-center gap-4">
-                                    <span className="text-purple-400 font-bold">{v.price_eur}€</span>
-                                    <button
-                                        onClick={() => handleDelete(v._id)}
-                                        className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-sm"
-                                    >
-                                        Borrar
-                                    </button>
-                                </div>
-                            </div>
-                        ))}
                     </div>
-                </div>
+                ))}
             </div>
         </div>
     );

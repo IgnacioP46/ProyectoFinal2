@@ -5,12 +5,14 @@ const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   role: { type: String, enum: ["user", "admin"], default: "user" },
+  // --- ACTUALIZADO PARA COINCIDIR CON EL FORMULARIO ---
   address: {
-    street: String,
-    number: String,
-    floor: String,
-    city: String,
-    zip: String
+    street: { type: String, default: "" },
+    number: { type: String, default: "" }, // Mejor String por si ponen "12 Bis"
+    floor: { type: String, default: "" },
+    zipCode: { type: String, default: "" }, // Cambiado de 'zip' a 'zipCode'
+    city: { type: String, default: "" },
+    province: { type: String, default: "" } // Añadido
   }
 }, { timestamps: true });
 

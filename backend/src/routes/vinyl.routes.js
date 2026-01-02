@@ -1,9 +1,13 @@
-import { Router } from "express";
-import { getVinyls } from "../controllers/Vinyl.controller.js";
+import express from 'express';
+// --- CORRECCIÓN AQUÍ ---
+// Cambiado de '../controllers/vinylController.js' a '../controllers/Vinyl.controller.js'
+import { getVinyls, getVinylById, createVinyl, deleteVinyl } from '../controllers/Vinyl.controller.js';
 
-const router = Router();
+const router = express.Router();
 
-// Define la ruta base "/" (que será /api/vinyls gracias a app.js)
-router.get("/", getVinyls);
+router.get('/', getVinyls);
+router.post('/', createVinyl);
+router.get('/:id', getVinylById);
+router.delete('/:id', deleteVinyl);
 
 export default router;

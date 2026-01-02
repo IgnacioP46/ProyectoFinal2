@@ -1,236 +1,364 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Search } from 'lucide-react';
+import React, { useState, useEffect, useContext, useRef } from 'react';
+import { Search, ShoppingCart, Filter, ChevronRight, ChevronLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import api from '../api/axios';
-import VinylCard from '../components/VinylCard';
+import { CartContext } from '../context/CartContext';
 
-// --- ESTILOS ADAPTADOS (Full Width + Dark Mode) ---
+// --- ESTILOS ---
 const styles = {
   container: {
-    width: "100%",               // Ocupar todo el ancho
     minHeight: "100vh",
-    padding: "40px 4%",          // Padding lateral porcentual para pantallas grandes
-    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-    backgroundColor: "#0b141a",  // Fondo Oscuro
-    color: "#e9edef",            // Texto Base Claro
-    boxSizing: "border-box",     // Asegura que el padding no rompa el ancho
+    backgroundColor: "#0b141a",
+    color: "#e9edef",
+    fontFamily: "'Segoe UI', sans-serif",
+    padding: "40px 0",
+    overflowX: "hidden"
   },
   header: {
-    marginBottom: "50px",
     textAlign: "center",
+    marginBottom: "40px",
+    padding: "0 5%"
   },
   title: {
     fontSize: "3rem",
     fontWeight: "800",
-    color: "#e9edef",            // TÍTULO BLANCO
+    color: "#e9edef",
     marginBottom: "20px",
   },
-  searchContainer: {
+  searchBox: {
     position: "relative",
     maxWidth: "600px",
     margin: "0 auto",
   },
-  searchInput: {
+  input: {
     width: "100%",
     padding: "15px 20px 15px 50px",
-    borderRadius: "50px",
-    border: "1px solid #2a3942",
     backgroundColor: "#202c33",
-    color: "#e9edef",
-    fontSize: "1rem",
+    border: "1px solid #2a3942",
+    borderRadius: "50px",
+    color: "white",
+    fontSize: "1.1rem",
     outline: "none",
-    boxShadow: "0 4px 15px rgba(0,0,0,0.3)",
-    transition: "border-color 0.2s, box-shadow 0.2s",
+    boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
+    boxSizing: "border-box"
   },
-  sectionTitle: {
+  iconSearch: {
+    position: "absolute",
+    left: "20px",
+    top: "50%",
+    transform: "translateY(-50%)",
+    color: "#8696a0",
+  },
+  // --- SECCIÓN GÉNEROS (SCROLL) ---
+  genreSection: {
+    marginBottom: "40px",
+    display: "flex",
+    flexDirection: "column",
+    position: "relative" // Necesario para posicionar botones
+  },
+  genreHeader: {
+    padding: "0 5%",
+    marginBottom: "15px",
+    display: "flex",
+    alignItems: "center",
+    gap: "10px"
+  },
+  genreTitle: {
     fontSize: "1.8rem",
-    fontWeight: "700",
-    color: "#e9edef",            // TÍTULO SECCIÓN BLANCO
-    marginBottom: "20px",
-    paddingLeft: "15px",
-    borderLeft: "5px solid #00a884",
-    marginTop: "40px",
+    fontWeight: "bold",
+    color: "#e9edef",
+    margin: 0
   },
-  carouselContainer: {
+  // Contenedor relativo para posicionar las flechas
+  carouselWrapper: {
     position: "relative",
     display: "flex",
     alignItems: "center",
-    marginBottom: "30px",
   },
-  carouselTrack: {
+  scrollContainer: {
     display: "flex",
-    gap: "20px",                 // Espacio entre discos
+    gap: "20px",
     overflowX: "auto",
+    padding: "10px 5% 30px 5%", 
     scrollBehavior: "smooth",
-    padding: "10px 0",           // Pequeño padding vertical para sombras
-    scrollbarWidth: "none",
-    msOverflowStyle: "none",
     width: "100%",
+    scrollbarWidth: "none", // Firefox
   },
-  navButton: {
+  // BOTONES DE SCROLL
+  navBtn: {
     position: "absolute",
-    top: "50%",
+    top: "40%",
     transform: "translateY(-50%)",
-    backgroundColor: "rgba(255, 255, 255, 0.9)", // Un poco transparente
-    color: "#0b141a",
-    border: "none",
+    backgroundColor: "rgba(11, 20, 26, 0.8)", // Semi-transparente oscuro
+    color: "#fff",
+    border: "1px solid #2a3942",
     borderRadius: "50%",
     width: "50px",
     height: "50px",
-    fontSize: "1.8rem",
-    cursor: "pointer",
-    zIndex: 20,
-    boxShadow: "0 5px 15px rgba(0,0,0,0.5)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    transition: "transform 0.2s, background-color 0.2s",
+    cursor: "pointer",
+    zIndex: 10,
+    boxShadow: "0 4px 10px rgba(0,0,0,0.5)",
+    transition: "all 0.2s",
   },
+  navBtnLeft: {
+    left: "10px",
+  },
+  navBtnRight: {
+    right: "10px",
+  },
+  // --- GRID (BÚSQUEDA) ---
+  grid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
+    gap: "30px",
+    padding: "0 5%"
+  },
+  // --- TARJETA ---
+  card: {
+    minWidth: "220px", 
+    maxWidth: "220px",
+    backgroundColor: "#202c33",
+    borderRadius: "15px",
+    overflow: "hidden",
+    border: "1px solid #2a3942",
+    transition: "transform 0.2s, box-shadow 0.2s",
+    display: "flex",
+    flexDirection: "column",
+    position: "relative",
+  },
+  cardImg: {
+    width: "100%",
+    aspectRatio: "1/1",
+    objectFit: "cover",
+    borderBottom: "1px solid #2a3942",
+  },
+  cardBody: {
+    padding: "15px",
+    flexGrow: 1,
+    display: "flex",
+    flexDirection: "column",
+  },
+  cardTitle: {
+    fontSize: "1rem",
+    fontWeight: "bold",
+    margin: "0 0 5px 0",
+    color: "#e9edef",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis"
+  },
+  cardArtist: {
+    color: "#8696a0",
+    fontSize: "0.85rem",
+    marginBottom: "15px",
+    flexGrow: 1,
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis"
+  },
+  footer: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  price: {
+    fontSize: "1.1rem",
+    fontWeight: "bold",
+    color: "#00a884",
+  },
+  addBtn: {
+    backgroundColor: "#00a884",
+    color: "#111b21",
+    border: "none",
+    borderRadius: "50%",
+    width: "35px",
+    height: "35px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    cursor: "pointer",
+  }
 };
 
-const adapt = (v) => ({
-  _id: v._id ?? v.id,
-  title: v.title ?? "Sin título",
-  artist_name: v.artist_name ?? v.artist ?? "Desconocido",
-  cover_image: v.cover_image ?? "",
-  price: typeof v.price === "number" ? v.price : Number(v.price ?? v.price_eur ?? 0) || 0,
-  genre: v.genre || 'Varios'
-});
-
-// --- COMPONENTE INTERNO PARA CADA FILA (GENRE ROW) ---
-const GenreRow = ({ genre, vinyls }) => {
-  const rowRef = useRef(null);
+// --- SUB-COMPONENTE PARA CADA FILA DE GÉNERO ---
+const GenreSection = ({ genre, vinyls, addToCart }) => {
+  const scrollRef = useRef(null);
 
   const scroll = (direction) => {
-    if (rowRef.current) {
-      // Ajustamos el scroll para que desplace un poco más al ser pantalla ancha
-      const scrollAmount = window.innerWidth * 0.6;
-      rowRef.current.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
+    if (scrollRef.current) {
+      const { current } = scrollRef;
+      const scrollAmount = 600; // Cuánto desplaza (aprox 3 cartas)
+      
+      if (direction === 'left') {
+        current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      } else {
+        current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
     }
   };
 
   return (
-    <div className="animate-fade-in" style={{ marginBottom: "20px" }}>
-      <h2 style={styles.sectionTitle}>
-        {genre} <span style={{ fontSize: "1rem", color: "#8696a0", fontWeight: "normal" }}>({vinyls.length})</span>
-      </h2>
+    <div style={styles.genreSection}>
+      <div style={styles.genreHeader}>
+        <h2 style={styles.genreTitle}>{genre}</h2>
+        <ChevronRight size={24} color="#00a884" />
+      </div>
 
-      <div style={styles.carouselContainer}>
-        {/* Botón Izquierda (Sticky al borde o flotante) */}
-        <button
-          onClick={() => scroll(-1)}
-          style={{ ...styles.navButton, left: "-25px" }}
-          onMouseEnter={(e) => e.currentTarget.style.transform = "translateY(-50%) scale(1.1)"}
-          onMouseLeave={(e) => e.currentTarget.style.transform = "translateY(-50%) scale(1)"}
+      <div style={styles.carouselWrapper}>
+        {/* Botón Izquierda */}
+        <button 
+            onClick={() => scroll('left')} 
+            style={{...styles.navBtn, ...styles.navBtnLeft}}
+            title="Anterior"
         >
-          ❮
+            <ChevronLeft size={24} />
         </button>
 
-        {/* Pista de Scroll */}
-        <div ref={rowRef} style={styles.carouselTrack} className="hide-scrollbar">
+        {/* Contenedor Scroll */}
+        <div style={styles.scrollContainer} className="hide-scrollbar" ref={scrollRef}>
           {vinyls.map((vinyl) => (
-            <VinylCard key={vinyl._id} vinyl={vinyl} />
+            <div 
+                key={vinyl._id} 
+                style={styles.card}
+                onMouseOver={(e) => {
+                    e.currentTarget.style.transform = "translateY(-5px)";
+                    e.currentTarget.style.boxShadow = "0 10px 20px rgba(0,0,0,0.5)";
+                }}
+                onMouseOut={(e) => {
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.boxShadow = "none";
+                }}
+            >
+              <Link to={`/vinyls/${vinyl._id}`}>
+                <img src={vinyl.cover_image} alt={vinyl.title} style={styles.cardImg} />
+              </Link>
+              <div style={styles.cardBody}>
+                <Link to={`/vinyls/${vinyl._id}`} style={{textDecoration: 'none'}}>
+                    <h3 style={styles.cardTitle} title={vinyl.title}>{vinyl.title}</h3>
+                </Link>
+                <p style={styles.cardArtist}>{vinyl.artist_name}</p>
+                <div style={styles.footer}>
+                  <span style={styles.price}>{vinyl.price_eur} €</span>
+                  <button onClick={() => addToCart(vinyl)} style={styles.addBtn} title="Añadir">
+                    <ShoppingCart size={18} />
+                  </button>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
 
         {/* Botón Derecha */}
-        <button
-          onClick={() => scroll(1)}
-          style={{ ...styles.navButton, right: "-25px" }}
-          onMouseEnter={(e) => e.currentTarget.style.transform = "translateY(-50%) scale(1.1)"}
-          onMouseLeave={(e) => e.currentTarget.style.transform = "translateY(-50%) scale(1)"}
+        <button 
+            onClick={() => scroll('right')} 
+            style={{...styles.navBtn, ...styles.navBtnRight}}
+            title="Siguiente"
         >
-          ❯
+            <ChevronRight size={24} />
         </button>
       </div>
     </div>
   );
 };
 
-// --- COMPONENTE PRINCIPAL CATALOG ---
-const Catalog = () => {
+// --- COMPONENTE PRINCIPAL ---
+export default function Catalogo() {
   const [vinyls, setVinyls] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
+  const { addToCart } = useContext(CartContext);
+  const [genres, setGenres] = useState([]);
 
   useEffect(() => {
-    const fetchVinyls = async () => {
-      try {
-        const { data } = await api.get('/vinyls');
-        const list = (Array.isArray(data) ? data : []).map(adapt);
-        setVinyls(list);
-      } catch (error) {
-        console.error("Error al cargar vinilos:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchVinyls();
+    api.get("/vinyls").then((res) => {
+      setVinyls(res.data);
+      const uniqueGenres = [...new Set(res.data.map(v => v.genre).filter(Boolean))];
+      setGenres(uniqueGenres);
+    });
   }, []);
 
-  // Filtros
-  const filteredVinyls = vinyls.filter(vinyl =>
-    vinyl.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    vinyl.artist_name.toLowerCase().includes(searchTerm.toLowerCase())
+  // Filtrado para búsqueda
+  const filtered = vinyls.filter(v => 
+    v.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+    v.artist_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    (v.genre && v.genre.toLowerCase().includes(searchTerm.toLowerCase()))
   );
-
-  const genres = [...new Set(filteredVinyls.map(v => v.genre))];
-
-  if (loading) {
-    return (
-      <div style={{ ...styles.container, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <div style={{ color: "#00a884", fontSize: "1.2rem" }}>Cargando catálogo...</div>
-      </div>
-    );
-  }
 
   return (
     <div style={styles.container}>
-
-      {/* --- CABECERA --- */}
+      
+      {/* HEADER */}
       <div style={styles.header}>
-        <h1 style={styles.title}>Catálogo Completo</h1>
-        <div style={styles.searchContainer}>
-          <div style={{ position: "absolute", left: "20px", top: "50%", transform: "translateY(-50%)", color: "#a0aec0" }}>
-            <Search size={20} />
-          </div>
-          <input
-            type="text"
-            placeholder="Busca por artista, disco o género..."
-            style={styles.searchInput}
+        <h1 style={styles.title}>Explorar Catálogo</h1>
+        <div style={styles.searchBox}>
+          <Search style={styles.iconSearch} />
+          <input 
+            style={styles.input} 
+            placeholder="Buscar por artista, álbum o género..." 
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            onFocus={(e) => e.target.style.borderColor = "#00a884"}
-            onBlur={(e) => e.target.style.borderColor = "#2a3942"}
           />
         </div>
       </div>
 
-      {/* --- LISTADO POR GÉNEROS --- */}
-      <div>
-        {filteredVinyls.length === 0 ? (
-          <div style={{ textAlign: "center", padding: "60px", color: "#8696a0" }}>
-            <p style={{ fontSize: "3rem", marginBottom: "20px" }}>🤔</p>
-            <p style={{ fontSize: "1.5rem" }}>No se encontraron vinilos.</p>
-          </div>
-        ) : (
-          genres.map((genre) => (
-            <GenreRow
-              key={genre}
-              genre={genre}
-              vinyls={filteredVinyls.filter(v => v.genre === genre)}
-            />
-          ))
-        )}
-      </div>
+      {/* CONTENIDO */}
+      {searchTerm ? (
+        // MODO BÚSQUEDA: Grid
+        <div style={styles.grid}>
+            {filtered.length > 0 ? (
+                filtered.map(vinyl => (
+                    // Reutilizamos la lógica visual de tarjeta aquí directamente para el grid
+                    <div key={vinyl._id} style={styles.card}>
+                      <Link to={`/vinyls/${vinyl._id}`}>
+                        <img src={vinyl.cover_image} alt={vinyl.title} style={styles.cardImg} />
+                      </Link>
+                      <div style={styles.cardBody}>
+                        <h3 style={styles.cardTitle}>{vinyl.title}</h3>
+                        <p style={styles.cardArtist}>{vinyl.artist_name}</p>
+                        <div style={styles.footer}>
+                          <span style={styles.price}>{vinyl.price_eur} €</span>
+                          <button onClick={() => addToCart(vinyl)} style={styles.addBtn}><ShoppingCart size={18} /></button>
+                        </div>
+                      </div>
+                    </div>
+                ))
+            ) : (
+                <div style={{gridColumn: "1 / -1", textAlign: "center", color: "#8696a0", marginTop: "40px"}}>
+                    <Filter size={64} style={{opacity: 0.5, marginBottom: "20px"}}/>
+                    <h2>No encontramos coincidencias.</h2>
+                </div>
+            )}
+        </div>
+      ) : (
+        // MODO NORMAL: Filas por Género con Botones
+        <div>
+            {genres.map(genre => {
+                const genreVinyls = vinyls.filter(v => v.genre === genre);
+                if (genreVinyls.length === 0) return null;
 
+                return (
+                    <GenreSection 
+                        key={genre} 
+                        genre={genre} 
+                        vinyls={genreVinyls} 
+                        addToCart={addToCart} 
+                    />
+                );
+            })}
+        </div>
+      )}
+      
       <style>{`
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .animate-fade-in { animation: fadeIn 0.5s ease-in; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .hide-scrollbar::-webkit-scrollbar {
+             display: none; 
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none; 
+        }
       `}</style>
     </div>
   );
-};
-
-export default Catalog;
+}

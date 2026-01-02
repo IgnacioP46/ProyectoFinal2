@@ -1,8 +1,124 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { ArrowLeft, ShoppingCart, Check, Music, Disc } from "lucide-react";
+import { ArrowLeft, ShoppingCart, Check, Disc, Music } from "lucide-react";
 import api from "../api/axios";
 import { CartContext } from "../context/CartContext";
+
+// --- ESTILOS (Dark Mode Premium) ---
+const styles = {
+  container: {
+    minHeight: "100vh",
+    backgroundColor: "#0b141a",
+    color: "#e9edef",
+    fontFamily: "'Segoe UI', sans-serif",
+    padding: "40px 5%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  contentWrapper: {
+    maxWidth: "1100px",
+    width: "100%",
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    gap: "50px",
+    alignItems: "start",
+  },
+  imageContainer: {
+    backgroundColor: "#202c33",
+    padding: "20px",
+    borderRadius: "20px",
+    boxShadow: "0 20px 50px rgba(0,0,0,0.4)",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    border: "1px solid #2a3942",
+  },
+  image: {
+    width: "100%",
+    maxWidth: "450px",
+    height: "auto",
+    borderRadius: "10px",
+    objectFit: "cover",
+    boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
+  },
+  details: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    paddingTop: "20px",
+  },
+  backLink: {
+    display: "inline-flex",
+    alignItems: "center",
+    gap: "8px",
+    color: "#8696a0",
+    textDecoration: "none",
+    fontWeight: "bold",
+    marginBottom: "20px",
+    fontSize: "0.95rem",
+    cursor: "pointer",
+  },
+  title: {
+    fontSize: "3rem",
+    fontWeight: "800",
+    margin: "0 0 10px 0",
+    lineHeight: "1.1",
+    color: "#e9edef",
+  },
+  artist: {
+    fontSize: "1.5rem",
+    color: "#00a884",
+    margin: "0 0 20px 0",
+    fontWeight: "600",
+  },
+  metaData: {
+    display: "flex",
+    gap: "20px",
+    borderTop: "1px solid #2a3942",
+    borderBottom: "1px solid #2a3942",
+    padding: "20px 0",
+    marginBottom: "20px",
+    color: "#8696a0",
+    fontSize: "0.95rem",
+  },
+  metaItem: {
+    display: "flex",
+    alignItems: "center",
+    gap: "8px",
+  },
+  price: {
+    fontSize: "2.5rem",
+    fontWeight: "bold",
+    color: "#e9edef",
+    marginBottom: "20px",
+  },
+  description: {
+    lineHeight: "1.6",
+    color: "#d1d7db",
+    fontSize: "1.1rem",
+    marginBottom: "30px",
+  },
+  buyBtn: {
+    backgroundColor: "#00a884",
+    color: "#111b21",
+    border: "none",
+    padding: "18px 32px",
+    borderRadius: "50px",
+    fontSize: "1.2rem",
+    fontWeight: "bold",
+    cursor: "pointer",
+    display: "flex",
+    alignItems: "center",
+    gap: "12px",
+    transition: "transform 0.1s, background 0.2s",
+    width: "fit-content",
+    boxShadow: "0 4px 15px rgba(0, 168, 132, 0.4)",
+  },
+  centerMessage: { textAlign: "center" },
+  errorTitle: { color: "#ef4444", fontSize: "2rem", marginBottom: "10px" },
+  errorText: { color: "#8696a0", marginBottom: "20px" }
+};
 
 export default function Product() {
   const { id } = useParams();
@@ -17,136 +133,121 @@ export default function Product() {
   useEffect(() => {
     const fetchVinyl = async () => {
       try {
-        const { data } = await api.get(`/vinyls/${id}`);
-        setVinyl(data);
+        const response = await api.get(`/vinyls/${id}`);
+        
+        // Verificamos si recibimos datos
+        if (!response.data) throw new Error("Datos vacíos");
+        
+        setVinyl(response.data);
       } catch (err) {
-        console.error(err);
-        setError("No se ha podido cargar el vinilo.");
+        console.error("Error Fetch:", err);
+        if (err.response && err.response.status === 404) {
+            setError("Disco no encontrado (404).");
+        } else {
+            setError("Error cargando el producto.");
+        }
       } finally {
         setLoading(false);
       }
     };
-    fetchVinyl();
+
+    if (id) fetchVinyl();
   }, [id]);
 
   const handleBuy = () => {
     addToCart(vinyl);
     setAdded(true);
-    setTimeout(() => setAdded(false), 2000); // Resetear botón a los 2s
+    setTimeout(() => setAdded(false), 2000);
   };
 
-  if (loading) return <div className="flex justify-center items-center h-[50vh] text-xl animate-pulse">Cargando disco... 📀</div>;
-  if (error || !vinyl) return <div className="text-center p-10 text-red-500">{error || "Vinilo no encontrado"}</div>;
-
-  return (
-    <div className="max-w-6xl mx-auto p-6 md:p-10 min-h-screen">
-
-      {/* Botón Volver */}
-      <button
-        onClick={() => navigate(-1)}
-        className="flex items-center gap-2 text-gray-500 hover:text-purple-600 mb-8 transition"
-      >
-        <ArrowLeft size={20} /> Volver al catálogo
-      </button>
-
-      <div className="flex flex-col md:flex-row gap-10 lg:gap-16">
-
-        {/* COLUMNA IZQUIERDA: IMAGEN */}
-        <div className="w-full md:w-1/2 flex justify-center">
-          <div className="relative w-full max-w-[500px] aspect-square bg-gray-100 rounded-xl shadow-2xl overflow-hidden border border-gray-200 group">
-            {vinyl.cover_image ? (
-              <img
-                src={vinyl.cover_image}
-                alt={vinyl.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-            ) : (
-              <div className="w-full h-full flex flex-col items-center justify-center text-gray-300">
-                <Disc size={100} />
-                <p>Sin Portada</p>
-              </div>
-            )}
-
-            {/* Etiqueta de Género Flotante */}
-            {vinyl.genre && (
-              <span className="absolute top-4 right-4 bg-black/70 backdrop-blur-md text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wide">
-                {vinyl.genre}
-              </span>
-            )}
-          </div>
-        </div>
-
-        {/* COLUMNA DERECHA: INFO Y COMPRA */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center">
-
-          <h1 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white leading-tight mb-2">
-            {vinyl.title}
-          </h1>
-
-          <h2 className="text-2xl text-purple-600 dark:text-purple-400 font-medium mb-6 flex items-center gap-2">
-            <Music size={24} /> {vinyl.artist_name}
-          </h2>
-
-          {/* Precio y Stock */}
-          <div className="flex items-center gap-6 mb-8 border-b border-gray-200 dark:border-gray-700 pb-8">
-            <span className="text-4xl font-bold text-gray-900 dark:text-gray-100">
-              {Number(vinyl.price || vinyl.price_eur).toFixed(2)}€
-            </span>
-
-            <div className={`px-3 py-1 rounded text-sm font-bold border ${vinyl.stock > 0 ? 'border-green-500 text-green-600 bg-green-50' : 'border-red-500 text-red-600 bg-red-50'}`}>
-              {vinyl.stock > 0 ? 'En Stock' : 'Agotado'}
-            </div>
-          </div>
-
-          {/* Detalles Técnicos */}
-          <div className="grid grid-cols-2 gap-4 mb-8 text-sm text-gray-600 dark:text-gray-400">
-            <div className="flex flex-col">
-              <span className="font-bold text-gray-900 dark:text-white">Año</span>
-              <span>{vinyl.year || "Desconocido"}</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-gray-900 dark:text-white">Estado</span>
-              <span>{vinyl.condition || "Nuevo (Mint)"}</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-gray-900 dark:text-white">Sello</span>
-              <span>{vinyl.label || "Murmullo Ed."}</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-gray-900 dark:text-white">Formato</span>
-              <span>LP, Vinilo 180g</span>
-            </div>
-          </div>
-
-          {/* Descripción (Si existe) */}
-          <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
-            {vinyl.description || "Un disco imprescindible para cualquier colección. Edición revisada y con sonido de alta fidelidad."}
-          </p>
-
-          {/* BOTÓN DE COMPRA */}
-          <div className="flex gap-4">
-            <button
-              onClick={handleBuy}
-              disabled={vinyl.stock <= 0 || added}
-              className={`flex-1 py-4 px-8 rounded-full font-bold text-lg flex items-center justify-center gap-2 transition-all transform hover:scale-[1.02] shadow-xl ${added
-                  ? "bg-green-600 text-white"
-                  : "bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200"
-                } ${vinyl.stock <= 0 ? "opacity-50 cursor-not-allowed" : ""}`}
-            >
-              {added ? (
-                <> <Check /> ¡Añadido! </>
-              ) : (
-                <> <ShoppingCart /> Añadir al carrito </>
-              )}
-            </button>
-          </div>
-
-          <p className="mt-4 text-xs text-center text-gray-400">
-            Envío gratis en pedidos superiores a 60€ · Devolución garantizada
-          </p>
-
+  if (loading) return <div style={styles.container}><h2 style={{color:"#8696a0"}}>Cargando...</h2></div>;
+  
+  if (error || !vinyl) return (
+      <div style={styles.container}>
+        <div style={styles.centerMessage}>
+          <h1 style={styles.errorTitle}>Error</h1>
+          <p style={styles.errorText}>{error}</p>
+          <Link to="/catalogo" style={{...styles.buyBtn, textDecoration:'none', margin:'0 auto'}}>
+            <ArrowLeft /> Volver
+          </Link>
         </div>
       </div>
+  );
+
+  // --- LÓGICA DE SEGURIDAD PARA NOMBRES DE CAMPOS ---
+  // Esto busca el dato aunque tenga nombre diferente en la BD
+  const title = vinyl.title || vinyl.titulo || "Sin título";
+  const artist = vinyl.artist_name || vinyl.artista || vinyl.artist || "Artista desconocido";
+  const image = vinyl.cover_image || vinyl.imagen || vinyl.img || "https://via.placeholder.com/500";
+  const price = vinyl.price_eur || vinyl.price || vinyl.precio || 0;
+  const genre = vinyl.genre || vinyl.genero || "Variado";
+  const year = vinyl.year || vinyl.año || vinyl.anio || "????";
+  const stock = vinyl.stock || vinyl.existencias || 0;
+  const description = vinyl.description || vinyl.descripcion || "Sin descripción disponible.";
+
+  return (
+    <div style={{...styles.container, display: "block"}}>
+      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+        
+        <Link to="/catalogo" style={styles.backLink}>
+            <ArrowLeft size={18} /> Volver al catálogo
+        </Link>
+
+        {/* DEBUG: Si esto muestra datos, la conexión funciona */}
+        {/* <pre style={{color:'lime', background:'#000', padding:10}}>{JSON.stringify(vinyl, null, 2)}</pre> */}
+
+        <div style={styles.contentWrapper}>
+            {/* Imagen */}
+            <div style={styles.imageContainer}>
+                <img src={image} alt={title} style={styles.image} />
+            </div>
+
+            {/* Detalles */}
+            <div style={styles.details}>
+                <h1 style={styles.title}>{title}</h1>
+                <h2 style={styles.artist}>{artist}</h2>
+
+                <div style={styles.metaData}>
+                    <div style={styles.metaItem}><Disc size={18}/> {genre}</div>
+                    <div style={styles.metaItem}><Music size={18}/> {year}</div>
+                    {stock > 0 ? (
+                         <div style={{...styles.metaItem, color: "#00a884", fontWeight: "bold"}}>
+                            <Check size={18}/> En Stock ({stock})
+                         </div>
+                    ) : (
+                        <div style={{...styles.metaItem, color: "#ef4444", fontWeight: "bold"}}>
+                            Agotado
+                         </div>
+                    )}
+                </div>
+
+                <div style={styles.price}>{Number(price).toFixed(2)} €</div>
+
+                <p style={styles.description}>{description}</p>
+
+                <button 
+                    onClick={handleBuy} 
+                    disabled={stock <= 0}
+                    style={{
+                        ...styles.buyBtn, 
+                        backgroundColor: added ? "#202c33" : "#00a884",
+                        color: added ? "#00a884" : "#111b21",
+                        border: added ? "1px solid #00a884" : "none"
+                    }}
+                >
+                    {added ? (<>¡Añadido! <Check /></>) : (<>Añadir al Carrito <ShoppingCart /></>)}
+                </button>
+            </div>
+        </div>
+      </div>
+      
+      {/* Responsive */}
+      <style>{`
+        @media (max-width: 768px) {
+            div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 30px !important; }
+            img { width: 100% !important; }
+        }
+      `}</style>
     </div>
   );
 }
