@@ -1,122 +1,105 @@
-import React, { useContext, useState, useEffect } from "react";
-import { CartContext } from "../context/CartContext";
-import { AuthContext } from "../context/AuthContext";
-import { useNavigate } from "react-router-dom";
-import { CreditCard, ShieldCheck, MapPin } from 'lucide-react';
-import api from "../api/axios";
+import React, { useContext, useState, useEffect } from 'react';
+import { CartContext } from '../context/CartContext';
+import { AuthContext } from '../context/AuthContext'; // Importamos AuthContext
+import { useNavigate } from 'react-router-dom';
+import api from '../api/axios';
 
-const styles = {
-  container: {
-    minHeight: "100vh",
-    backgroundColor: "#0b141a",
-    color: "#e9edef",
-    display: "flex",
-    justifyContent: "center",
-    padding: "40px 20px",
-    fontFamily: "'Segoe UI', sans-serif",
-  },
-  card: {
-    backgroundColor: "#202c33",
-    padding: "40px",
-    borderRadius: "20px",
-    width: "100%",
-    maxWidth: "600px",
-    border: "1px solid #2a3942",
-    boxShadow: "0 20px 50px rgba(0,0,0,0.5)",
-  },
-  title: { fontSize: "2rem", marginBottom: "30px", borderBottom: "1px solid #2a3942", paddingBottom: "15px" },
-  summaryRow: { display: "flex", justifyContent: "space-between", marginBottom: "15px", fontSize: "1.1rem" },
-  totalRow: { display: "flex", justifyContent: "space-between", marginTop: "20px", paddingTop: "20px", borderTop: "1px solid #2a3942", fontSize: "1.5rem", fontWeight: "bold", color: "#00a884" },
-  payBtn: {
-    width: "100%",
-    padding: "16px",
-    backgroundColor: "#00a884",
-    color: "#fff",
-    border: "none",
-    borderRadius: "50px",
-    fontSize: "1.2rem",
-    fontWeight: "bold",
-    cursor: "pointer",
-    marginTop: "30px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    gap: "10px",
-  }
-};
-
-export default function Checkout() {
+const Checkout = () => {
   const { cart, total, clearCart } = useContext(CartContext);
-  const { user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext); // Sacamos el usuario
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
 
+  // Inicializamos el formulario. 
+  // Si existe "user.address", usamos esos datos. Si no, string vacío.
+  const [formData, setFormData] = useState({
+    street: user?.address?.street || '',
+    city: user?.address?.city || '',
+    zipCode: user?.address?.zipCode || '',
+  });
+
+  // Este useEffect asegura que si el usuario tarda en cargar, se rellene cuando esté listo
   useEffect(() => {
-    if (cart.length === 0) navigate("/catalogo");
-  }, [cart, navigate]);
+    if (user && user.address) {
+      setFormData({
+        street: user.address.street || '',
+        city: user.address.city || '',
+        zipCode: user.address.zipCode || ''
+      });
+    }
+  }, [user]);
 
-  const handleFinalize = async () => {
-    setLoading(true);
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
-      // Aquí iría la lógica real de Stripe/PayPal
-      const orderPayload = {
-          items: cart,
-          total: total,
-          user_id: user ? (user.id || user._id) : null,
-          guest_data: user ? null : { name: "Invitado desde Checkout" } // Simplificado para el ejemplo
-      };
-      
-      await api.post("/orders", orderPayload);
-      
-      setTimeout(() => {
-        alert("¡Pago procesado correctamente! Gracias por tu música.");
-        clearCart();
-        navigate("/profile");
-      }, 1500);
-    } catch (err) {
-      alert("Error al procesar el pago.");
-      setLoading(false);
+      await api.post('/orders', {
+        items: cart,
+        total_price: total,
+        shipping_address: formData // Enviamos la dirección del formulario (que ya está rellena)
+      });
+      clearCart();
+      alert('Pedido realizado con éxito');
+      navigate('/profile');
+    } catch (error) {
+      console.error(error);
+      alert('Error al procesar el pedido');
     }
   };
 
+  if (cart.length === 0) return <h2 className="text-center mt-10 text-white">El carrito está vacío</h2>;
+
   return (
-    <div style={styles.container}>
-      <div style={styles.card}>
-        <h1 style={styles.title}>Confirmar Pago</h1>
+    <div className="min-h-screen bg-[#0b141a] text-white flex justify-center py-10">
+      <form onSubmit={handleSubmit} className="bg-[#202c33] p-8 rounded-lg w-full max-w-md border border-[#2a3942]">
+        <h2 className="text-2xl font-bold mb-6 text-center text-[#00a884]">Finalizar Compra</h2>
         
-        <div style={{marginBottom: "30px"}}>
-            <h3 style={{color: "#8696a0", marginBottom: "10px", fontSize: "0.9rem", textTransform: "uppercase"}}>Dirección de Envío</h3>
-            <div style={{display: "flex", alignItems: "center", gap: "10px", color: "#e9edef"}}>
-                <MapPin size={20} color="#00a884"/>
-                <span>{user ? user.address?.street || "Calle Principal 123, Madrid" : "Dirección introducida anteriormente"}</span>
-            </div>
+        <div className="mb-4">
+          <label className="block text-gray-400 mb-2">Dirección</label>
+          <input 
+            name="street" 
+            type="text" 
+            value={formData.street} 
+            onChange={handleChange}
+            required 
+            className="w-full p-2 rounded bg-[#2a3942] text-white border-none focus:ring-2 focus:ring-[#00a884]"
+          />
         </div>
 
-        <h3 style={{color: "#8696a0", marginBottom: "15px", fontSize: "0.9rem", textTransform: "uppercase"}}>Resumen</h3>
-        {cart.map(item => (
-            <div key={item._id} style={styles.summaryRow}>
-                <span>{item.title} <span style={{color: "#8696a0"}}>x{item.qty}</span></span>
-                <span>{(item.price * item.qty).toFixed(2)} €</span>
-            </div>
-        ))}
-        
-        <div style={styles.totalRow}>
-            <span>Total a pagar</span>
-            <span>{total.toFixed(2)} €</span>
+        <div className="mb-4">
+          <label className="block text-gray-400 mb-2">Ciudad</label>
+          <input 
+            name="city" 
+            type="text" 
+            value={formData.city} 
+            onChange={handleChange}
+            required 
+            className="w-full p-2 rounded bg-[#2a3942] text-white border-none focus:ring-2 focus:ring-[#00a884]"
+          />
         </div>
 
-        <button 
-            onClick={handleFinalize} 
-            style={{...styles.payBtn, opacity: loading ? 0.7 : 1}} 
-            disabled={loading}
-        >
-            {loading ? "Procesando..." : <><CreditCard /> Pagar {total.toFixed(2)} €</>}
+        <div className="mb-6">
+          <label className="block text-gray-400 mb-2">Código Postal</label>
+          <input 
+            name="zipCode" 
+            type="text" 
+            value={formData.zipCode} 
+            onChange={handleChange}
+            required 
+            className="w-full p-2 rounded bg-[#2a3942] text-white border-none focus:ring-2 focus:ring-[#00a884]"
+          />
+        </div>
+
+        <div className="text-xl font-bold mb-6 text-center">Total: {total.toFixed(2)} €</div>
+
+        <button type="submit" className="w-full bg-[#00a884] hover:bg-[#008f6f] text-white font-bold py-2 px-4 rounded transition-colors">
+          Confirmar y Pagar
         </button>
-
-        <p style={{textAlign: "center", marginTop: "20px", color: "#8696a0", fontSize: "0.8rem", display: "flex", justifyContent: "center", gap: "5px"}}>
-            <ShieldCheck size={14}/> Pagos 100% seguros y encriptados.
-        </p>
-      </div>
+      </form>
     </div>
   );
-}
+};
+
+export default Checkout;

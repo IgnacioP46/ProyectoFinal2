@@ -1,10 +1,27 @@
-const jwt = require("jsonwebtoken");
-module.exports = (roles = []) => (req,res,next)=>{
-  const token = (req.headers.authorization||"").replace(/^Bearer /,"");
-  if(!token) return res.status(401).json({error:"No token"});
-  try{
-    const payload = jwt.verify(token, process.env.JWT_SECRET);
-    if (roles.length && !roles.includes(payload.role)) return res.status(403).json({error:"Forbidden"});
-    req.user = payload; next();
-  }catch(e){ return res.status(401).json({error:"Invalid token"}); }
+import jwt from "jsonwebtoken";
+
+// Versión simplificada: Funciona directamente sin pedir roles
+const authMiddleware = (req, res, next) => {
+    try {
+        // 1. Limpiamos el token (quitamos "Bearer ")
+        const token = (req.headers.authorization || "").replace(/^Bearer\s+/, "");
+
+        if (!token) {
+            return res.status(401).json({ message: "No hay token de acceso" });
+        }
+
+        // 2. Verificamos la firma
+        const secret = process.env.JWT_SECRET || "tu_palabra_secreta_si_no_esta_en_env";
+        const decoded = jwt.verify(token, secret);
+
+        // 3. Inyectamos el usuario en la petición y PASAMOS (next)
+        req.user = decoded;
+        next(); // <--- ¡ESTO ES LO QUE FALTABA! El semáforo en verde.
+
+    } catch (error) {
+        console.log("Error de Auth:", error.message);
+        return res.status(401).json({ message: "Token inválido o expirado" });
+    }
 };
+
+export default authMiddleware;

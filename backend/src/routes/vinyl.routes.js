@@ -1,13 +1,25 @@
-import express from 'express';
-// --- CORRECCIÓN AQUÍ ---
-// Cambiado de '../controllers/vinylController.js' a '../controllers/Vinyl.controller.js'
-import { getVinyls, getVinylById, createVinyl, deleteVinyl } from '../controllers/Vinyl.controller.js';
+import { Router } from 'express';
+// Importamos updateVinyl del controlador (donde pusimos los chivatos/logs)
+import { 
+    getVinyls, 
+    getVinylById, 
+    createVinyl, 
+    deleteVinyl, 
+    updateVinyl 
+} from '../controllers/Vinyl.controller.js';
 
-const router = express.Router();
+import auth from '../middleware/auth.js'; 
 
+const router = Router();
+
+// --- RUTAS PÚBLICAS ---
 router.get('/', getVinyls);
-router.post('/', createVinyl);
 router.get('/:id', getVinylById);
-router.delete('/:id', deleteVinyl);
+
+// --- RUTAS PROTEGIDAS (ADMIN) ---
+router.post('/', auth, createVinyl);
+router.delete('/:id', auth, deleteVinyl);
+
+router.put('/:id', auth, updateVinyl); 
 
 export default router;

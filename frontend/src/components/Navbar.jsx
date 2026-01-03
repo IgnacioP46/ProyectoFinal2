@@ -1,11 +1,18 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
-// He añadido el icono 'User' a la importación
-import { ShoppingBag, Disc, Home, Search, User } from 'lucide-react'; 
+import { AuthContext } from '../context/AuthContext'; 
+import { ShoppingBag, Disc, Home, Search, User, LogOut, LayoutDashboard } from 'lucide-react'; // <--- Añadido LayoutDashboard
 
 export default function Navbar() {
   const { totalItems } = useContext(CartContext);
+  const { user, logout } = useContext(AuthContext); 
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout(); 
+    navigate('/'); 
+  };
 
   const styles = {
     nav: {
@@ -31,18 +38,25 @@ export default function Navbar() {
     },
     links: {
       display: 'flex',
-      gap: '25px',
+      gap: '20px',
       alignItems: 'center',
     },
     link: {
       textDecoration: 'none',
       color: '#e9edef',
-      fontWeight: '500',
       display: 'flex',
       alignItems: 'center',
-      gap: '5px',
+      gap: '8px',
       transition: 'color 0.3s',
-      cursor: 'pointer'
+      cursor: 'pointer', 
+      background: 'none', 
+      border: 'none',
+      fontSize: '1rem', 
+    },
+    // Estilo especial para el botón de Admin
+    adminLink: {
+      color: '#ef4444', // Rojo o Naranja para destacar
+      fontWeight: 'bold'
     },
     cartContainer: {
       position: 'relative',
@@ -52,26 +66,21 @@ export default function Navbar() {
     badge: {
       position: 'absolute',
       top: '-8px',
-      right: '-10px',
-      backgroundColor: '#ef4444',
+      right: '-8px',
+      backgroundColor: '#00a884',
       color: 'white',
       borderRadius: '50%',
-      width: '20px',
-      height: '20px',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
+      padding: '2px 6px',
       fontSize: '0.75rem',
       fontWeight: 'bold',
-      boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
-    }
+    },
   };
 
   return (
     <nav style={styles.nav}>
       {/* LOGO */}
       <Link to="/" style={styles.logo}>
-        <Disc size={28} /> MurmulloRecords
+        <Disc size={28} /> Discos Rizos
       </Link>
 
       {/* ENLACES */}
@@ -84,25 +93,48 @@ export default function Navbar() {
           <Search size={20} /> <span className="hide-mobile">Catálogo</span>
         </Link>
 
-        {/* --- NUEVO BOTÓN DE LOGIN --- */}
-        <Link to="/login" style={styles.link}>
-          <User size={20} /> <span className="hide-mobile">Ingresar</span>
-        </Link>
+        {/* LÓGICA CONDICIONAL: USUARIO LOGUEADO */}
+        {user ? (
+          <>
+            {/* --- BOTÓN DE ADMINISTRADOR (SOLO SI ES ADMIN) --- */}
+            {user.role === 'admin' && (
+                <Link to="/admin" style={{...styles.link, ...styles.adminLink}}>
+                    <LayoutDashboard size={20} />
+                    <span className="hide-mobile">Panel Admin</span>
+                </Link>
+            )}
+
+            {/* Enlace al Perfil */}
+            <Link to="/profile" style={styles.link}>
+               <User size={20} color="#00a884" />
+               <span className="hide-mobile">{user.name}</span>
+            </Link>
+            
+            {/* Botón Salir */}
+            <button onClick={handleLogout} style={styles.link}>
+               <LogOut size={20} /> 
+               <span className="hide-mobile">Salir</span>
+            </button>
+          </>
+        ) : (
+          // SI NO ESTÁS LOGUEADO
+          <Link to="/login" style={styles.link}>
+            <User size={20} /> <span className="hide-mobile">Ingresar</span>
+          </Link>
+        )}
 
         {/* ICONO DEL CARRITO */}
         <Link to="/cart" style={{...styles.link, ...styles.cartContainer}}>
           <ShoppingBag size={24} />
-          {totalItems > 0 && (
-            <span style={styles.badge}>
-              {totalItems}
-            </span>
-          )}
+          {totalItems > 0 && <span style={styles.badge}>{totalItems}</span>}
         </Link>
       </div>
 
       <style>{`
         @media (max-width: 768px) {
-          .hide-mobile { display: none; }
+          .hide-mobile {
+            display: none;
+          }
         }
       `}</style>
     </nav>

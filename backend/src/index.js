@@ -1,24 +1,32 @@
 import express from 'express';
-import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
+// Importar conexión a DB
+import connectDB from './config/db.js'; 
+
+// Importar Rutas
 import vinylRoutes from './routes/vinyl.routes.js'; 
-// --- NUEVO IMPORT ---
 import authRoutes from './routes/auth.routes.js'; 
+import orderRoutes from './routes/order.routes.js'; 
+import userRoutes from './routes/user.routes.js'; 
 
 dotenv.config();
+
+// Conectar a la base de datos
+const mongoURI = process.env.MONGODB_URI;
+connectDB(mongoURI);
+
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-// ... (código de conexión a MongoDB que ya tienes) ...
-
-// Rutas
+// Definir endpoints
 app.use('/api/vinyls', vinylRoutes);
-// --- NUEVA RUTA ---
-app.use('/api/auth', authRoutes); // Esto habilitará http://localhost:3000/api/auth/register
+app.use('/api/auth', authRoutes);
+app.use('/api/orders', orderRoutes); 
+app.use('/api/users', userRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

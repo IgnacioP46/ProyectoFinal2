@@ -1,26 +1,41 @@
 import mongoose from "mongoose";
 
-const orderSchema = new mongoose.Schema({
-  user: { type: mongoose.Schema.Types.ObjectId, ref: "User" }, // Null si es invitado
-  guest_info: { // Datos si no está registrado
-    name: String,
-    email: String,
-    address: {
+const orderSchema = new mongoose.Schema(
+  {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
+    items: [
+      {
+        vinyl: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Vinyl",
+          required: true,
+        },
+        quantity: { type: Number, required: true, default: 1 },
+        price_at_purchase: { type: Number, required: true }, // Guardamos el precio del momento de compra
+      },
+    ],
+    total_price: {
+      type: Number,
+      required: true,
+    },
+    status: {
+      type: String,
+      enum: ["pending", "completed", "shipped", "cancelled"],
+      default: "completed",
+    },
+    shipping_address: {
       street: String,
       city: String,
-      zip: String,
-      floor: String
+      zipCode: String,
     }
   },
-  items: [{
-    vinyl_id: { type: mongoose.Schema.Types.ObjectId, ref: "Vinyl" },
-    title: String,
-    price: Number,
-    quantity: Number
-  }],
-  total: Number,
-  status: { type: String, default: "paid" }, // paid, shipped, delivered
-  date: { type: Date, default: Date.now }
-});
+  {
+    timestamps: true,
+  }
+);
 
 export const Order = mongoose.model("Order", orderSchema);
