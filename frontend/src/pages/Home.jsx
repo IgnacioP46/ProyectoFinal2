@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Disc, Music, Star, ChevronLeft, ChevronRight, ShoppingCart } from 'lucide-react';
 import axios from 'axios';
 import { CartContext } from '../context/CartContext';
-
+import heroImage from "../assets/hero-image.png";
 const styles = {
   container: {
     fontFamily: "'Segoe UI', sans-serif",
@@ -15,12 +15,12 @@ const styles = {
   // --- HERO SECTION ---
   hero: {
     position: 'relative',
-    height: '70vh', // Un poco más corto para ver el slider antes
+    height: '70vh',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'center',
-    backgroundImage: 'url("https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=2070&auto=format&fit=crop")',
+    backgroundImage: 'url("' + heroImage + '")',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   },
@@ -93,8 +93,8 @@ const styles = {
     overflowX: 'auto',
     scrollBehavior: 'smooth',
     padding: '20px 5px',
-    scrollbarWidth: 'none', // Firefox
-    msOverflowStyle: 'none',  // IE
+    scrollbarWidth: 'none',
+    msOverflowStyle: 'none',
   },
   scrollButton: {
     backgroundColor: 'rgba(32, 44, 51, 0.8)',
@@ -218,7 +218,7 @@ export default function Home() {
   const scroll = (direction) => {
     const { current } = scrollRef;
     if (current) {
-      const scrollAmount = 300; // Cuánto se mueve al hacer click
+      const scrollAmount = 300;
       current.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,
         behavior: 'smooth',

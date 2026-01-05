@@ -1,0 +1,214 @@
+:root {
+    --gold-color: #d4af37; 
+}
+
+.cart-container {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+}
+
+.cart-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+}
+
+.empty-cart {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #666;
+    margin-top: 50px;
+}
+
+/* --- ESTILOS DE LA TABLA (ESCRITORIO) --- */
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.cart-table th {
+    background-color: #f8f9fa;
+    padding: 15px;
+    text-align: left;
+    font-weight: bold;
+    color: #555;
+}
+
+.cart-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+/* Estilos de producto */
+.product-cell {
+    display: flex;
+    align-items: center;
+}
+
+.cart-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 20px;
+    background-color: #eee; /* Placeholder color */
+}
+
+.product-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.product-info p {
+    margin: 0;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* Botones de cantidad y eliminar */
+.quantity-btn {
+    background-color: #eee;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+    margin: 0 5px;
+}
+
+.remove-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.remove-btn:hover {
+    background-color: #d93636;
+}
+
+/* Resumen del carrito */
+.cart-summary {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: right;
+    max-width: 400px;
+    margin-left: auto;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.summary-total {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    border-top: 2px solid #eee;
+    padding-top: 15px;
+}
+
+.checkout-btn {
+    background-color: var(--gold-color);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.checkout-btn:hover {
+    background-color: #b08d2b;
+}
+
+
+/* --- RESPONSIVIDAD (MÓVIL) --- */
+@media (max-width: 768px) {
+    /* Ocultamos la cabecera de la tabla */
+    .cart-table thead {
+        display: none;
+    }
+
+    /* Convertimos las filas en "tarjetas" */
+    .cart-table, .cart-table tbody, .cart-table tr, .cart-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .cart-table tr {
+        margin-bottom: 20px;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 10px;
+        background: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    /* Las celdas se convierten en filas flex */
+    .cart-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: right;
+        padding: 10px 5px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    /* Usamos el atributo data-label para poner el título a la izquierda */
+    .cart-table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        text-align: left;
+        margin-right: auto;
+        color: #555;
+    }
+
+    /* Ajustes específicos para la celda de producto */
+    .product-cell {
+        flex-direction: row; /* Mantener imagen y texto juntos */
+        justify-content: flex-start;
+        text-align: left;
+    }
+    .product-cell::before {
+        display: none; /* No mostrar etiqueta "Producto" aquí */
+    }
+    .cart-image {
+        width: 60px;
+        height: 60px;
+    }
+    
+    /* Ajuste para el botón de eliminar */
+    td:last-child {
+        border-bottom: none;
+        justify-content: center;
+    }
+    .remove-btn {
+        width: 100%;
+    }
+
+    /* Resumen centrado en móvil */
+    .cart-summary {
+        text-align: center;
+        margin: 0 auto;
+    }
+}

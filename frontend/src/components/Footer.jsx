@@ -116,13 +116,14 @@ export default function Footer() {
 
         .copyright {
           font-weight: bold;
-          color: white;
+          color: #fcfcfcff;
           font-size: 0.9rem;
         }
 
         .legal-links {
           display: flex;
           gap: 15px;
+          color: #fcfcfcff;
         }
         .legal-links a:hover { color: #a78bfa; }
 
