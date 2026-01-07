@@ -19,7 +19,7 @@ const styles = {
     padding: '40px',
     borderRadius: '15px',
     width: '100%',
-    maxWidth: '500px', // Un poco más ancho para la dirección
+    maxWidth: '500px',
     border: '1px solid #2a3942',
   },
   title: {
@@ -46,7 +46,7 @@ const styles = {
   // Grid para inputs pequeños
   row: {
     display: 'grid',
-    gridTemplateColumns: '1fr 1fr 1fr', // 3 columnas iguales
+    gridTemplateColumns: '1fr 1fr 1fr',
     gap: '15px',
   },
   inputGroup: {

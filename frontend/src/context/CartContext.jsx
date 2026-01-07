@@ -80,7 +80,7 @@ export const CartProvider = ({ children }) => {
         const newProduct = {
           _id: product._id,
           title: cleanTitle,
-          price: cleanPrice, // Aquí guardamos el precio ya limpio
+          price: cleanPrice,
           image: cleanImage,
           artist: product.artist_name || product.artista || "Artista Desconocido",
           quantity: 1

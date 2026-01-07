@@ -1,5 +1,4 @@
 import { Router } from "express";
-// --- CORRECCIÓN AQUÍ: Añadida la 's' y las llaves { } ---
 import { User } from "../models/User.models.js"; 
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";

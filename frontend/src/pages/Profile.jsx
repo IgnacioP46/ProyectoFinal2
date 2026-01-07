@@ -56,7 +56,7 @@ const styles = {
         color: "#8696a0",
     },
     logoutBtn: {
-        backgroundColor: "rgba(239, 68, 68, 0.1)", // Rojo suave transparente
+        backgroundColor: "rgba(239, 68, 68, 0.1)",
         color: "#ef4444",
         border: "1px solid #ef4444",
         padding: "10px 20px",

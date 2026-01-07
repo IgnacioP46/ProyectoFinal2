@@ -1,8 +1,7 @@
-// src/api/axios.js
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:3000/api", // Asegúrate que coincide con tu backend
+  baseURL: "http://localhost:3000/api",
 });
 
 // Interceptor: Antes de cada petición, inyecta el token si existe

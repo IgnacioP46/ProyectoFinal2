@@ -17,7 +17,7 @@ import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import Product from './pages/Product';
 import AdminDashboard from './pages/AdminDashboard';
-import UserProfile from './pages/UserProfile'; // <--- NUEVO IMPORT
+import UserProfile from './pages/UserProfile';
 
 function App() {
   return (
@@ -39,10 +39,7 @@ function App() {
               <Route path="/vinyls/:id" element={<Product />} />
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/admin" element={<AdminDashboard />} />
-              
-              {/* --- NUEVA RUTA DE PERFIL --- */}
               <Route path="/profile" element={<UserProfile />} />
-
               <Route path="*" element={<div className="text-center mt-20"><h1>404 - Página no encontrada</h1></div>} />
             </Routes>
           </div>

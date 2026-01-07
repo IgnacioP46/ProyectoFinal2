@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { CartContext } from '../context/CartContext';
-import { AuthContext } from '../context/AuthContext'; // Importamos AuthContext
+import { AuthContext } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import api from '../api/axios';
 
@@ -38,7 +38,7 @@ const Checkout = () => {
       await api.post('/orders', {
         items: cart,
         total_price: total,
-        shipping_address: formData // Enviamos la dirección del formulario (que ya está rellena)
+        shipping_address: formData
       });
       clearCart();
       alert('Pedido realizado con éxito');

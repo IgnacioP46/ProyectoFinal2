@@ -5,15 +5,12 @@ import { fileURLToPath } from "url";
 import { parse } from "csv-parse";
 import mongoose from "mongoose";
 
-// --- CAMBIO AQUÍ: Añadido .models ---
 import { Artist } from "../src/models/Artist.models.js";
 import { Vinyl } from "../src/models/Vinyl.models.js";
-// ------------------------------------
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// ... (El resto del código sigue igual) ...
 const { MONGODB_URI } = process.env;
 if (!MONGODB_URI) {
   console.error("❌ Falta MONGODB_URI en backend/.env");
@@ -103,7 +100,7 @@ async function seedArtists(artistRows) {
 async function main() {
   try {
     console.log("🔌 Conectando a MongoDB…");
-    await mongoose.connect(MONGODB_URI); // Eliminado timeout opcional para simplificar
+    await mongoose.connect(MONGODB_URI);
     console.log("✅ Conectado");
 
     const [artistRows, vinylRows] = await Promise.all([
@@ -111,7 +108,6 @@ async function main() {
       readCSV(VINYLS_CSV),
     ]);
 
-    // Snapshot opcional (puedes quitarlo si da problemas de permisos)
     try {
       ensureDir(SNAP_DIR);
       fs.writeFileSync(path.join(SNAP_DIR, "artists_snapshot.json"), JSON.stringify(artistRows, null, 2));

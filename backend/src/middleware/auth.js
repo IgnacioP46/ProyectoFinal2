@@ -1,6 +1,5 @@
 import jwt from "jsonwebtoken";
 
-// Versión simplificada: Funciona directamente sin pedir roles
 const authMiddleware = (req, res, next) => {
     try {
         // 1. Limpiamos el token (quitamos "Bearer ")
@@ -16,7 +15,7 @@ const authMiddleware = (req, res, next) => {
 
         // 3. Inyectamos el usuario en la petición y PASAMOS (next)
         req.user = decoded;
-        next(); // <--- ¡ESTO ES LO QUE FALTABA! El semáforo en verde.
+        next();
 
     } catch (error) {
         console.log("Error de Auth:", error.message);

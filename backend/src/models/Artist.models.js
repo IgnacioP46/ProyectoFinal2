@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const artistSchema = new mongoose.Schema({
-  artist_code: { type: String, unique: true }, // Importante para que funcione el seed
+  artist_code: { type: String, unique: true },
   name: { type: String, required: true, text: true },
 }, { timestamps: true });
 

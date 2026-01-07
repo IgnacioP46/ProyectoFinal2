@@ -54,7 +54,7 @@ const styles = {
     marginBottom: "40px",
     display: "flex",
     flexDirection: "column",
-    position: "relative" // Necesario para posicionar botones
+    position: "relative"
   },
   genreHeader: {
     padding: "0 5%",
@@ -82,14 +82,14 @@ const styles = {
     padding: "10px 5% 30px 5%", 
     scrollBehavior: "smooth",
     width: "100%",
-    scrollbarWidth: "none", // Firefox
+    scrollbarWidth: "none",
   },
   // BOTONES DE SCROLL
   navBtn: {
     position: "absolute",
     top: "40%",
     transform: "translateY(-50%)",
-    backgroundColor: "rgba(11, 20, 26, 0.8)", // Semi-transparente oscuro
+    backgroundColor: "rgba(11, 20, 26, 0.8)",
     color: "#fff",
     border: "1px solid #2a3942",
     borderRadius: "50%",
@@ -190,7 +190,7 @@ const GenreSection = ({ genre, vinyls, addToCart }) => {
   const scroll = (direction) => {
     if (scrollRef.current) {
       const { current } = scrollRef;
-      const scrollAmount = 600; // Cuánto desplaza (aprox 3 cartas)
+      const scrollAmount = 600;
       
       if (direction === 'left') {
         current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });

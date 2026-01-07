@@ -67,15 +67,12 @@ export const deleteVinyl = async (req, res) => {
     }
 };
 
-// 5. Actualizar un vinilo (Admin) - NUEVO
+// 5. Actualizar un vinilo (Admin)
 export const updateVinyl = async (req, res) => {
     try {
         const { id } = req.params;
-        
-        // --- LOGS PARA DEPURAR (VER ESTO EN LA TERMINAL NEGRA) ---
         console.log(`📝 Intento de editar vinilo ID: ${id}`);
         console.log("📦 Datos recibidos del Frontend:", req.body);
-        // ---------------------------------------------------------
 
         if (!mongoose.Types.ObjectId.isValid(id)) {
             return res.status(404).json({ message: 'ID no válido' });

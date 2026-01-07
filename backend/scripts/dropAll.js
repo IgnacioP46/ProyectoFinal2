@@ -1,9 +1,7 @@
 import "dotenv/config";
 import mongoose from "mongoose";
-// --- CAMBIO AQUÍ ---
 import { Artist } from "../src/models/Artist.models.js";
 import { Vinyl } from "../src/models/Vinyl.models.js";
-// -------------------
 
 const { MONGODB_URI } = process.env;
 

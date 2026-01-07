@@ -64,7 +64,7 @@ const styles = {
     color: "#2d3748",
   },
   buyButtonSmall: {
-    backgroundColor: "#10B981", // Verde esmeralda idéntico al Home
+    backgroundColor: "#10B981",
     color: "white",
     border: "none",
     borderRadius: "20px",

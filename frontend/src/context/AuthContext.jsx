@@ -13,7 +13,6 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  // --- ESTA ES LA FUNCIÓN QUE TE FALTA O ESTÁ MAL ---
   const login = async (email, password) => {
     try {
       const response = await fetch("http://localhost:3000/api/auth/login", {
@@ -30,7 +29,7 @@ export const AuthProvider = ({ children }) => {
       const data = await response.json();
       localStorage.setItem("token", data.token);
       localStorage.setItem("user_data", JSON.stringify(data.user));
-      setUser(data.user); // Esto actualiza la web y te "deja pasar"
+      setUser(data.user);
 
     } catch (error) {
       console.error(error);

@@ -95,11 +95,11 @@ const Chatbot = () => {
                         backgroundColor: '#202c33',
                         color: '#e9edef',
                         padding: '12px',
-                        borderRadius: '0 16px 16px 16px', // Forma de burbuja de chat (pico izquierda)
+                        borderRadius: '0 16px 16px 16px',
                         maxWidth: '85%',
                         width: 'fit-content',
                         boxShadow: '0 1px 2px rgba(0,0,0,0.3)',
-                        borderLeft: '4px solid #00a884', // Acento verde dentro de la burbuja
+                        borderLeft: '4px solid #00a884',
                         display: 'flex',
                         flexDirection: 'column',
                         gap: '6px'
@@ -189,11 +189,10 @@ const Chatbot = () => {
                 </div>
             )}
 
-            {/* >>> BOTÓN FLOTANTE FINAL: VERDE, REDONDO (PÍLDORA) Y CON TEXTO "CHATBOT" <<< */}
             {!isOpen && (
                 <button
                     onClick={() => setIsOpen(true)}
-                    className="fixed bottom-[50px] right-[40px] bg-[#25D366] rounded-full shadow-lg flex items-center justify-center gap-2 px-5 py-3 hover:scale-105 transition-transform z-[9990]"
+                    className="fixed bottom-[50px] right-[20px] bg-[#25D366] rounded-full shadow-lg flex items-center justify-center gap-2 px-5 py-3 hover:scale-105 transition-transform z-[9990]"
                 >
                     <MessageCircle size={24} color="green" fill="green" />
                     <span className="text-green-500 font-bold text-base">Chatbot</span>

@@ -5,9 +5,8 @@ import { Trash2, ArrowLeft, ShoppingBag, CreditCard, User, MapPin } from "lucide
 import { Link, useNavigate } from "react-router-dom";
 import api from "../api/axios";
 
-// --- URL DEL SERVIDOR PARA LAS IMÁGENES ---
-// Si tu backend está en otro puerto, cámbialo aquí (ej: 4000)
-const SERVER_URL = "http://localhost:5000";
+// --- CONFIGURACIÓN ---
+const BASE_URL = "http://localhost:5000"; 
 
 const styles = {
   container: {
@@ -20,16 +19,13 @@ const styles = {
   header: { textAlign: "center", marginBottom: "30px" },
   title: { fontSize: "2.5rem", fontWeight: "800", marginBottom: "10px" },
   
-  // Usamos CSS Grid, pero la responsividad la maneja el bloque <style> abajo
   cartGrid: {
     display: "grid", 
     gap: "40px",
     maxWidth: "1200px",
     margin: "0 auto",
   },
-  
   itemsColumn: { display: "flex", flexDirection: "column", gap: "20px" },
-  
   itemCard: {
     display: "flex",
     backgroundColor: "#202c33",
@@ -47,7 +43,6 @@ const styles = {
   itemTitle: { fontSize: "1.1rem", fontWeight: "bold", color: "#e9edef", margin: 0 },
   itemArtist: { color: "#8696a0", fontSize: "0.9rem", margin: "4px 0" },
   itemPrice: { color: "#00a884", fontWeight: "bold", fontSize: "1.1rem" },
-  
   controls: { display: "flex", alignItems: "center", gap: "15px", marginTop: "10px" },
   qtyBtn: {
     backgroundColor: "#2a3942", color: "#e9edef", border: "none",
@@ -55,10 +50,8 @@ const styles = {
     fontSize: "1.2rem", display: "flex", alignItems: "center", justifyContent: "center"
   },
   deleteBtn: {
-    backgroundColor: "transparent", border: "none", color: "#ef4444", 
-    cursor: "pointer", padding: "5px"
+    backgroundColor: "transparent", border: "none", color: "#ef4444", cursor: "pointer", padding: "5px"
   },
-
   summaryCard: {
     backgroundColor: "#202c33",
     borderRadius: "15px",
@@ -79,10 +72,8 @@ const styles = {
     width: "100%", outline: "none", fontSize: "1rem"
   },
   label: { display: "block", marginBottom: "5px", color: "#8696a0", fontSize: "0.9rem" },
-  
   summaryRow: { display: "flex", justifyContent: "space-between", marginBottom: "10px", color: "#8696a0" },
   totalRow: { display: "flex", justifyContent: "space-between", marginTop: "20px", paddingTop: "20px", borderTop: "1px solid #2a3942", fontSize: "1.5rem", fontWeight: "bold", color: "#e9edef" },
-  
   payBtn: {
     width: "100%", backgroundColor: "#00a884", color: "white", border: "none",
     padding: "15px", borderRadius: "8px", fontSize: "1.1rem", fontWeight: "bold",
@@ -110,13 +101,20 @@ const Cart = () => {
     postalCode: ""
   });
 
-  // --- FUNCIÓN PARA ARREGLAR LAS IMÁGENES ---
-  const getImageUrl = (imagePath) => {
-    if (!imagePath) return "https://via.placeholder.com/80";
-    // Si ya tiene http (es una url externa), la dejamos igual
-    if (imagePath.startsWith("http")) return imagePath;
-    // Si es una ruta local (ej: /uploads/foto.jpg), le pegamos el localhost
-    return `${SERVER_URL}${imagePath.startsWith('/') ? '' : '/'}${imagePath}`;
+  // --- FUNCIÓN INTELIGENTE REFORZADA ---
+  const getCorrectImage = (item) => {
+    const imgUrl = item.cover_image || item.image || item.img || item.cover;
+
+    if (!imgUrl) {
+        return "https://placehold.co/80x80?text=No+Img";
+    }
+
+    if (imgUrl.startsWith("http") || imgUrl.startsWith("https")) {
+      return imgUrl;
+    }
+
+    const cleanPath = imgUrl.startsWith('/') ? imgUrl.slice(1) : imgUrl;
+    return `${BASE_URL}/${cleanPath}`;
   };
 
   const finalTotal = cart.reduce((sum, item) => {
@@ -138,12 +136,15 @@ const Cart = () => {
 
     try {
       const orderData = {
+        // Mapeamos los nombres para que coincidan con tu Modelo Backend
         items: cart.map(item => ({
-            product: item._id,
+            vinyl: item._id,
             quantity: item.quantity,
-            price: Number(item.price_eur || item.price)
+            price_at_purchase: Number(item.price_eur || item.price)
         })),
-        totalAmount: finalTotal,
+        
+        total_price: finalTotal,
+        
         shippingAddress: formData.address, 
         paymentStatus: 'pending'
       };
@@ -157,7 +158,7 @@ const Cart = () => {
       }
     } catch (error) {
       console.error("Error en checkout:", error);
-      alert("Hubo un error al procesar el pedido.");
+      alert("Hubo un error al procesar el pedido. Revisa que tu dirección no esté vacía.");
     }
   };
 
@@ -192,13 +193,17 @@ const Cart = () => {
              
              return (
                 <div key={item._id} style={styles.itemCard}>
+                    
                     <img 
-                        // --- USAMOS LA NUEVA FUNCIÓN AQUÍ ---
-                        src={getImageUrl(item.cover_image)}
+                        src={getCorrectImage(item)}
                         alt={item.title} 
                         style={styles.image}
-                        onError={(e) => {e.target.src = "https://via.placeholder.com/80"}}
+                        onError={(e) => {
+                            e.target.onerror = null; 
+                            e.target.src = "https://placehold.co/80x80/2a3942/FFF?text=Error";
+                        }}
                     />
+
                     <div style={styles.info}>
                         <h3 style={styles.itemTitle}>{item.title}</h3>
                         <p style={styles.itemArtist}>{item.artist_name}</p>
@@ -277,12 +282,9 @@ const Cart = () => {
       
       {/* --- RESPONSIVIDAD --- */}
       <style>{`
-        /* Por defecto (Escritorio) */
         .cart-grid {
             grid-template-columns: 1.5fr 1fr;
         }
-
-        /* En tablet y móvil */
         @media (max-width: 900px) {
             .cart-grid {
                 grid-template-columns: 1fr !important;

@@ -148,7 +148,6 @@ export default function AdminDashboard() {
                                     <div style={styles.inputGroup}>
                                         <label style={styles.label}>Título</label>
                                         <input style={styles.input} 
-                                            // Corrección del Warning: || ""
                                             value={editingProduct.title || ""} 
                                             onChange={e => setEditingProduct({...editingProduct, title: e.target.value})} />
                                     </div>

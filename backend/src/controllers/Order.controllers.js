@@ -15,7 +15,7 @@ export const getMyOrders = async (req, res) => {
     }
 };
 
-// Crear pedido (Este es el que te fallaba, aquí vemos el error real)
+// Crear pedido
 export const createOrder = async (req, res) => {
     try {
         if (!req.user || !req.user.id) {

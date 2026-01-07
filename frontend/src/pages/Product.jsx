@@ -4,7 +4,7 @@ import { ArrowLeft, ShoppingCart, Check, Disc, Music } from "lucide-react";
 import api from "../api/axios";
 import { CartContext } from "../context/CartContext";
 
-// --- ESTILOS (Dark Mode Premium) ---
+// --- ESTILOS ---
 const styles = {
   container: {
     minHeight: "100vh",

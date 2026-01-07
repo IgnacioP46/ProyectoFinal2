@@ -13,11 +13,9 @@ export const register = async (req, res) => {
     }
 
     // 2. CIBERSEGURIDAD: Encriptar la contraseña (Hash)
-    // El '10' es el "salt", la complejidad del cifrado.
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    // 3. LÓGICA DE ROLES: ¿Es el primer usuario del sistema?
     // Contamos cuántos usuarios hay en total.
     const isFirstAccount = (await User.countDocuments({})) === 0;
     // Si es el primero -> 'admin', si no -> 'user'
@@ -57,10 +55,10 @@ export const login = async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) return res.status(400).json({ message: "Credenciales inválidas" });
 
-    // 3. Generar Token (Tu "carnet de identidad" digital)
+    // 3. Generar Token
     const token = jwt.sign(
       { id: user._id, role: user.role },
-      process.env.JWT_SECRET, // Asegúrate de tener esto en tu .env
+      process.env.JWT_SECRET,
       { expiresIn: "1d" }
     );
 
@@ -71,7 +69,7 @@ export const login = async (req, res) => {
         name: user.name,
         email: user.email,
         role: user.role,
-        address: user.address // <--- ¡IMPORTANTE! Enviamos la dirección
+        address: user.address
       }
     });
 

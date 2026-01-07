@@ -15,7 +15,7 @@ const orderSchema = new mongoose.Schema(
           required: true,
         },
         quantity: { type: Number, required: true, default: 1 },
-        price_at_purchase: { type: Number, required: true }, // Guardamos el precio del momento de compra
+        price_at_purchase: { type: Number, required: true },
       },
     ],
     total_price: {

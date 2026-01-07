@@ -55,7 +55,7 @@ export default function Navbar() {
     },
     // Estilo especial para el botón de Admin
     adminLink: {
-      color: '#ef4444', // Rojo o Naranja para destacar
+      color: '#ef4444',
       fontWeight: 'bold'
     },
     cartContainer: {

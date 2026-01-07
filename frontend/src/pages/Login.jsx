@@ -72,7 +72,6 @@ export default function Login() {
       await login(values.email, values.password);
       navigate("/");
     } catch (error) {
-      // CAMBIO IMPORTANTE: Ahora mostramos el mensaje real del error
       alert(error.message || "Hubo un error al intentar entrar");
       console.error("Error detallado:", error);
     }
