@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:3000/api",
+  baseURL: "https://api.render.com/deploy/srv-d5f9u9k9c44c73eolib0?key=obE_FYyPros/api",
 });
 
 // Interceptor: Antes de cada petición, inyecta el token si existe
