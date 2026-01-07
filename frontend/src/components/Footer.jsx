@@ -1,7 +1,9 @@
 import React from 'react';
 import { Instagram, Facebook, Twitter, Mail, Phone } from 'lucide-react';
+import {useClock }from '../hooks/useClock';
 
 export default function Footer() {
+    const time = useClock();
   return (
     <footer className="footer-background">
       <div className="footer-centered">
@@ -35,6 +37,7 @@ export default function Footer() {
           <p className="copyright">
             © {new Date().getFullYear()} Murmullo Records
           </p>
+          <p className="footer-clock">Hora local: <span>{time}</span></p>
           <div className="legal-links">
             <a href="#">Aviso Legal</a>
             <a href="#">Privacidad</a>
@@ -116,7 +119,7 @@ export default function Footer() {
 
         .copyright {
           font-weight: bold;
-          color: #fcfcfc;
+          color: #fcfcfcff;
           font-size: 0.9rem;
         }
 

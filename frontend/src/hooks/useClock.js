@@ -1,12 +1,22 @@
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react';
 
-export function useClock(tz = 'Europe/Madrid') {
-  const [now, setNow] = useState(new Date())
-  useEffect(() => {
-    const id = setInterval(() => setNow(new Date()), 1000)
-    return () => clearInterval(id)
-  }, [])
-  const dateStr = new Intl.DateTimeFormat('es-ES', { timeZone: tz, day: '2-digit', month: '2-digit', year: 'numeric' }).format(now)
-  const timeStr = new Intl.DateTimeFormat('es-ES', { timeZone: tz, hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(now)
-  return { now, dateStr, timeStr }
-}
+export const useClock = () => {
+    const [time, setTime] = useState(new Date());
+
+    useEffect(() => {
+        // Actualiza la hora cada segundo
+        const timerID = setInterval(() => {
+            setTime(new Date());
+        }, 1000);
+
+        // Limpieza: detiene el reloj si el componente se desmonta
+        return () => clearInterval(timerID);
+    }, []);
+
+    // Formateamos la hora para que se vea bonita (HH:MM:SS)
+    return time.toLocaleTimeString([], { 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        second: '2-digit' 
+    });
+};

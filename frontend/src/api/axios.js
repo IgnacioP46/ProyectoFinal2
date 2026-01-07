@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://discosderizos.onrender.com/api",
+  baseURL: "http://localhost:3000/api",
 });
 
 // Interceptor: Antes de cada petición, inyecta el token si existe
