@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import api from "../api/axios";
 
 // --- CONFIGURACIÓN ---
-const BASE_URL = "http://localhost:5000"; 
+const BASE_URL = "https://discosderizos.onrender.com"; 
 
 const styles = {
   container: {
