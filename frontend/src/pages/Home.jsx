@@ -202,7 +202,7 @@ export default function Home() {
   useEffect(() => {
     const fetchFeatured = async () => {
       try {
-        const res = await axios.get('https://api.render.com/deploy/srv-d5f9u9k9c44c73eolib0?key=obE_FYyPros/api/vinyls');
+        const res = await axios.get('https://discosderizos.onrender.com/api/vinyls');
         // Cogemos solo los primeros 10 para "Destacados"
         setVinyls(res.data.slice(0, 10));
         setLoading(false);
