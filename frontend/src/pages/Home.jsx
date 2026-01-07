@@ -233,7 +233,7 @@ export default function Home() {
       <section style={styles.hero}>
         <div style={styles.overlay}></div>
         <div style={styles.heroContent}>
-          <h1 style={styles.title}>Siente la Música Real</h1>
+          <h1 style={styles.title}>Siente la Música</h1>
           <p style={styles.subtitle}>
             Descubre los vinilos más exclusivos. Desde clásicos del rock hasta las últimas novedades indie.
           </p>
