@@ -8,8 +8,18 @@
 }
 
 /* --- FIX GENERAL --- */
-#root { max-width: 100%; margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
-body { background-color: var(--bg-dark); color: var(--text-primary); font-family: 'Segoe UI', sans-serif; }
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: "Segoe UI", sans-serif;
+}
 
 /* --- ADMIN DASHBOARD GRID (VINILOS) --- */
 /* PC: 5 columnas (Imagen | Título | Artista | Precio | Acciones) */
@@ -24,7 +34,9 @@ body { background-color: var(--bg-dark); color: var(--text-primary); font-family
   transition: background 0.2s;
 }
 
-.admin-row-vinyl:hover { background-color: #2a3942; }
+.admin-row-vinyl:hover {
+  background-color: #2a3942;
+}
 
 /* --- ADMIN DASHBOARD GRID (USUARIOS) --- */
 .admin-row-user {
@@ -35,13 +47,249 @@ body { background-color: var(--bg-dark); color: var(--text-primary); font-family
   padding: 15px;
   border-bottom: 1px solid #2a3942;
 }
+/* --- ESTILOS PÁGINA PRODUCTO (ESTILO TARJETA UNIFICADO) --- */
 
-/* --- RESPONSIVE (iPad e Inferior - < 900px) --- */
-@media (max-width: 900px) {
-  
+.product-page-container {
+  min-height: 100vh;
+  padding: 40px 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar la tarjeta */
+  justify-content: center;
+}
+
+.back-btn-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 20px;
+}
+
+.back-btn {
+  background: transparent;
+  border: 1px solid #2a3942;
+  color: var(--text-secondary);
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+.back-btn:hover {
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+/* --- LA SUPER TARJETA --- */
+.product-card-expanded {
+  background-color: var(--bg-card); /* Color gris del catálogo (#202c33) */
+  border: 1px solid #2a3942;
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 1000px; /* Ancho máximo para que no se estire demasiado */
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); /* Sombra elegante */
+}
+
+/* Sección Imagen */
+.product-img-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.vinyl-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 320px; /* Tamaño controlado */
+  aspect-ratio: 1/1;
+}
+
+.product-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%; /* Redondo como un vinilo */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  border: 2px solid #111;
+}
+
+.vinyl-hole {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15%;
+  height: 15%;
+  background-color: var(--bg-card); /* Mismo color que el fondo de la tarjeta */
+  border-radius: 50%;
+  border: 2px solid #111;
+}
+
+.spin-animation:hover {
+  animation: spin 10s linear infinite;
+}
+
+/* Sección Info */
+.product-info-section {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.product-title {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+.product-artist {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.product-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.info-badge {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid #2a3942;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.product-description {
+  color: #aebac1;
+  line-height: 1.6;
+  font-size: 1rem;
+  border-top: 1px solid #2a3942;
+  border-bottom: 1px solid #2a3942;
+  padding: 20px 0;
+}
+
+/* Footer de la tarjeta: Precio y Botón */
+.product-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.price-stock-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.big-price {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.stock-text {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.stock-text.in-stock {
+  color: var(--accent);
+}
+.stock-text.out-stock {
+  color: var(--danger);
+}
+
+/* Botón (Mismo estilo que definimos antes) */
+.buy-btn {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.2s, background 0.2s;
+}
+.buy-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+.buy-btn:disabled {
+  background-color: #2a3942;
+  color: #555;
+  cursor: not-allowed;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .product-card-expanded {
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 30px;
+  }
+
+  .product-img-section {
+    width: 100%;
+  }
+  .vinyl-wrapper {
+    max-width: 250px;
+  }
+
+  .product-title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  .product-artist {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  .product-badges {
+    justify-content: center;
+  }
+
+  .product-footer {
+    gap: 15px;
+  }
+
+  .buy-btn {
+    width: 100%;
+  }
+  .btn-text {
+    display: inline;
+  }
+}
+
+/* Ajustes para Móviles muy pequeños (menos de 400px) */
+@media (max-width: 400px) {
+  .vinyl-wrapper {
+    max-width: 220px;
+  }
+  .product-title {
+    font-size: 1.8rem;
+  }
   /* VINILOS: Solo Imagen | Título | Botones */
   .admin-row-vinyl {
-    grid-template-columns: 70px 1fr auto; 
+    grid-template-columns: 70px 1fr auto;
   }
 
   /* USUARIOS: Nombre | Email | Botón */
@@ -68,8 +316,8 @@ body { background-color: var(--bg-dark); color: var(--text-primary); font-family
   border-radius: 15px;
   border: 1px solid #2a3942;
   overflow: hidden;
-  max-width: 1200px; 
-  margin: 0 auto; 
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .input-dark {
@@ -81,7 +329,9 @@ body { background-color: var(--bg-dark); color: var(--text-primary); font-family
   width: 100%;
   outline: none;
 }
-.input-dark:focus { border-color: var(--accent); }
+.input-dark:focus {
+  border-color: var(--accent);
+}
 
 .btn-action {
   padding: 8px 12px;
@@ -95,22 +345,92 @@ body { background-color: var(--bg-dark); color: var(--text-primary); font-family
   font-weight: bold;
   transition: transform 0.1s;
 }
-.btn-action:active { transform: scale(0.95); }
+.btn-action:active {
+  transform: scale(0.95);
+}
 
 /* --- FOOTER STYLES (Mantenidos) --- */
-.footer-background { background-color: #000; border-top: 1px solid #333; padding: 40px 0; margin-top: auto; font-size: 0.9rem; }
-.footer-centered { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; }
-.left-section { display: flex; gap: 40px; }
-.socials-column { display: flex; flex-direction: column; gap: 15px; }
-.contact-column { display: flex; flex-direction: column; gap: 10px; border-left: 1px solid #333; padding-left: 20px; }
-.contact-item { display: flex; align-items: center; gap: 10px; color: #ccc; text-decoration: none; }
-.right-section { display: flex; flex-direction: column; align-items: flex-end; text-align: right; gap: 10px; }
-.legal-links { display: flex; gap: 15px; }
-.legal-links a { color: #666; text-decoration: none; font-size: 0.8rem; }
-.footer-clock { font-family: monospace; color: var(--accent); background: #111; padding: 5px 10px; border-radius: 5px; border: 1px solid #333; }
+.footer-background {
+  background-color: #000;
+  border-top: 1px solid #333;
+  padding: 40px 0;
+  margin-top: auto;
+  font-size: 0.9rem;
+}
+.footer-centered {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.left-section {
+  display: flex;
+  gap: 40px;
+}
+.socials-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-left: 1px solid #333;
+  padding-left: 20px;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ccc;
+  text-decoration: none;
+}
+.right-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 10px;
+}
+.legal-links {
+  display: flex;
+  gap: 15px;
+}
+.legal-links a {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+.footer-clock {
+  font-family: monospace;
+  color: var(--accent);
+  background: #111;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #333;
+}
 @media (max-width: 768px) {
-  .footer-centered { flex-direction: column; align-items: center; text-align: center; }
-  .left-section { flex-direction: column; align-items: center; gap: 20px; }
-  .contact-column { border-left: none; padding-left: 0; align-items: center; }
-  .right-section { align-items: center; text-align: center; }
+  .footer-centered {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .left-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .contact-column {
+    border-left: none;
+    padding-left: 0;
+    align-items: center;
+  }
+  .right-section {
+    align-items: center;
+    text-align: center;
+  }
 }

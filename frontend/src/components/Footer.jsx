@@ -15,9 +15,9 @@ export default function Footer() {
                     
                     {/* Redes Sociales Verticales */}
                     <div className="socials-column">
-                        <a href="#" className="social-icon instagram"><Instagram size={20} /></a>
-                        <a href="#" className="social-icon facebook"><Facebook size={20} /></a>
-                        <a href="#" className="social-icon twitter"><Twitter size={20} /></a>
+                        <a href="#" className="social-icon instagram"><Instagram size={20} color="#ffffffff" /></a>
+                        <a href="#" className="social-icon facebook"><Facebook size={20} color="#ffffffff" /></a>
+                        <a href="#" className="social-icon twitter"><Twitter size={20} color="#ffffffff" /></a>
                     </div>
 
                     {/* Contacto Vertical con borde a la izquierda */}
@@ -49,7 +49,7 @@ export default function Footer() {
                         <a href="#">Términos</a>
                     </div>
                     
-                    <div style={{fontSize: '0.8rem', color: '#444', marginTop: '5px'}}>
+                    <div style={{fontSize: '0.8rem', color: '#666', marginTop: '5px'}}>
                         Hecho con <Heart size={10} inlinefill="true" />
                     </div>
                 </div>

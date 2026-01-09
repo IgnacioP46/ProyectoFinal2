@@ -1,41 +1,29 @@
 import mongoose from "mongoose";
 
-const orderSchema = new mongoose.Schema(
-  {
+const orderSchema = new mongoose.Schema({
+    // El usuario ahora NO es requerido (required: false)
     user: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-      required: true,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        required: false 
+    },
+    // Añadimos campo para invitados
+    guest_info: {
+        name: String,
+        email: String
     },
     items: [
-      {
-        vinyl: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "Vinyl",
-          required: true,
-        },
-        quantity: { type: Number, required: true, default: 1 },
-        price_at_purchase: { type: Number, required: true },
-      },
+        {
+            vinyl: { type: mongoose.Schema.Types.ObjectId, ref: "Vinyl" },
+            quantity: Number,
+            price_at_purchase: Number
+        }
     ],
-    total_price: {
-      type: Number,
-      required: true,
-    },
-    status: {
-      type: String,
-      enum: ["pending", "completed", "shipped", "cancelled"],
-      default: "completed",
-    },
-    shipping_address: {
-      street: String,
-      city: String,
-      zipCode: String,
-    }
-  },
-  {
-    timestamps: true,
-  }
-);
+    total_price: { type: Number, required: true },
+    shipping_address: { type: String, required: true },
+    status: { type: String, default: "pendiente" }
+}, {
+    timestamps: true
+});
 
 export const Order = mongoose.model("Order", orderSchema);

@@ -150,7 +150,7 @@ const Chatbot = () => {
 
             {/* VENTANA DEL CHAT */}
             {isOpen && (
-                <div className="fixed shadow-2xl animate-fade-in-up" style={{ display: 'flex', flexDirection: 'column', bottom: '100px', right: '20px', width: '300px', height: '550px', maxHeight: '80vh', maxWidth: 'calc(100vw - 40px)', borderRadius: '24px', backgroundColor: '#0b141a', overflow: 'hidden', border: '1px solid #333', zIndex: 99999 }}>
+                <div className="fixed shadow-2xl animate-fade-in-up" style={{ display: 'flex', flexDirection: 'column', bottom: '100px', right: '20px', width: '250px', height: '550px', maxHeight: '80vh', maxWidth: 'calc(100vw - 40px)', borderRadius: '24px', backgroundColor: '#0b141a', overflow: 'hidden', border: '1px solid #333', zIndex: 99999 }}>
                     <div className="bg-[#202c33] p-3 px-4 border-b border-[#2a3942] shadow-md z-10" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', flexShrink: 0 }}>
                         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '12px' }}>
                             <div className="relative flex-shrink-0">
