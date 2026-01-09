@@ -87,7 +87,6 @@ const Chatbot = () => {
     const renderMessage = (msg, index) => {
         const isUser = msg.sender === 'user';
 
-        // >>> VINILOS EN FORMATO "BOCADILLO" DE CHAT <<<
         if (msg.type === 'product') {
             return (
                 <div key={index} style={{ display: 'flex', width: '100%', justifyContent: 'flex-start', marginBottom: '10px' }}>
@@ -104,7 +103,6 @@ const Chatbot = () => {
                         flexDirection: 'column',
                         gap: '6px'
                     }}>
-                        {/* Contenido */}
                         <div className="flex flex-col">
                             <span className="text-[#00a884] text-[10px] font-bold uppercase tracking-wider">Resultado</span>
                             <h4 className="font-bold text-sm text-white leading-tight">{msg.data.title}</h4>
@@ -128,7 +126,6 @@ const Chatbot = () => {
             );
         }
 
-        // MENSAJES NORMALES
         return (
             <div key={index} style={{ display: 'flex', width: '100%', justifyContent: isUser ? 'flex-end' : 'flex-start', marginBottom: '10px' }}>
                 <div style={{
@@ -153,7 +150,7 @@ const Chatbot = () => {
 
             {/* VENTANA DEL CHAT */}
             {isOpen && (
-                <div className="fixed shadow-2xl animate-fade-in-up" style={{ display: 'flex', flexDirection: 'column', bottom: '100px', right: '20px', width: '340px', height: '550px', maxHeight: '80vh', maxWidth: 'calc(100vw - 40px)', borderRadius: '24px', backgroundColor: '#0b141a', overflow: 'hidden', border: '1px solid #333', zIndex: 99999 }}>
+                <div className="fixed shadow-2xl animate-fade-in-up" style={{ display: 'flex', flexDirection: 'column', bottom: '100px', right: '20px', width: '300px', height: '550px', maxHeight: '80vh', maxWidth: 'calc(100vw - 40px)', borderRadius: '24px', backgroundColor: '#0b141a', overflow: 'hidden', border: '1px solid #333', zIndex: 99999 }}>
                     <div className="bg-[#202c33] p-3 px-4 border-b border-[#2a3942] shadow-md z-10" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', flexShrink: 0 }}>
                         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '12px' }}>
                             <div className="relative flex-shrink-0">
@@ -189,15 +186,17 @@ const Chatbot = () => {
                 </div>
             )}
 
+            {/* BOTÓN FLOTANTE (CERRADO) */}
             {!isOpen && (
                 <button
                     onClick={() => setIsOpen(true)}
-                    className="fixed bottom-[50px] right-[20px] bg-[#25D366] rounded-full shadow-lg flex items-center justify-center gap-2 px-5 py-3 hover:scale-105 transition-transform z-[9990]"
+                    className="fixed bottom-[40px] right-[40px] bg-[#25D366] text-white rounded-full shadow-2xl flex items-center justify-center gap-3 w-20 h-20 hover:scale-105 transition-transform z-[9990]"
                 >
-                    <MessageCircle size={24} color="green" fill="green" />
-                    <span className="text-green-500 font-bold text-base">Chatbot</span>
+                    <MessageCircle size={36} fill="green" color="green" />
+                    <span className="font-bold text-xl hidden md:block">Chat</span>
                 </button>
             )}
+
 
             <style>{`.no-scrollbar::-webkit-scrollbar { display: none; } .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }`}</style>
         </div>
