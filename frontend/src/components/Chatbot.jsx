@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Search, Truck, HelpCircle } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import api from '../api/axios';
 
 const Chatbot = () => {
@@ -8,7 +7,6 @@ const Chatbot = () => {
     const [input, setInput] = useState('');
     const [isTyping, setIsTyping] = useState(false);
     const [searchMode, setSearchMode] = useState(false);
-    const [vinyls, setVinyls] = useState([]);
 
     const [messages, setMessages] = useState([
         {
@@ -22,110 +20,89 @@ const Chatbot = () => {
     const messagesEndRef = useRef(null);
 
     useEffect(() => {
-        const fetchVinyls = async () => {
-            try {
-                const { data } = await api.get('/vinyls');
-                setVinyls(data);
-            } catch (error) { console.error(error); }
-        };
-        fetchVinyls();
-    }, []);
-
-    useEffect(() => {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     }, [messages, isOpen, isTyping]);
 
     const getCurrentTime = () => new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
-    const processResponse = (text) => {
-        const lowerText = text.toLowerCase();
-        if (searchMode) {
+    // --- 1. LÓGICA DIRECTA PARA LOS BOTONES ---
+    const handleQuickReply = (action) => {
+        let userText = "";
+        let botText = "";
+
+        if (action === 'shipping') {
+            userText = "🚚 Envíos";
+            botText = "Los gastos de envío son de 4,95€ y las entregas llegan en 24-48H.";
             setSearchMode(false);
-            const results = vinyls.filter(v =>
-                v.title.toLowerCase().includes(lowerText) ||
-                v.artist_name.toLowerCase().includes(lowerText)
-            );
-            if (results.length > 0) {
-                return [
-                    { text: `¡He encontrado ${results.length} coincidencia(s)!`, sender: 'bot' },
-                    ...results.slice(0, 3).map(v => ({ type: 'product', data: v, sender: 'bot', time: getCurrentTime() }))
-                ];
-            }
-            return [{ text: "No he encontrado nada. 😓 Intenta con otro nombre.", sender: 'bot', time: getCurrentTime() }];
-        }
-
-        if (lowerText.includes('buscar') || lowerText.includes('tienes')) {
+        } 
+        else if (action === 'store') {
+            userText = "📍 Tienda";
+            botText = "Nuestra tienda está en C/ Desengaño 21, donde antes había un videoclub muy famoso.";
+            setSearchMode(false);
+        } 
+        else if (action === 'search') {
+            userText = "🔍 Buscar vinilo";
+            botText = "¡Claro! 🎵 Dime el nombre del artista o del disco.";
             setSearchMode(true);
-            return [{ text: "¡Claro! 🎵 Dime el nombre del artista o del disco.", sender: 'bot', time: getCurrentTime() }];
         }
 
-        if (lowerText.includes('envio')) {
-            return [{ text: "🚚 Envíos GRATIS a partir de 60€. Menos de eso, 4,95€. 24/48h.", sender: 'bot', time: getCurrentTime() }];
-        }
-        return [{ text: "No te he entendido bien. Prueba con 'Buscar' o 'Envíos'.", sender: 'bot', time: getCurrentTime() }];
-    };
-
-    const handleSend = async (textOverride = null) => {
-        const textToSend = textOverride || input;
-        if (!textToSend.trim()) return;
-
-        const time = getCurrentTime();
-        setMessages(prev => [...prev, { text: textToSend, sender: 'user', time, type: 'text' }]);
-        setInput('');
+        setMessages(prev => [...prev, { text: userText, sender: 'user', time: getCurrentTime(), type: 'text' }]);
         setIsTyping(true);
 
         setTimeout(() => {
-            const responses = processResponse(textToSend);
-            setMessages(prev => [...prev, ...responses]);
+            setMessages(prev => [...prev, { text: botText, sender: 'bot', time: getCurrentTime(), type: 'text' }]);
             setIsTyping(false);
-        }, 1000);
+        }, 800);
     };
 
-    const handleKeyPress = (e) => { if (e.key === 'Enter') handleSend(); };
+    // --- 2. LÓGICA PARA ESCRIBIR MANUALMENTE ---
+    const handleSend = async (manualText = null) => {
+        const textToSend = manualText || input;
+        if (!textToSend.trim()) return;
 
-    // --- RENDERIZADO DE MENSAJES ---
+        setInput('');
+
+        setMessages(prev => [...prev, { text: textToSend, sender: 'user', time: getCurrentTime(), type: 'text' }]);
+        setIsTyping(true);
+
+        if (searchMode) {
+            try {
+                const { data } = await api.get(`/vinyls?search=${textToSend}`);
+                setTimeout(() => {
+                    if (data.length > 0) {
+                        setMessages(prev => [...prev, { 
+                            text: `He encontrado ${data.length} coincidencias. Te recomiendo "${data[0].title}".`, 
+                            sender: 'bot', time: getCurrentTime(), type: 'text' 
+                        }]);
+                    } else {
+                        setMessages(prev => [...prev, { 
+                            text: "No he encontrado nada con ese nombre. Intenta con otro artista.", 
+                            sender: 'bot', time: getCurrentTime(), type: 'text' 
+                        }]);
+                    }
+                    setIsTyping(false);
+                }, 1000);
+            } catch (error) { setIsTyping(false); }
+        } else {
+            setTimeout(() => {
+                if (textToSend.toLowerCase().includes('envio')) {
+                    setMessages(prev => [...prev, { text: "Los gastos de envío son de 4,95€ y las entregas llegan en 24-48H.", sender: 'bot', time: getCurrentTime(), type: 'text' }]);
+                } else if (textToSend.toLowerCase().includes('tienda')) {
+                    setMessages(prev => [...prev, { text: "Nuestra tienda está en C/ Desengaño 21, donde antes había un videoclub muy famoso.", sender: 'bot', time: getCurrentTime(), type: 'text' }]);
+                } else {
+                    setMessages(prev => [...prev, { text: "Elige una opción de abajo 👇 o pulsa 'Buscar' para encontrar discos.", sender: 'bot', time: getCurrentTime(), type: 'text' }]);
+                }
+                setIsTyping(false);
+            }, 800);
+        }
+    };
+
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') handleSend();
+    };
+
     const renderMessage = (msg, index) => {
         const isUser = msg.sender === 'user';
-
-        if (msg.type === 'product') {
-            return (
-                <div key={index} style={{ display: 'flex', width: '100%', justifyContent: 'flex-start', marginBottom: '10px' }}>
-                    <div style={{
-                        backgroundColor: '#202c33',
-                        color: '#e9edef',
-                        padding: '12px',
-                        borderRadius: '0 16px 16px 16px',
-                        maxWidth: '85%',
-                        width: 'fit-content',
-                        boxShadow: '0 1px 2px rgba(0,0,0,0.3)',
-                        borderLeft: '4px solid #00a884',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '6px'
-                    }}>
-                        <div className="flex flex-col">
-                            <span className="text-[#00a884] text-[10px] font-bold uppercase tracking-wider">Resultado</span>
-                            <h4 className="font-bold text-sm text-white leading-tight">{msg.data.title}</h4>
-                            <p className="text-xs text-gray-400">{msg.data.artist_name}</p>
-                        </div>
-
-                        <div className="w-full h-[1px] bg-[#2a3942] my-1"></div>
-
-                        <div className="flex items-center justify-between gap-4">
-                            <span className="font-bold text-white">{Number(msg.data.price || msg.data.price_eur).toFixed(2)}€</span>
-                            <Link
-                                to={`/vinyls/${msg.data._id}`}
-                                className="bg-[#00a884] hover:bg-[#008f6f] text-white text-[10px] font-bold px-3 py-1 rounded-full transition"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                Ver
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            );
-        }
-
         return (
             <div key={index} style={{ display: 'flex', width: '100%', justifyContent: isUser ? 'flex-end' : 'flex-start', marginBottom: '10px' }}>
                 <div style={{
@@ -150,7 +127,25 @@ const Chatbot = () => {
 
             {/* VENTANA DEL CHAT */}
             {isOpen && (
-                <div className="fixed shadow-2xl animate-fade-in-up" style={{ display: 'flex', flexDirection: 'column', bottom: '100px', right: '20px', width: '250px', height: '550px', maxHeight: '80vh', maxWidth: 'calc(100vw - 40px)', borderRadius: '24px', backgroundColor: '#0b141a', overflow: 'hidden', border: '1px solid #333', zIndex: 99999 }}>
+                <div 
+                    // HE AÑADIDO LA CLASE "chat-window" AQUÍ
+                    className="fixed shadow-2xl animate-fade-in-up chat-window" 
+                    style={{ 
+                        display: 'flex', 
+                        flexDirection: 'column', 
+                        bottom: '100px', 
+                        // HE QUITADO 'width' DE AQUÍ PARA QUE LO CONTROLE EL CSS
+                        height: '550px', 
+                        maxHeight: '80vh', 
+                        borderRadius: '24px', 
+                        backgroundColor: '#0b141a', 
+                        overflow: 'hidden', 
+                        border: '1px solid #333', 
+                        zIndex: 99999 
+                    }}
+                >
+                    
+                    {/* Header */}
                     <div className="bg-[#202c33] p-3 px-4 border-b border-[#2a3942] shadow-md z-10" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', flexShrink: 0 }}>
                         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '12px' }}>
                             <div className="relative flex-shrink-0">
@@ -165,19 +160,28 @@ const Chatbot = () => {
                         <button onClick={() => setIsOpen(false)} className="hover:bg-white/10 rounded-full p-1.5 transition"><X size={24} color="#aebac1" /></button>
                     </div>
 
+                    {/* Cuerpo */}
                     <div style={{ flex: 1, overflowY: 'auto', padding: '16px', backgroundImage: 'url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png")', backgroundColor: '#0b141a', backgroundBlendMode: 'soft-light', backgroundSize: '400px', opacity: 0.95 }}>
                         {messages.map(renderMessage)}
                         <div ref={messagesEndRef} />
                     </div>
 
+                    {/* Footer */}
                     <div className="flex-shrink-0 bg-[#202c33]">
                         {!input && !searchMode && (
                             <div className="px-4 py-2 flex gap-2 overflow-x-auto border-t border-[#2a3942] no-scrollbar">
-                                <button onClick={() => handleSend("🔍 Buscar vinilo")} className="flex items-center gap-1 bg-[#2a3942] border border-[#374248] px-3 py-1.5 rounded-full text-xs text-gray-300 hover:bg-[#364147] whitespace-nowrap transition"><Search size={12} /> Buscar</button>
-                                <button onClick={() => handleSend("🚚 Envíos")} className="flex items-center gap-1 bg-[#2a3942] border border-[#374248] px-3 py-1.5 rounded-full text-xs text-gray-300 hover:bg-[#364147] whitespace-nowrap transition"><Truck size={12} /> Envíos</button>
-                                <button onClick={() => handleSend("📍 Tienda")} className="flex items-center gap-1 bg-[#2a3942] border border-[#374248] px-3 py-1.5 rounded-full text-xs text-gray-300 hover:bg-[#364147] whitespace-nowrap transition"><HelpCircle size={12} /> Tienda</button>
+                                <button onClick={() => handleQuickReply('search')} className="flex items-center gap-1 bg-[#2a3942] border border-[#374248] px-3 py-1.5 rounded-full text-xs text-gray-300 hover:bg-[#364147] whitespace-nowrap transition">
+                                    <Search size={12} /> Buscar
+                                </button>
+                                <button onClick={() => handleQuickReply('shipping')} className="flex items-center gap-1 bg-[#2a3942] border border-[#374248] px-3 py-1.5 rounded-full text-xs text-gray-300 hover:bg-[#364147] whitespace-nowrap transition">
+                                    <Truck size={12} /> Envíos
+                                </button>
+                                <button onClick={() => handleQuickReply('store')} className="flex items-center gap-1 bg-[#2a3942] border border-[#374248] px-3 py-1.5 rounded-full text-xs text-gray-300 hover:bg-[#364147] whitespace-nowrap transition">
+                                    <HelpCircle size={12} /> Tienda
+                                </button>
                             </div>
                         )}
+                        
                         <div className="p-2 px-3 flex items-center gap-2 border-t border-[#2a3942]">
                             <input type="text" value={input} onChange={(e) => setInput(e.target.value)} onKeyPress={handleKeyPress} placeholder={searchMode ? "Escribe artista..." : "Escribe un mensaje..."} className="flex-1 py-2.5 px-4 rounded-full bg-[#2a3942] border-none outline-none text-sm text-white placeholder-gray-400 focus:bg-[#323f47] transition" autoFocus />
                             <button onClick={() => handleSend()} disabled={!input.trim()} className={`p-2.5 rounded-full transition-all duration-200 flex items-center justify-center ${input.trim() ? 'bg-[#00a884] text-white hover:scale-105' : 'bg-[#2a3942] text-gray-500 cursor-default'}`}><Send size={18} className={input.trim() ? 'ml-0.5' : ''} /></button>
@@ -186,7 +190,7 @@ const Chatbot = () => {
                 </div>
             )}
 
-            {/* BOTÓN FLOTANTE (CERRADO) */}
+            {/* BOTÓN FLOTANTE */}
             {!isOpen && (
                 <button
                     onClick={() => setIsOpen(true)}
@@ -197,8 +201,26 @@ const Chatbot = () => {
                 </button>
             )}
 
+            <style>{`
+                .no-scrollbar::-webkit-scrollbar { display: none; } 
+                .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+                
+                /* AQUÍ ESTÁ LA MAGIA RESPONSIVE */
+                /* Por defecto (PC) */
+                .chat-window {
+                    width: 300px;
+                    right: 20px;
+                }
 
-            <style>{`.no-scrollbar::-webkit-scrollbar { display: none; } .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }`}</style>
+                /* Para Tablets y Móviles (menos de 768px) */
+                @media (max-width: 768px) {
+                    .chat-window {
+                        width: 250px !important;
+                        right: 15px !important;
+                        bottom: 90px !important; /* Un poco más abajo en móvil */
+                    }
+                }
+            `}</style>
         </div>
     );
 };
